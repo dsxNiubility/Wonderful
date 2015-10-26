@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "UIColor+Wonderful.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor goldColor];
     // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 - (void)didReceiveMemoryWarning {
