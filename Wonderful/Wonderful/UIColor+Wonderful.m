@@ -316,6 +316,58 @@
     return SXRGB16Color(0x191970);
 }
 
+#pragma mark - **************** 红色系
+/** 薄雾玫瑰*/
++ (UIColor *)mistyRose
+{
+    return SXRGB16Color(0xFFE4E1);
+}
+/** 浅鲑鱼色*/
++ (UIColor *)lightSalmon
+{
+    return SXRGB16Color(0xFFA07A);
+}
+/** 鲑🐟色*/
++ (UIColor *)salmonColor
+{
+    return SXRGB16Color(0xFA8072);
+}
+/** 深鲑鱼色*/
++ (UIColor *)darkSalmon
+{
+    return SXRGB16Color(0xE9967A);
+}
+/** 淡珊瑚色*/
++ (UIColor *)lightCoral
+{
+    return SXRGB16Color(0xF08080);
+}
+/** 珊瑚色*/
++ (UIColor *)coral
+{
+    return SXRGB16Color(0xFF7F50);
+}
+/** 橙红色*/
++ (UIColor *)orangeRed
+{
+    return SXRGB16Color(0xFF4500);
+}
+/** 番茄*/
++ (UIColor *)tomato
+{
+    return SXRGB16Color(0xFF6347);
+}
+/** 印度红*/
++ (UIColor *)indianRed
+{
+    return SXRGB16Color(0xCD5C5C);
+}
+/** 猩红*/
++ (UIColor *)crimson
+{
+    return SXRGB16Color(0xDC143C);
+}
+
 
 
 

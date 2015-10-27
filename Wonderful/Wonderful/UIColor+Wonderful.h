@@ -10,6 +10,7 @@
 
 @interface UIColor (Wonderful)
 
+#pragma mark - **************** 黄色系
 /** 金色*/
 + (UIColor *)goldColor;
 /** 金麒麟色*/
@@ -31,7 +32,35 @@
 /** 玉米色*/
 + (UIColor *)cornColor;
 
+#pragma mark - **************** 白色系
+/** 海贝壳*/
++ (UIColor *)seaShell;
+/** 雪*/
++ (UIColor *)snowColor;
+/** 亚麻色*/
++ (UIColor *)linenColor;
+/** 花之白*/
++ (UIColor *)floralWhite;
+/** 老饰带*/
++ (UIColor *)oldLace;
+/** 象牙白*/
++ (UIColor *)ivoryColor;
+/** 蜂蜜露*/
++ (UIColor *)honeydew;
+/** 薄荷奶油*/
++ (UIColor *)mintCream;
+/** 蔚蓝色*/
++ (UIColor *)azureColor;
+/** 爱丽丝蓝*/
++ (UIColor *)aliceBlue;
+/** 幽灵白*/
++ (UIColor *)ghostWhite;
+/** 淡紫红*/
++ (UIColor *)lavenderBlush;
+/** 薰衣草*/
++ (UIColor *)lavender;
 
+#pragma mark - **************** 绿色系
 /** 苍绿*/
 + (UIColor *)paleGreen;
 /** 淡绿色*/
@@ -61,7 +90,7 @@
 /** 橄榄土褐色*/
 + (UIColor *)oliveDrab;
 
-
+#pragma mark - **************** 青色系
 /** 淡青色*/
 + (UIColor *)lightCyan;
 /** 苍白绿松石*/
@@ -81,7 +110,7 @@
 /** 军校蓝*/
 + (UIColor *)cadetBlue;
 
-
+#pragma mark - **************** 蓝色系
 /** 淡蓝*/
 + (UIColor *)lightBLue;
 /** 天蓝色*/
@@ -108,5 +137,27 @@
 + (UIColor *)darkBlue;
 /** 午夜蓝*/
 + (UIColor *)midnightBlue;
+
+#pragma mark - **************** 红色系
+/** 薄雾玫瑰*/
++ (UIColor *)mistyRose;
+/** 浅鲑鱼色*/
++ (UIColor *)lightSalmon;
+/** 鲑鱼色（肉色）*/
++ (UIColor *)salmonColor;
+/** 深鲑鱼色*/
++ (UIColor *)darkSalmon;
+/** 淡珊瑚色*/
++ (UIColor *)lightCoral;
+/** 珊瑚色*/
++ (UIColor *)coral;
+/** 橙红色*/
++ (UIColor *)orangeRed;
+/** 番茄*/
++ (UIColor *)tomato;
+/** 印度红*/
++ (UIColor *)indianRed;
+/** 猩红*/
++ (UIColor *)crimson;
 
 @end
