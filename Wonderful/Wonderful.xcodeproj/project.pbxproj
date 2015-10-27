@@ -13,7 +13,7 @@
 		1DCCF4891BDE214900DB5EB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DCCF4871BDE214900DB5EB7 /* Main.storyboard */; };
 		1DCCF48B1BDE214900DB5EB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DCCF48A1BDE214900DB5EB7 /* Assets.xcassets */; };
 		1DCCF48E1BDE214900DB5EB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DCCF48C1BDE214900DB5EB7 /* LaunchScreen.storyboard */; };
-		1DCCF4971BDE258800DB5EB7 /* UIColor+Wonderful.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF4961BDE258800DB5EB7 /* UIColor+Wonderful.m */; settings = {ASSET_TAGS = (); }; };
+		1DCCF49B1BDF121000DB5EB7 /* UIColor+Wonderful.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF49A1BDF121000DB5EB7 /* UIColor+Wonderful.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +27,8 @@
 		1DCCF48A1BDE214900DB5EB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DCCF48D1BDE214900DB5EB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DCCF48F1BDE214900DB5EB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1DCCF4951BDE258800DB5EB7 /* UIColor+Wonderful.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Wonderful.h"; sourceTree = "<group>"; };
-		1DCCF4961BDE258800DB5EB7 /* UIColor+Wonderful.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Wonderful.m"; sourceTree = "<group>"; };
+		1DCCF4991BDF121000DB5EB7 /* UIColor+Wonderful.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Wonderful.h"; sourceTree = "<group>"; };
+		1DCCF49A1BDF121000DB5EB7 /* UIColor+Wonderful.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Wonderful.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,12 +61,11 @@
 		1DCCF47D1BDE214900DB5EB7 /* Wonderful */ = {
 			isa = PBXGroup;
 			children = (
+				1DCCF4981BDF121000DB5EB7 /* Category */,
 				1DCCF4811BDE214900DB5EB7 /* AppDelegate.h */,
 				1DCCF4821BDE214900DB5EB7 /* AppDelegate.m */,
 				1DCCF4841BDE214900DB5EB7 /* ViewController.h */,
 				1DCCF4851BDE214900DB5EB7 /* ViewController.m */,
-				1DCCF4951BDE258800DB5EB7 /* UIColor+Wonderful.h */,
-				1DCCF4961BDE258800DB5EB7 /* UIColor+Wonderful.m */,
 				1DCCF4871BDE214900DB5EB7 /* Main.storyboard */,
 				1DCCF48A1BDE214900DB5EB7 /* Assets.xcassets */,
 				1DCCF48C1BDE214900DB5EB7 /* LaunchScreen.storyboard */,
@@ -82,6 +81,15 @@
 				1DCCF47F1BDE214900DB5EB7 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1DCCF4981BDF121000DB5EB7 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1DCCF4991BDF121000DB5EB7 /* UIColor+Wonderful.h */,
+				1DCCF49A1BDF121000DB5EB7 /* UIColor+Wonderful.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,8 +162,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DCCF4971BDE258800DB5EB7 /* UIColor+Wonderful.m in Sources */,
 				1DCCF4861BDE214900DB5EB7 /* ViewController.m in Sources */,
+				1DCCF49B1BDF121000DB5EB7 /* UIColor+Wonderful.m in Sources */,
 				1DCCF4831BDE214900DB5EB7 /* AppDelegate.m in Sources */,
 				1DCCF4801BDE214900DB5EB7 /* main.m in Sources */,
 			);
