@@ -11,6 +11,77 @@
 
 @implementation UIColor (Wonderful)
 
+#pragma mark - **************** 绿色系
+/** 苍绿*/
++ (UIColor *)paleGreen
+{
+    return SXRGB16Color(0x98FB98);
+}
+/** 淡绿色*/
++ (UIColor *)lightGreen
+{
+    return SXRGB16Color(0x90EE90);
+}
+/** 草坪绿*/
++ (UIColor *)lawnGreen
+{
+    return SXRGB16Color(0x7CFC00);
+}
+/** 绿黄色*/
++ (UIColor *)greenYellow
+{
+    return SXRGB16Color(0xADFF2F);
+}
+/** 查特酒绿*/
++ (UIColor *)chartreuse
+{
+    return SXRGB16Color(0x7FFF00);
+}
+/** 春绿*/
++ (UIColor *)springGreen
+{
+    return SXRGB16Color(0x2AFD84);
+}
+/** 适中的春绿*/
++ (UIColor *)mediumSpringGreen
+{
+    return SXRGB16Color(0x29F89D);
+}
+/** 酸橙绿*/
++ (UIColor *)limeColor
+{
+    return SXRGB16Color(0x00FF00);
+}
+/** 酸橙色*/
++ (UIColor *)limeGreen
+{
+    return SXRGB16Color(0x32CD32);
+}
+/** 海洋绿*/
++ (UIColor *)seaGreen
+{
+    return SXRGB16Color(0x2E8B57);
+}
+/** 深海洋绿*/
++ (UIColor *)darkSeaGreen
+{
+    return SXRGB16Color(0x8FBC8F);
+}
+/** 森林绿*/
++ (UIColor *)forestGreen
+{
+    return SXRGB16Color(0x228B22);
+}
+/** 深绿*/
++ (UIColor *)darkGreen
+{
+    return SXRGB16Color(0x006400);
+}
+/** 橄榄土褐色*/
++ (UIColor *)oliveDrab
+{
+    return SXRGB16Color(0x556B2F);
+}
 
 #pragma mark - **************** 黄色系
 /** 金色*/
