@@ -61,4 +61,24 @@
 /** 橄榄土褐色*/
 + (UIColor *)oliveDrab;
 
+
+/** 淡青色*/
++ (UIColor *)lightCyan;
+/** 苍白绿松石*/
++ (UIColor *)paleTurquoise;
+/** 绿松石*/
++ (UIColor *)turquoise;
+/** 适中绿松石*/
++ (UIColor *)mediumTurquoise;
+/** 浅海洋绿*/
++ (UIColor *)lightSeaGreen;
+/** 深青色*/
++ (UIColor *)darkCyan;
+/** 水鸭色*/
++ (UIColor *)tealColor;
+/** 深石板灰*/
++ (UIColor *)darkSlateGray;
+/** 军校蓝*/
++ (UIColor *)cadetBlue;
+
 @end

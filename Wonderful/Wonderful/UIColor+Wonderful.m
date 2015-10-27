@@ -202,6 +202,54 @@
     return SXRGB16Color(0xE6E6FA);
 }
 
+#pragma mark - **************** 青色系
+/** 淡青色*/
++ (UIColor *)lightCyan
+{
+    return SXRGB16Color(0xE1FFFF);
+}
+/** 苍白绿松石*/
++ (UIColor *)paleTurquoise
+{
+    return SXRGB16Color(0xAFEEEE);
+}
+/** 绿松石*/
++ (UIColor *)turquoise
+{
+    return SXRGB16Color(0x40E0D0);
+}
+/** 适中绿松石*/
++ (UIColor *)mediumTurquoise
+{
+    return SXRGB16Color(0x48D1CC);
+}
+/** 浅海洋绿*/
++ (UIColor *)lightSeaGreen
+{
+    return SXRGB16Color(0x20B2AA);
+}
+/** 深青色*/
++ (UIColor *)darkCyan
+{
+    return SXRGB16Color(0x008B8B);
+}
+/** 水鸭色*/
++ (UIColor *)tealColor
+{
+    return SXRGB16Color(0x008080);
+}
+/** 深石板灰*/
++ (UIColor *)darkSlateGray
+{
+    return SXRGB16Color(0x2F4F4F);
+}
+/** 军校蓝*/
++ (UIColor *)cadetBlue
+{
+    return SXRGB16Color(0x5F9EA0);
+}
+
+
 
 
 
