@@ -249,6 +249,72 @@
     return SXRGB16Color(0x5F9EA0);
 }
 
+#pragma mark - **************** 蓝色系
+/** 淡蓝*/
++ (UIColor *)lightBLue
+{
+    return SXRGB16Color(0xADD8E6);
+}
+/** 天蓝色*/
++ (UIColor *)skyBlue
+{
+    return SXRGB16Color(0xE1FFFF);
+}
+/** 浅天蓝色*/
++ (UIColor *)lightSkyBlue
+{
+    return SXRGB16Color(0xE1FFFF);
+}
+/** 深天蓝*/
++ (UIColor *)deepSkyBlue
+{
+    return SXRGB16Color(0x00BFFF);
+}
+/** 淡钢蓝*/
++ (UIColor *)lightSteelBlue
+{
+    return SXRGB16Color(0xB0C4DE);
+}
+/** 钢蓝*/
++ (UIColor *)steelBlue
+{
+    return SXRGB16Color(0x4682B4);
+}
+/** 道奇蓝*/
++ (UIColor *)doderBlue
+{
+    return SXRGB16Color(0x1E90FF);
+}
+/** 矢车菊的蓝色*/
++ (UIColor *)cornflowerBlue
+{
+    return SXRGB16Color(0x6495ED);
+}
+/** 皇家蓝*/
++ (UIColor *)royalBlue
+{
+    return SXRGB16Color(0x4169E1);
+}
+/** 适中的蓝色*/
++ (UIColor *)mediumBlue
+{
+    return SXRGB16Color(0x0000CD);
+}
+/** 海军蓝*/
++ (UIColor *)navyColor
+{
+    return SXRGB16Color(0x000080);
+}
+/** 深蓝*/
++ (UIColor *)darkBlue
+{
+    return SXRGB16Color(0x00008B);
+}
+/** 午夜蓝*/
++ (UIColor *)midnightBlue
+{
+    return SXRGB16Color(0x191970);
+}
 
 
 

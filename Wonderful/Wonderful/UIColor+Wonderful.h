@@ -81,4 +81,32 @@
 /** 军校蓝*/
 + (UIColor *)cadetBlue;
 
+
+/** 淡蓝*/
++ (UIColor *)lightBLue;
+/** 天蓝色*/
++ (UIColor *)skyBlue;
+/** 浅天蓝色*/
++ (UIColor *)lightSkyBlue;
+/** 深天蓝*/
++ (UIColor *)deepSkyBlue;
+/** 淡钢蓝*/
++ (UIColor *)lightSteelBlue;
+/** 钢蓝*/
++ (UIColor *)steelBlue;
+/** 道奇蓝*/
++ (UIColor *)doderBlue;
+/** 矢车菊的蓝色*/
++ (UIColor *)cornflowerBlue;
+/** 皇家蓝*/
++ (UIColor *)royalBlue;
+/** 适中的蓝色*/
++ (UIColor *)mediumBlue;
+/** 海军蓝*/
++ (UIColor *)navyColor;
+/** 深蓝*/
++ (UIColor *)darkBlue;
+/** 午夜蓝*/
++ (UIColor *)midnightBlue;
+
 @end
