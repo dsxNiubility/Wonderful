@@ -368,7 +368,32 @@
     return SXRGB16Color(0xDC143C);
 }
 
-
+#pragma mark - **************** 粉色系
+/** 浅粉红*/
++ (UIColor *)lightPink
+{
+    return SXRGB16Color(0xFFB6C1);
+}
+/** 适中的粉红*/
++ (UIColor *)mediumPink
+{
+    return SXRGB16Color(0xFFC0CB);
+}
+/** 苍白的紫罗兰红色*/
++ (UIColor *)paleVioletRed
+{
+    return SXRGB16Color(0xDB7093);
+}
+/** 深粉色*/
++ (UIColor *)deepPink
+{
+    return SXRGB16Color(0xFF1493);
+}
+/** 适中的紫罗兰红色*/
++ (UIColor *)mediumVioletRed
+{
+    return SXRGB16Color(0xC71585);
+}
 
 
 

@@ -160,4 +160,16 @@
 /** 猩红*/
 + (UIColor *)crimson;
 
+#pragma mark - **************** 粉色系
+/** 浅粉红*/
++ (UIColor *)lightPink;
+/** 适中的粉红*/
++ (UIColor *)mediumPink;
+/** 苍白的紫罗兰红色*/
++ (UIColor *)paleVioletRed;
+/** 深粉色*/
++ (UIColor *)deepPink;
+/** 适中的紫罗兰红色*/
++ (UIColor *)mediumVioletRed;
+
 @end
