@@ -172,4 +172,20 @@
 /** 适中的紫罗兰红色*/
 + (UIColor *)mediumVioletRed;
 
+#pragma mark - **************** 紫色系
+/** 深兰花紫*/
++ (UIColor *)darkOrchid;
+/** 靛青*/
++ (UIColor *)indigoColor;
+/** 深紫罗兰的蓝色*/
++ (UIColor *)blueViolet;
+/** 适中的紫色*/
++ (UIColor *)mediumPurple;
+/** 适中的板岩色*/
++ (UIColor *)mediumSlate;
+/** 板岩色*/
++ (UIColor *)slateColor;
+/** 深板岩色*/
++ (UIColor *)darkSlate;
+
 @end

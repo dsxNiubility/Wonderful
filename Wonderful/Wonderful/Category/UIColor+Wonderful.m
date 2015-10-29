@@ -395,6 +395,80 @@
     return SXRGB16Color(0xC71585);
 }
 
+#pragma mark - **************** 紫色系
+/** 蓟*/
++ (UIColor *)Thistle
+{
+    return SXRGB16Color(0xD8BFD8);
+}
+/** 李子*/
++ (UIColor *)plum
+{
+    return SXRGB16Color(0xDDA0DD);
+}
+/** 蓟*/
++ (UIColor *)Violet
+{
+    return SXRGB16Color(0xEE82EE);
+}
+/** 深洋红色*/
++ (UIColor *)DarkMagenta
+{
+    return SXRGB16Color(0x8B008B);
+}
+/** 洋红*/
++ (UIColor *)Magenta
+{
+    return SXRGB16Color(0xFF00FF);
+}
+/** 适中的兰花紫*/
++ (UIColor *)MediumOrchid
+{
+    return SXRGB16Color(0xBA55D3);
+}
+/** 深紫罗兰色*/
++ (UIColor *)DarkVoilet
+{
+    return SXRGB16Color(0x9400D3);
+}
+
+
+#pragma mark - **************** 紫色系
+/** 深兰花紫*/
++ (UIColor *)darkOrchid
+{
+    return SXRGB16Color(0x9932CC);
+}
+/** 靛青*/
++ (UIColor *)indigoColor
+{
+    return SXRGB16Color(0x4B0082);
+}
+/** 深紫罗兰的蓝色*/
++ (UIColor *)blueViolet
+{
+    return SXRGB16Color(0x8A2BE2);
+}
+/** 适中的紫色*/
++ (UIColor *)mediumPurple
+{
+    return SXRGB16Color(0x9370DB);
+}
+/** 适中的板岩色*/
++ (UIColor *)mediumSlate
+{
+    return SXRGB16Color(0x7B68EE);
+}
+/** 板岩色*/
++ (UIColor *)slateColor
+{
+    return SXRGB16Color(0x6A5ACD);
+}
+/** 深板岩色*/
++ (UIColor *)darkSlate
+{
+    return SXRGB16Color(0x483D8B);
+}
 
 
 @end
