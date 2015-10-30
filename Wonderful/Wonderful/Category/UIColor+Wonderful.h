@@ -188,4 +188,31 @@
 /** 深板岩色*/
 + (UIColor *)darkSlate;
 
+#pragma mark - **************** 灰色系
+/** 白烟*/
++ (UIColor *)WhiteSmoke;
+/** Gainsboro*/
++ (UIColor *)Gainsboro;
+/** 银白色*/
++ (UIColor *)Silver;
+/** 暗淡的灰色*/
++ (UIColor *)DimGray;
+#pragma mark - **************** 棕色系
+/** 晒黑*/
++ (UIColor *)tanColor;
+/** 秘鲁*/
++ (UIColor *)peruColor;
+/** 马鞍棕色*/
++ (UIColor *)saddleBrown;
+/** 巧克力*/
++ (UIColor *)chocolateColor;
+/** 黄土赭色*/
++ (UIColor *)siennaColor;
+/** 玫瑰棕色*/
++ (UIColor *)rosyBrown;
+/** 耐火砖*/
++ (UIColor *)fireBrick;
+/** 栗色*/
++ (UIColor *)maroonColor;
+
 @end

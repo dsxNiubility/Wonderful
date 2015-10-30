@@ -470,5 +470,69 @@
     return SXRGB16Color(0x483D8B);
 }
 
+#pragma mark - **************** 灰色系
+/** 白烟*/
++ (UIColor *)WhiteSmoke
+{
+    return SXRGB16Color(0xF5F5F5);
+}
+/** Gainsboro*/
++ (UIColor *)Gainsboro
+{
+    return SXRGB16Color(0xDCDCDC);
+}
+/** 银白色*/
++ (UIColor *)Silver
+{
+    return SXRGB16Color(0xC0C0C0);
+}
+/** 暗淡的灰色*/
++ (UIColor *)DimGray
+{
+    return SXRGB16Color(0x696969);
+}
+
+#pragma mark - **************** 棕色系
+/** 晒黑*/
++ (UIColor *)tanColor
+{
+    return SXRGB16Color(0xD2B48C);
+}
+/** 秘鲁*/
++ (UIColor *)peruColor
+{
+    return SXRGB16Color(0xCD853F);
+}
+/** 马鞍棕色*/
++ (UIColor *)saddleBrown
+{
+    return SXRGB16Color(0x8B4513);
+}
+/** 巧克力*/
++ (UIColor *)chocolateColor
+{
+    return SXRGB16Color(0xD2691E);
+}
+/** 黄土赭色*/
++ (UIColor *)siennaColor
+{
+    return SXRGB16Color(0xA0522D);
+}
+/** 玫瑰棕色*/
++ (UIColor *)rosyBrown
+{
+    return SXRGB16Color(0xBC8F8F);
+}
+/** 耐火砖*/
++ (UIColor *)fireBrick
+{
+    return SXRGB16Color(0xB22222);
+}
+/** 栗色*/
++ (UIColor *)maroonColor
+{
+    return SXRGB16Color(0x800000);
+}
+
 
 @end
