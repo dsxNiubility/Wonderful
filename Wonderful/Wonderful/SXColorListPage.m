@@ -8,6 +8,7 @@
 
 #import "SXColorListPage.h"
 #import "SXColorListCell.h"
+#import "SXCLE.h"
 #import "UIColor+Wonderful.h"
 #import <objc/runtime.h>
 
@@ -22,9 +23,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSArray *array1 = @[@"lightPink",@"mediumPink",@"paleVioletRed",@"deepPink",@"mediumVioletRed"];
+    
+    SXCLE *a1 = [SXCLE CWV:0xFFB6C1 D:@"浅粉红" N:@"lightPink"];
+    SXCLE *a2 = [SXCLE CWV:0xFFC0CB D:@"适中的粉红" N:@"mediumPink"];
+    SXCLE *a3 = [SXCLE CWV:0xDB7093 D:@"苍白的紫罗兰红色" N:@"paleVioletRed"];
+    SXCLE *a4 = [SXCLE CWV:0xFF1493 D:@"深粉色" N:@"deepPink"];
+    SXCLE *a5 = [SXCLE CWV:0xC71585 D:@"适中的紫罗兰红色" N:@"mediumVioletRed"];
+    NSArray *array1 = @[a1,a2,a3,a4,a5];
     self.marray = [NSMutableArray array];
     [self.marray addObjectsFromArray:array1];
+    
+    
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -56,8 +65,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    SXCLE *cle = self.marray[indexPath.row];
     SXColorListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"colorCell"];
-    cell.NameLabel.text = self.marray[indexPath.row];
+    cell.NameLabel.text = cle.desc;
+    cell.NumLabel.text = cle.methodName;
+    cell.backgroundColor = SXRGB16Color(cle.colorValue);
     
 //    Class class = NSClassFromString(@"UIColor");
 //    SEL selector = NSSelectorFromString(cell.NameLabel.text);

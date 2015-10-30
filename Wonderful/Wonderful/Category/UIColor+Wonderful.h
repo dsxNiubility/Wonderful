@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define SXRGB16Color(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 @interface UIColor (Wonderful)
 
 #pragma mark - **************** 黄色系
@@ -204,13 +206,13 @@
 
 #pragma mark - **************** 灰色系
 /** 白烟*/
-+ (UIColor *)WhiteSmoke;
++ (UIColor *)whiteSmoke;
 /** Gainsboro*/
-+ (UIColor *)Gainsboro;
++ (UIColor *)gainsboro;
 /** 银白色*/
-+ (UIColor *)Silver;
++ (UIColor *)silver;
 /** 暗淡的灰色*/
-+ (UIColor *)DimGray;
++ (UIColor *)dimGray;
 #pragma mark - **************** 棕色系
 /** 晒黑*/
 + (UIColor *)tanColor;
