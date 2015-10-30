@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1DB8ECC51BE3741E0066CF40 /* SXColorListPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC41BE3741E0066CF40 /* SXColorListPage.m */; settings = {ASSET_TAGS = (); }; };
+		1DB8ECC81BE38B500066CF40 /* SXColorListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC71BE38B500066CF40 /* SXColorListCell.m */; settings = {ASSET_TAGS = (); }; };
 		1DCCF4801BDE214900DB5EB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF47F1BDE214900DB5EB7 /* main.m */; };
 		1DCCF4831BDE214900DB5EB7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF4821BDE214900DB5EB7 /* AppDelegate.m */; };
 		1DCCF4861BDE214900DB5EB7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF4851BDE214900DB5EB7 /* ViewController.m */; };
@@ -20,6 +21,8 @@
 /* Begin PBXFileReference section */
 		1DB8ECC31BE3741E0066CF40 /* SXColorListPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXColorListPage.h; sourceTree = "<group>"; };
 		1DB8ECC41BE3741E0066CF40 /* SXColorListPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXColorListPage.m; sourceTree = "<group>"; };
+		1DB8ECC61BE38B500066CF40 /* SXColorListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXColorListCell.h; sourceTree = "<group>"; };
+		1DB8ECC71BE38B500066CF40 /* SXColorListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXColorListCell.m; sourceTree = "<group>"; };
 		1DCCF47B1BDE214900DB5EB7 /* Wonderful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wonderful.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DCCF47F1BDE214900DB5EB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1DCCF4811BDE214900DB5EB7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -71,6 +74,8 @@
 				1DCCF4851BDE214900DB5EB7 /* ViewController.m */,
 				1DB8ECC31BE3741E0066CF40 /* SXColorListPage.h */,
 				1DB8ECC41BE3741E0066CF40 /* SXColorListPage.m */,
+				1DB8ECC61BE38B500066CF40 /* SXColorListCell.h */,
+				1DB8ECC71BE38B500066CF40 /* SXColorListCell.m */,
 				1DCCF4871BDE214900DB5EB7 /* Main.storyboard */,
 				1DCCF48A1BDE214900DB5EB7 /* Assets.xcassets */,
 				1DCCF48C1BDE214900DB5EB7 /* LaunchScreen.storyboard */,
@@ -170,6 +175,7 @@
 			files = (
 				1DCCF4861BDE214900DB5EB7 /* ViewController.m in Sources */,
 				1DCCF49B1BDF121000DB5EB7 /* UIColor+Wonderful.m in Sources */,
+				1DB8ECC81BE38B500066CF40 /* SXColorListCell.m in Sources */,
 				1DCCF4831BDE214900DB5EB7 /* AppDelegate.m in Sources */,
 				1DCCF4801BDE214900DB5EB7 /* main.m in Sources */,
 				1DB8ECC51BE3741E0066CF40 /* SXColorListPage.m in Sources */,

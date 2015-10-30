@@ -150,15 +150,15 @@
 /** 淡珊瑚色*/
 + (UIColor *)lightCoral;
 /** 珊瑚色*/
-+ (UIColor *)coral;
++ (UIColor *)coralColor;
 /** 橙红色*/
 + (UIColor *)orangeRed;
 /** 番茄*/
-+ (UIColor *)tomato;
++ (UIColor *)tomatoColor;
 /** 印度红*/
 + (UIColor *)indianRed;
 /** 猩红*/
-+ (UIColor *)crimson;
++ (UIColor *)crimsonColor;
 
 #pragma mark - **************** 粉色系
 /** 浅粉红*/
@@ -173,6 +173,20 @@
 + (UIColor *)mediumVioletRed;
 
 #pragma mark - **************** 紫色系
+/** 蓟*/
++ (UIColor *)thistleColor;
+/** 李子*/
++ (UIColor *)plumColor;
+/** 蓟*/
++ (UIColor *)violetColor;
+/** 深洋红色*/
++ (UIColor *)darkMagenta;
+/** 洋红*/
++ (UIColor *)magenta;
+/** 适中的兰花紫*/
++ (UIColor *)mediumOrchid;
+/** 深紫罗兰色*/
++ (UIColor *)darkVoilet;
 /** 深兰花紫*/
 + (UIColor *)darkOrchid;
 /** 靛青*/
