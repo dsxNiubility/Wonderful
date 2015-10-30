@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DB8ECC51BE3741E0066CF40 /* SXColorListPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC41BE3741E0066CF40 /* SXColorListPage.m */; settings = {ASSET_TAGS = (); }; };
 		1DCCF4801BDE214900DB5EB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF47F1BDE214900DB5EB7 /* main.m */; };
 		1DCCF4831BDE214900DB5EB7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF4821BDE214900DB5EB7 /* AppDelegate.m */; };
 		1DCCF4861BDE214900DB5EB7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF4851BDE214900DB5EB7 /* ViewController.m */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DB8ECC31BE3741E0066CF40 /* SXColorListPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXColorListPage.h; sourceTree = "<group>"; };
+		1DB8ECC41BE3741E0066CF40 /* SXColorListPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXColorListPage.m; sourceTree = "<group>"; };
 		1DCCF47B1BDE214900DB5EB7 /* Wonderful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wonderful.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DCCF47F1BDE214900DB5EB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1DCCF4811BDE214900DB5EB7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,6 +69,8 @@
 				1DCCF4821BDE214900DB5EB7 /* AppDelegate.m */,
 				1DCCF4841BDE214900DB5EB7 /* ViewController.h */,
 				1DCCF4851BDE214900DB5EB7 /* ViewController.m */,
+				1DB8ECC31BE3741E0066CF40 /* SXColorListPage.h */,
+				1DB8ECC41BE3741E0066CF40 /* SXColorListPage.m */,
 				1DCCF4871BDE214900DB5EB7 /* Main.storyboard */,
 				1DCCF48A1BDE214900DB5EB7 /* Assets.xcassets */,
 				1DCCF48C1BDE214900DB5EB7 /* LaunchScreen.storyboard */,
@@ -118,6 +123,7 @@
 		1DCCF4731BDE214900DB5EB7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SX;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Sankuai;
 				TargetAttributes = {
@@ -166,6 +172,7 @@
 				1DCCF49B1BDF121000DB5EB7 /* UIColor+Wonderful.m in Sources */,
 				1DCCF4831BDE214900DB5EB7 /* AppDelegate.m in Sources */,
 				1DCCF4801BDE214900DB5EB7 /* main.m in Sources */,
+				1DB8ECC51BE3741E0066CF40 /* SXColorListPage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +321,7 @@
 				1DCCF4941BDE214900DB5EB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
