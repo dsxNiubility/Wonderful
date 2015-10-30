@@ -33,8 +33,6 @@
     self.marray = [NSMutableArray array];
     [self.marray addObjectsFromArray:array1];
     
-    
-    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
 //    [self runTests];
@@ -70,15 +68,7 @@
     cell.NameLabel.text = cle.desc;
     cell.NumLabel.text = cle.methodName;
     cell.backgroundColor = SXRGB16Color(cle.colorValue);
-    
-//    Class class = NSClassFromString(@"UIColor");
-//    SEL selector = NSSelectorFromString(cell.NameLabel.text);
 
-//    IMP imp = [class methodForSelector:selector];
-//    void (*func)(id, SEL) = (void *)imp;
-//    
-//    
-//    cell.backgroundColor = func(class, selector);
     return cell;
     
 }
