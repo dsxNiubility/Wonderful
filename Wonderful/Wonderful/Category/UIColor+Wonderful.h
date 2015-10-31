@@ -117,8 +117,6 @@
 + (UIColor *)lightBLue;
 /** 天蓝色*/
 + (UIColor *)skyBlue;
-/** 浅天蓝色*/
-+ (UIColor *)lightSkyBlue;
 /** 深天蓝*/
 + (UIColor *)deepSkyBlue;
 /** 淡钢蓝*/
@@ -185,7 +183,7 @@
 + (UIColor *)thistleColor;
 /** 李子*/
 + (UIColor *)plumColor;
-/** 蓟*/
+/** 紫罗兰*/
 + (UIColor *)violetColor;
 /** 深洋红色*/
 + (UIColor *)darkMagenta;
@@ -213,13 +211,13 @@
 #pragma mark - **************** 灰色系
 /** 白烟*/
 + (UIColor *)whiteSmoke;
-/** Gainsboro*/
-+ (UIColor *)gainsboro;
+/** 亮灰*/
++ (UIColor *)gainsboroColor;
 /** 银白色*/
-+ (UIColor *)silver;
++ (UIColor *)silverColor;
 /** 暗淡的灰色*/
 + (UIColor *)dimGray;
-/** 鸭蛋*/
+/** 鸭卵*/
 + (UIColor *)duckEgg; // $$$$$
 /** 蟹壳青*/
 + (UIColor *)carapaceColor; // $$$$$

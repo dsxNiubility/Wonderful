@@ -117,7 +117,7 @@
 /** 米色*/
 + (UIColor *)beigeColor
 {
-    return SXRGB16Color(0x6B8E23);
+    return SXRGB16Color(0xF5F5DD);
 }
 /** 橄榄色*/
 + (UIColor *)oliveColor
@@ -174,7 +174,7 @@
 /** 薄荷奶油*/
 + (UIColor *)mintCream
 {
-    return SXRGB16Color(0x00FF7F);
+    return SXRGB16Color(0xF5FFFA);
 }
 /** 蔚蓝色*/
 + (UIColor *)azureColor
@@ -260,11 +260,7 @@
 {
     return SXRGB16Color(0xE1FFFF);
 }
-/** 浅天蓝色*/
-+ (UIColor *)lightSkyBlue
-{
-    return SXRGB16Color(0xE1FFFF);
-}
+
 /** 深天蓝*/
 + (UIColor *)deepSkyBlue
 {
@@ -327,7 +323,7 @@
 {
     return SXRGB16Color(0xFFA07A);
 }
-/** 鲑🐟色*/
+/** 鲑鱼色*/
 + (UIColor *)salmonColor
 {
     return SXRGB16Color(0xFA8072);
@@ -402,7 +398,7 @@
 /** 水粉*/
 + (UIColor *)waterPink // $$$$$
 {
-    return SXRGB16Color(0xF47983);
+    return SXRGB16Color(0xF3D3E7);
 }
 /** 藕色*/
 + (UIColor *)lotusRoot // $$$$$
@@ -422,7 +418,7 @@
 {
     return SXRGB16Color(0xDDA0DD);
 }
-/** 蓟*/
+/** 紫罗兰*/
 + (UIColor *)violetColor
 {
     return SXRGB16Color(0xEE82EE);
@@ -492,13 +488,13 @@
 {
     return SXRGB16Color(0xF5F5F5);
 }
-/** Gainsboro*/
-+ (UIColor *)gainsboro
+/** 亮灰*/
++ (UIColor *)gainsboroColor
 {
     return SXRGB16Color(0xDCDCDC);
 }
 /** 银白色*/
-+ (UIColor *)silver
++ (UIColor *)silverColor
 {
     return SXRGB16Color(0xC0C0C0);
 }
@@ -507,10 +503,10 @@
 {
     return SXRGB16Color(0x696969);
 }
-/** 鸭蛋*/
+/** 鸭卵*/
 + (UIColor *)duckEgg // $$$$$
 {
-    return SXRGB16Color(0x696969);
+    return SXRGB16Color(0xE0EEE8);
 }
 /** 蟹壳青*/
 + (UIColor *)carapaceColor // $$$$$
