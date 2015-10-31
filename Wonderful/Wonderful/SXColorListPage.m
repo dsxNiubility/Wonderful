@@ -24,6 +24,69 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self getDataSource];
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.tableView.rowHeight = 40;
+//    [self runTests];
+}
+//- (void)runTests
+//{
+//    unsigned int count;
+//    Method *methods = class_copyMethodList([UIColor class], &count);
+//    for (int i = 0; i < count; i++)
+//    {
+//        Method method = methods[i];
+//        SEL selector = method_getName(method);
+//        NSString *name = NSStringFromSelector(selector);
+//        NSLog(@"方法名字 ==== %@",name);
+//
+//    }
+//}
+- (IBAction)change:(UIBarButtonItem *)sender {
+    BOOL result = ![self.tableView isEditing];
+    [self.tableView setEditing:result animated:YES];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 10;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.marray[section] count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SXCLE *cle = self.marray[indexPath.section][indexPath.row];
+    SXColorListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"colorCell"];
+    cell.NameLabel.text = cle.desc;
+    cell.NumLabel.text = cle.methodName;
+    cell.backgroundColor = SXRGB16Color(cle.colorValue);
+
+    return cell;
+    
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+
+//    SXCLE *cle = self.marray[sourceIndexPath.section][sourceIndexPath.row];
+//    [self.marray removeObjectAtIndex:sourceIndexPath.row];
+//    [self.marray insertObject:cle atIndex:destinationIndexPath.row];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return self.titleArray[section];
+}
+
+- (void)getDataSource
+{
     self.titleArray = @[@"红",@"黄",@"绿",@"青",@"蓝",@"紫",@"灰",@"白",@"棕",@"粉"];
     
     SXCLE *a1 = [SXCLE CWV:0xFFE4E1 D:@"薄雾玫瑰" N:@"mistyRose"];
@@ -36,7 +99,7 @@
     SXCLE *a8 = [SXCLE CWV:0xFF6347 D:@"番茄" N:@"tomatoColor"];
     SXCLE *a9 = [SXCLE CWV:0xCD5C5C D:@"印度红" N:@"indianRed"];
     SXCLE *a10 = [SXCLE CWV:0xDC143C D:@"猩红" N:@"crimsonColor"];
-    NSArray *array0 = @[a1,a2,a3,a4,a5,a6,a7,a8,a9,a10];
+    NSMutableArray *array0 = (NSMutableArray *)@[a1,a2,a3,a4,a5,a6,a7,a8,a9,a10];
     
     
     SXCLE *b1 = [SXCLE CWV:0xFFD700 D:@"金色" N:@"goldColor"];
@@ -66,7 +129,7 @@
     SXCLE *c13 = [SXCLE CWV:0x006400 D:@"深绿" N:@"darkGreen"];
     SXCLE *c14 = [SXCLE CWV:0x556B2F D:@"橄榄土褐色" N:@"oliveDrab"];
     NSArray *array2 = @[c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14];
-
+    
     SXCLE *d1 = [SXCLE CWV:0xE1FFFF D:@"淡青色" N:@"lightCyan"];
     SXCLE *d2 = [SXCLE CWV:0xAFEEEE D:@"苍白绿松石" N:@"paleTurquoise"];
     SXCLE *d3 = [SXCLE CWV:0x40E0D0 D:@"绿松石" N:@"turquoise"];
@@ -108,7 +171,7 @@
     SXCLE *f13 = [SXCLE CWV:0x6A5ACD D:@"板岩色" N:@"slateColor"];
     SXCLE *f14 = [SXCLE CWV:0x483D8B D:@"深板岩色" N:@"darkSlate"];
     NSArray *array5 = @[f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14];
-
+    
     
     SXCLE *g1 = [SXCLE CWV:0xF5F5F5 D:@"白烟" N:@"whiteSmoke"];
     SXCLE *g2 = [SXCLE CWV:0xDCDCDC D:@"亮灰" N:@"gainsboroColor"];
@@ -117,7 +180,7 @@
     SXCLE *g5 = [SXCLE CWV:0xE0EEE8 D:@"鸭蛋" N:@"duckEgg"];
     SXCLE *g6 = [SXCLE CWV:0xBBCDC5 D:@"蟹壳青" N:@"carapaceColor"];
     NSArray *array6 = @[g1,g2,g3,g4,g5,g6];
-
+    
     
     SXCLE *h1 = [SXCLE CWV:0xFFF5EE D:@"海贝壳" N:@"seaShell"];
     SXCLE *h2 = [SXCLE CWV:0xFFFAFA D:@"雪" N:@"snowColor"];
@@ -133,7 +196,7 @@
     SXCLE *h12 = [SXCLE CWV:0xFFF0F5 D:@"淡紫红" N:@"lavenderBlush"];
     SXCLE *h13 = [SXCLE CWV:0xE6E6FA D:@"薰衣草" N:@"lavender"];
     NSArray *array7 = @[h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,h11,h12,h13];
-
+    
     
     
     SXCLE *i1 = [SXCLE CWV:0xD2B48C D:@"晒黑" N:@"tanColor"];
@@ -168,52 +231,6 @@
     [self.marray addObject:array7];
     [self.marray addObject:array8];
     [self.marray addObject:array9];
-    
-    
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    self.tableView.rowHeight = 40;
-//    [self runTests];
-}
-//- (void)runTests
-//{
-//    unsigned int count;
-//    Method *methods = class_copyMethodList([UIColor class], &count);
-//    for (int i = 0; i < count; i++)
-//    {
-//        Method method = methods[i];
-//        SEL selector = method_getName(method);
-//        NSString *name = NSStringFromSelector(selector);
-//        NSLog(@"方法名字 ==== %@",name);
-//
-//    }
-//}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 10;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [self.marray[section] count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    SXCLE *cle = self.marray[indexPath.section][indexPath.row];
-    SXColorListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"colorCell"];
-    cell.NameLabel.text = cle.desc;
-    cell.NumLabel.text = cle.methodName;
-    cell.backgroundColor = SXRGB16Color(cle.colorValue);
-
-    return cell;
-    
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return self.titleArray[section];
 }
 
 @end

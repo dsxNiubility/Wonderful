@@ -20,7 +20,7 @@
                                 <rect key="frame" x="58" y="121" width="99" height="30"/>
                                 <state key="normal" title="pushColorList"/>
                                 <connections>
-                                    <segue destination="ina-eM-cnh" kind="show" id="lJm-aP-OOJ"/>
+                                    <segue destination="ina-eM-cnh" kind="push" id="w50-lt-TIa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -93,6 +93,13 @@
                             <constraint firstAttribute="trailing" secondItem="Wsc-Ry-qVB" secondAttribute="trailing" id="tQX-nm-Gt0"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="FHd-W1-oAU">
+                        <barButtonItem key="rightBarButtonItem" title="排序" id="Kx1-Ex-0Lb">
+                            <connections>
+                                <action selector="change:" destination="ina-eM-cnh" id="TH1-Gc-gy6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="Wsc-Ry-qVB" id="GJI-jB-UWd"/>
@@ -100,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAG-Cp-iLi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="612"/>
+            <point key="canvasLocation" x="879" y="558"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4dy-gO-hqS">
