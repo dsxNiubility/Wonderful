@@ -173,6 +173,12 @@
 + (UIColor *)deepPink;
 /** 适中的紫罗兰红色*/
 + (UIColor *)mediumVioletRed;
+/** 桃红*/
++ (UIColor *)peachRed; // $$$$$
+/** 水粉*/
++ (UIColor *)waterPink; // $$$$$
+/** 藕色*/
++ (UIColor *)lotusRoot; // $$$$$
 
 #pragma mark - **************** 紫色系
 /** 蓟*/
@@ -213,9 +219,15 @@
 + (UIColor *)silver;
 /** 暗淡的灰色*/
 + (UIColor *)dimGray;
+/** 鸭蛋*/
++ (UIColor *)duckEgg; // $$$$$
+/** 蟹壳青*/
++ (UIColor *)carapaceColor; // $$$$$
 #pragma mark - **************** 棕色系
 /** 晒黑*/
 + (UIColor *)tanColor;
+/** 古铜色*/
++ (UIColor *)bronzeColor; // $$$$$
 /** 秘鲁*/
 + (UIColor *)peruColor;
 /** 马鞍棕色*/

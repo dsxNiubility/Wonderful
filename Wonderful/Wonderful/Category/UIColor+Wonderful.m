@@ -394,6 +394,22 @@
 {
     return SXRGB16Color(0xC71585);
 }
+/** 桃红*/
++ (UIColor *)peachRed // $$$$$
+{
+    return SXRGB16Color(0xF47983);
+}
+/** 水粉*/
++ (UIColor *)waterPink // $$$$$
+{
+    return SXRGB16Color(0xF47983);
+}
+/** 藕色*/
++ (UIColor *)lotusRoot // $$$$$
+{
+    return SXRGB16Color(0xEDD1D8);
+}
+
 
 #pragma mark - **************** 紫色系
 /** 蓟*/
@@ -491,12 +507,27 @@
 {
     return SXRGB16Color(0x696969);
 }
+/** 鸭蛋*/
++ (UIColor *)duckEgg // $$$$$
+{
+    return SXRGB16Color(0x696969);
+}
+/** 蟹壳青*/
++ (UIColor *)carapaceColor // $$$$$
+{
+    return SXRGB16Color(0xBBCDC5);
+}
 
 #pragma mark - **************** 棕色系
 /** 晒黑*/
 + (UIColor *)tanColor
 {
     return SXRGB16Color(0xD2B48C);
+}
+/** 古铜色*/
++ (UIColor *)bronzeColor // $$$$$
+{
+    return SXRGB16Color(0xB87333);
 }
 /** 秘鲁*/
 + (UIColor *)peruColor
