@@ -10,6 +10,7 @@
 #import "SXColorListCell.h"
 #import "SXCLE.h"
 #import "UIColor+Wonderful.h"
+#import "UIColor+Separate.h"
 #import <objc/runtime.h>
 
 @interface SXColorListPage ()<UITableViewDataSource,UITableViewDelegate>
@@ -30,6 +31,7 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.rowHeight = 40;
+    
 //    [self runTests];
 }
 //- (void)runTests

@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "UIColor+Wonderful.h"
 #import "SXColorGradientView.h"
+#import "UIColor+Separate.h"
 
 @interface ViewController ()
 
@@ -18,6 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIColor *testC = [UIColor purpleColor];
+    float r= [testC red];
+    float g= [testC green];
+    float b= [testC blue];
+    float alpha= [testC alpha];
+    
+    NSLog(@"******  %f,%f,%f,%f",r,g,b,alpha);
     
 //    self.view.backgroundColor = [UIColor salmonColor];
     // Do any additional setup after loading the view, typically from a nib.
