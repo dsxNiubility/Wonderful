@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, SXColorGradientDirection) {
+    SXColorGradientToTop = 1,
+    SXColorGradientToLeft = 2,
+    SXColorGradientToBottom = 3,
+    SXColorGradientToRight = 4,
+};
+
 @interface SXColorGradientView : UIView
 
++ (instancetype)createWithColor:(UIColor *)color frame:(CGRect)frame visible:(BOOL)visible direction:(SXColorGradientDirection)direction;
+
+//- (instancetype)initWithColor:(UIColor *)color frame:(CGRect)frame visible:(BOOL)visible;
 @end
