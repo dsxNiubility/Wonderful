@@ -10,6 +10,7 @@
 		1DB8ECC51BE3741E0066CF40 /* SXColorListPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC41BE3741E0066CF40 /* SXColorListPage.m */; settings = {ASSET_TAGS = (); }; };
 		1DB8ECC81BE38B500066CF40 /* SXColorListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC71BE38B500066CF40 /* SXColorListCell.m */; settings = {ASSET_TAGS = (); }; };
 		1DB8ECCB1BE39ABE0066CF40 /* SXCLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECCA1BE39ABE0066CF40 /* SXCLE.m */; settings = {ASSET_TAGS = (); }; };
+		1DB8ECCE1BE63B2A0066CF40 /* SXColorGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECCD1BE63B2A0066CF40 /* SXColorGradientView.m */; settings = {ASSET_TAGS = (); }; };
 		1DCCF4801BDE214900DB5EB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF47F1BDE214900DB5EB7 /* main.m */; };
 		1DCCF4831BDE214900DB5EB7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF4821BDE214900DB5EB7 /* AppDelegate.m */; };
 		1DCCF4861BDE214900DB5EB7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF4851BDE214900DB5EB7 /* ViewController.m */; };
@@ -26,6 +27,8 @@
 		1DB8ECC71BE38B500066CF40 /* SXColorListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXColorListCell.m; sourceTree = "<group>"; };
 		1DB8ECC91BE39ABD0066CF40 /* SXCLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXCLE.h; sourceTree = "<group>"; };
 		1DB8ECCA1BE39ABE0066CF40 /* SXCLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXCLE.m; sourceTree = "<group>"; };
+		1DB8ECCC1BE63B2A0066CF40 /* SXColorGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXColorGradientView.h; sourceTree = "<group>"; };
+		1DB8ECCD1BE63B2A0066CF40 /* SXColorGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXColorGradientView.m; sourceTree = "<group>"; };
 		1DCCF47B1BDE214900DB5EB7 /* Wonderful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wonderful.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DCCF47F1BDE214900DB5EB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1DCCF4811BDE214900DB5EB7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -103,6 +106,8 @@
 			children = (
 				1DCCF4991BDF121000DB5EB7 /* UIColor+Wonderful.h */,
 				1DCCF49A1BDF121000DB5EB7 /* UIColor+Wonderful.m */,
+				1DB8ECCC1BE63B2A0066CF40 /* SXColorGradientView.h */,
+				1DB8ECCD1BE63B2A0066CF40 /* SXColorGradientView.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 				1DB8ECCB1BE39ABE0066CF40 /* SXCLE.m in Sources */,
 				1DCCF4861BDE214900DB5EB7 /* ViewController.m in Sources */,
 				1DCCF49B1BDF121000DB5EB7 /* UIColor+Wonderful.m in Sources */,
+				1DB8ECCE1BE63B2A0066CF40 /* SXColorGradientView.m in Sources */,
 				1DB8ECC81BE38B500066CF40 /* SXColorListCell.m in Sources */,
 				1DCCF4831BDE214900DB5EB7 /* AppDelegate.m in Sources */,
 				1DCCF4801BDE214900DB5EB7 /* main.m in Sources */,
