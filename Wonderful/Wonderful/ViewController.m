@@ -31,7 +31,8 @@
 //    self.view.backgroundColor = [UIColor salmonColor];
     // Do any additional setup after loading the view, typically from a nib.
     
-    SXColorGradientView *view2 = [SXColorGradientView createWithColor:[UIColor goldColor] frame:CGRectMake(0, 64, 375, 64) visible:NO direction:3];
+//    SXColorGradientView *view2 = [SXColorGradientView createWithColor:[UIColor goldColor] frame:CGRectMake(0, 84, 375, 64) visible:NO direction:3];
+    SXColorGradientView *view2 = [SXColorGradientView createWithFromColor:[UIColor lawnGreen] toColor:[UIColor peachRed] frame:CGRectMake(0, 84, 375, 200) direction:2];
     
     [self.view addSubview:view2];
 }
