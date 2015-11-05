@@ -20,6 +20,7 @@
 		1DCCF48E1BDE214900DB5EB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DCCF48C1BDE214900DB5EB7 /* LaunchScreen.storyboard */; };
 		1DCCF49B1BDF121000DB5EB7 /* UIColor+Wonderful.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF49A1BDF121000DB5EB7 /* UIColor+Wonderful.m */; settings = {ASSET_TAGS = (); }; };
 		1DEA00301BEB558A00D40E49 /* SXMarquee.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA002F1BEB558A00D40E49 /* SXMarquee.m */; settings = {ASSET_TAGS = (); }; };
+		1DEA00361BEB5B6A00D40E49 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA00351BEB5B6A00D40E49 /* UIViewAdditions.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,10 @@
 		1DCCF49A1BDF121000DB5EB7 /* UIColor+Wonderful.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Wonderful.m"; sourceTree = "<group>"; };
 		1DEA002E1BEB558A00D40E49 /* SXMarquee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXMarquee.h; sourceTree = "<group>"; };
 		1DEA002F1BEB558A00D40E49 /* SXMarquee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXMarquee.m; sourceTree = "<group>"; };
+		1DEA00321BEB5B6A00D40E49 /* SXEasyConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXEasyConstant.h; sourceTree = "<group>"; };
+		1DEA00331BEB5B6A00D40E49 /* SXEasyMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXEasyMacro.h; sourceTree = "<group>"; };
+		1DEA00341BEB5B6A00D40E49 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
+		1DEA00351BEB5B6A00D40E49 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +84,7 @@
 		1DCCF47D1BDE214900DB5EB7 /* Wonderful */ = {
 			isa = PBXGroup;
 			children = (
+				1DEA00311BEB5B6A00D40E49 /* Other */,
 				1DCCF4981BDF121000DB5EB7 /* Category */,
 				1DCCF4811BDE214900DB5EB7 /* AppDelegate.h */,
 				1DCCF4821BDE214900DB5EB7 /* AppDelegate.m */,
@@ -120,6 +126,17 @@
 				1DEA002F1BEB558A00D40E49 /* SXMarquee.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		1DEA00311BEB5B6A00D40E49 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				1DEA00321BEB5B6A00D40E49 /* SXEasyConstant.h */,
+				1DEA00331BEB5B6A00D40E49 /* SXEasyMacro.h */,
+				1DEA00341BEB5B6A00D40E49 /* UIViewAdditions.h */,
+				1DEA00351BEB5B6A00D40E49 /* UIViewAdditions.m */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +213,7 @@
 				1DB8ECCB1BE39ABE0066CF40 /* SXCLE.m in Sources */,
 				1DCCF4861BDE214900DB5EB7 /* ViewController.m in Sources */,
 				1DB8ECD11BE647070066CF40 /* UIColor+Separate.m in Sources */,
+				1DEA00361BEB5B6A00D40E49 /* UIViewAdditions.m in Sources */,
 				1DCCF49B1BDF121000DB5EB7 /* UIColor+Wonderful.m in Sources */,
 				1DB8ECCE1BE63B2A0066CF40 /* SXColorGradientView.m in Sources */,
 				1DEA00301BEB558A00D40E49 /* SXMarquee.m in Sources */,
