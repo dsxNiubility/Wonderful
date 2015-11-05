@@ -19,6 +19,7 @@
 		1DCCF48B1BDE214900DB5EB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DCCF48A1BDE214900DB5EB7 /* Assets.xcassets */; };
 		1DCCF48E1BDE214900DB5EB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DCCF48C1BDE214900DB5EB7 /* LaunchScreen.storyboard */; };
 		1DCCF49B1BDF121000DB5EB7 /* UIColor+Wonderful.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF49A1BDF121000DB5EB7 /* UIColor+Wonderful.m */; settings = {ASSET_TAGS = (); }; };
+		1DEA00301BEB558A00D40E49 /* SXMarquee.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA002F1BEB558A00D40E49 /* SXMarquee.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		1DCCF48F1BDE214900DB5EB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DCCF4991BDF121000DB5EB7 /* UIColor+Wonderful.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Wonderful.h"; sourceTree = "<group>"; };
 		1DCCF49A1BDF121000DB5EB7 /* UIColor+Wonderful.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Wonderful.m"; sourceTree = "<group>"; };
+		1DEA002E1BEB558A00D40E49 /* SXMarquee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXMarquee.h; sourceTree = "<group>"; };
+		1DEA002F1BEB558A00D40E49 /* SXMarquee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXMarquee.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 				1DB8ECD01BE647070066CF40 /* UIColor+Separate.m */,
 				1DB8ECCC1BE63B2A0066CF40 /* SXColorGradientView.h */,
 				1DB8ECCD1BE63B2A0066CF40 /* SXColorGradientView.m */,
+				1DEA002E1BEB558A00D40E49 /* SXMarquee.h */,
+				1DEA002F1BEB558A00D40E49 /* SXMarquee.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 				1DB8ECD11BE647070066CF40 /* UIColor+Separate.m in Sources */,
 				1DCCF49B1BDF121000DB5EB7 /* UIColor+Wonderful.m in Sources */,
 				1DB8ECCE1BE63B2A0066CF40 /* SXColorGradientView.m in Sources */,
+				1DEA00301BEB558A00D40E49 /* SXMarquee.m in Sources */,
 				1DB8ECC81BE38B500066CF40 /* SXColorListCell.m in Sources */,
 				1DCCF4831BDE214900DB5EB7 /* AppDelegate.m in Sources */,
 				1DCCF4801BDE214900DB5EB7 /* main.m in Sources */,
