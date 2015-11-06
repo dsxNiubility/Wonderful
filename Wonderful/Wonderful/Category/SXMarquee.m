@@ -15,6 +15,8 @@ typedef void(^SXWonderfulAction)();
 @property(nonatomic,strong)UIButton *bgBtn;
 @property(nonatomic,strong)UILabel *marqueeLbl;
 @property(nonatomic,strong)UIColor *bgColor;
+
+@property(nonatomic,copy)NSString *msg;
 @property(nonatomic,copy)SXWonderfulAction tapAction;
 
 @end
@@ -28,11 +30,11 @@ typedef void(^SXWonderfulAction)();
         
         self.tapAction = action;
         self.bgColor = color;
+        self.msg = msg;
         
-        [self addSubview:self.bgBtn];
+//        [self addSubview:self.bgBtn];
         [self addSubview:self.marqueeLbl];
         [self addLeftAndRightGradient];
-        self.marqueeLbl.text = msg;
     }
     return self;
 }
@@ -53,10 +55,19 @@ typedef void(^SXWonderfulAction)();
 - (UILabel *)marqueeLbl
 {
     if (!_marqueeLbl) {
-        CGFloat w = self.frame.size.width;
+//        CGFloat w = self.frame.size.width;
         CGFloat h = self.frame.size.height;
-        _marqueeLbl = [[UILabel alloc]initWithFrame:CGRectMake(5, 0, w-5, h)];
-
+        _marqueeLbl = [[UILabel alloc]init];
+        _marqueeLbl.text = self.msg;
+        
+        UIFont *fnt = [UIFont fontWithName:@"HelveticaNeue" size:14.0f];
+        _marqueeLbl.font = fnt;
+        
+        CGSize msgSize = [_marqueeLbl.text sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:fnt,NSFontAttributeName, nil]];
+        _marqueeLbl.frame = CGRectMake(0, 0, msgSize.width, h);
+        
+        NSLog(@"%f",msgSize.width);
+        
         _marqueeLbl.textColor = [UIColor whiteColor];
     }
     return _marqueeLbl;
@@ -66,9 +77,9 @@ typedef void(^SXWonderfulAction)();
 {
     CGFloat w = self.frame.size.width;
     CGFloat h = self.frame.size.height;
-    SXColorGradientView *left = [SXColorGradientView createWithColor:self.bgColor frame:CGRectMake(5, 0, h, h) visible:YES direction:SXColorGradientToRight];
+    SXColorGradientView *left = [SXColorGradientView createWithColor:self.bgColor frame:CGRectMake(0, 0, h, h) visible:YES direction:SXColorGradientToRight];
     
-    SXColorGradientView *right = [SXColorGradientView createWithColor:self.bgColor frame:CGRectMake(w - h - 5, 0, h, h) visible:YES direction:SXColorGradientToLeft];
+    SXColorGradientView *right = [SXColorGradientView createWithColor:self.bgColor frame:CGRectMake(w - h, 0, h, h) visible:YES direction:SXColorGradientToLeft];
     
     [self addSubview:left];
     [self addSubview:right];
@@ -79,6 +90,17 @@ typedef void(^SXWonderfulAction)();
     if (self.tapAction) {
         self.tapAction();
     }
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *tou = [touches anyObject];
+    CGPoint now = [tou locationInView:self];
+    CGPoint pre = [tou previousLocationInView:self];
+    CGFloat offsetX = now.x - pre.x;
+    CGRect frame = self.marqueeLbl.frame;
+    frame.origin.x = frame.origin.x + offsetX;
+    self.marqueeLbl.frame = frame;
 }
 
 @end
