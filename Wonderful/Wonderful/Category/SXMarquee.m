@@ -18,6 +18,7 @@ typedef void(^SXWonderfulAction)();
 
 @property(nonatomic,copy)NSString *msg;
 @property(nonatomic,copy)SXWonderfulAction tapAction;
+@property(nonatomic,strong)NSTimer *timer;
 
 @end
 @implementation SXMarquee
@@ -25,13 +26,15 @@ typedef void(^SXWonderfulAction)();
 - (instancetype)initWithFrame:(CGRect)frame Msg:(NSString *)msg action:(void(^)())action color:(UIColor *)color{
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = color;
-        self.layer.cornerRadius = 10;
+        self.layer.cornerRadius = 5;
         self.layer.masksToBounds = YES;
         
         self.tapAction = action;
         self.bgColor = color;
         self.msg = msg;
         
+
+        [self timerStart];
 //        [self addSubview:self.bgBtn];
         [self addSubview:self.marqueeLbl];
         [self addLeftAndRightGradient];
@@ -102,5 +105,66 @@ typedef void(^SXWonderfulAction)();
     frame.origin.x = frame.origin.x + offsetX;
     self.marqueeLbl.frame = frame;
 }
+
+//-(void)unpauseLabel
+//{
+//    if (1) {
+//        // Unpause sublabel position animation
+//        CFTimeInterval labelPausedTime = self.marqueeLbl.layer.timeOffset;
+//        self.marqueeLbl.layer.speed = 1.0;
+//        self.marqueeLbl.layer.timeOffset = 0.0;
+//        self.marqueeLbl.layer.beginTime = 0.0;
+//        self.marqueeLbl.layer.beginTime = [self.marqueeLbl.layer convertTime:CACurrentMediaTime() fromLayer:nil] - labelPausedTime;
+//        // Unpause gradient fade animation
+//        CFTimeInterval gradientPauseTime = self.layer.mask.timeOffset;
+//        self.layer.mask.speed = 1.0;
+//        self.layer.mask.timeOffset = 0.0;
+//        self.layer.mask.beginTime = 0.0;
+//        self.layer.mask.beginTime = [self.layer.mask convertTime:CACurrentMediaTime() fromLayer:nil] - gradientPauseTime;
+//        
+////        self.isPaused = NO;
+//    }
+//}
+
+- (void)marqueeMove
+{
+    
+    CGRect fr = self.marqueeLbl.frame;
+    if (fr.origin.x + fr.size.width < 0) {
+        fr.origin.x = self.frame.size.width;
+    }else{
+        fr.origin.x += -1;
+    }
+    self.marqueeLbl.frame = fr;
+    
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"按下");
+    [self timerStop];
+
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"结束");
+    [self timerStart];
+}
+
+#pragma mark - 计时器关闭和开启
+- (void)timerStop
+{
+    [self.timer invalidate];
+    self.timer = nil;
+}
+
+- (void)timerStart
+{
+    NSTimer *timer = [NSTimer timerWithTimeInterval:0.02 target:self selector:@selector(marqueeMove) userInfo:nil repeats:YES];
+    self.timer = timer;
+    [[NSRunLoop mainRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
+}
+
 
 @end
