@@ -15,7 +15,6 @@ typedef void(^SXWonderfulAction)();
 @property(nonatomic,strong)UIButton *bgBtn;
 @property(nonatomic,strong)UILabel *marqueeLbl;
 @property(nonatomic,strong)UIColor *bgColor;
-
 @property(nonatomic,copy)NSString *msg;
 @property(nonatomic,copy)SXWonderfulAction tapAction;
 @property(nonatomic,strong)NSTimer *timer;
@@ -32,10 +31,8 @@ typedef void(^SXWonderfulAction)();
         self.tapAction = action;
         self.bgColor = color;
         self.msg = msg;
-        
 
         [self timerStart];
-//        [self addSubview:self.bgBtn];
         [self addSubview:self.marqueeLbl];
         [self addLeftAndRightGradient];
     }
@@ -106,29 +103,8 @@ typedef void(^SXWonderfulAction)();
     self.marqueeLbl.frame = frame;
 }
 
-//-(void)unpauseLabel
-//{
-//    if (1) {
-//        // Unpause sublabel position animation
-//        CFTimeInterval labelPausedTime = self.marqueeLbl.layer.timeOffset;
-//        self.marqueeLbl.layer.speed = 1.0;
-//        self.marqueeLbl.layer.timeOffset = 0.0;
-//        self.marqueeLbl.layer.beginTime = 0.0;
-//        self.marqueeLbl.layer.beginTime = [self.marqueeLbl.layer convertTime:CACurrentMediaTime() fromLayer:nil] - labelPausedTime;
-//        // Unpause gradient fade animation
-//        CFTimeInterval gradientPauseTime = self.layer.mask.timeOffset;
-//        self.layer.mask.speed = 1.0;
-//        self.layer.mask.timeOffset = 0.0;
-//        self.layer.mask.beginTime = 0.0;
-//        self.layer.mask.beginTime = [self.layer.mask convertTime:CACurrentMediaTime() fromLayer:nil] - gradientPauseTime;
-//        
-////        self.isPaused = NO;
-//    }
-//}
-
 - (void)marqueeMove
 {
-    
     CGRect fr = self.marqueeLbl.frame;
     if (fr.origin.x + fr.size.width < 0) {
         fr.origin.x = self.frame.size.width;
@@ -136,14 +112,12 @@ typedef void(^SXWonderfulAction)();
         fr.origin.x += -1;
     }
     self.marqueeLbl.frame = fr;
-    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"按下");
     [self timerStop];
-
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
@@ -165,6 +139,5 @@ typedef void(^SXWonderfulAction)();
     self.timer = timer;
     [[NSRunLoop mainRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
 }
-
 
 @end

@@ -21,5 +21,4 @@ typedef NS_ENUM(NSInteger, SXColorGradientDirection) {
 
 + (instancetype)createWithFromColor:(UIColor *)fromColor toColor:(UIColor *)toColor frame:(CGRect)frame direction:(SXColorGradientDirection)direction;
 
-//- (instancetype)initWithColor:(UIColor *)color frame:(CGRect)frame visible:(BOOL)visible;
 @end
