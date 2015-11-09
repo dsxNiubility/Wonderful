@@ -38,8 +38,17 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 - (instancetype)initWithFrame:(CGRect)frame Msg:(NSString *)msg bgColor:(UIColor *)bgColor txtColor:(UIColor *)txtColor{
     if (self = [super initWithFrame:frame]) {
         self.layer.cornerRadius = 5;
-        self.bgColor = bgColor;
-        self.txtColor = txtColor;
+        if(bgColor){
+            self.bgColor = bgColor;
+        }else{
+            self.bgColor = [UIColor whiteColor];
+        }
+        
+        if (txtColor) {
+            self.txtColor = txtColor;
+        }else{
+            self.txtColor = [UIColor darkGrayColor];
+        }
         self.msg = msg;
         [self doSometingBeginning];
     }
@@ -50,6 +59,7 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
     if (self = [super initWithFrame:frame]) {
         self.msg = msg;
         self.bgColor = [UIColor whiteColor];
+        self.txtColor = [UIColor darkGrayColor];
         [self doSometingBeginning];
     }
     return self;
