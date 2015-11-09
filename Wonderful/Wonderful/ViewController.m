@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIColor *testC = [UIColor goldColor];
+    UIColor *testC = [UIColor redColor];
     float r= [testC red];
     float g= [testC green];
     float b= [testC blue];
@@ -29,7 +29,7 @@
     
     NSLog(@"******  %f,%f,%f,%f",r,g,b,alpha);
     
-//    self.view.backgroundColor = [UIColor salmonColor];
+//    self.view.backgroundColor = [[UIColor redColor]up:3 num:255];
     // Do any additional setup after loading the view, typically from a nib.
     
 //    SXColorGradientView *view2 = [SXColorGradientView createWithColor:[UIColor goldColor] frame:CGRectMake(0, 84, 375, 64) visible:NO direction:3];
