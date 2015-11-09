@@ -10,101 +10,147 @@
 #import "SXColorGradientView.h"
 
 typedef void(^SXWonderfulAction)();
+
+typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
+    SXMarqueeTapForMove = 1,
+    SXMarqueeTapForAction = 2
+};
+
 @interface SXMarquee ()
 
 @property(nonatomic,strong)UIButton *bgBtn;
 @property(nonatomic,strong)UILabel *marqueeLbl;
 @property(nonatomic,strong)UIColor *bgColor;
+@property(nonatomic,strong)UIColor *txtColor;
 @property(nonatomic,copy)NSString *msg;
-@property(nonatomic,copy)SXWonderfulAction tapAction;
 @property(nonatomic,strong)NSTimer *timer;
+@property(nonatomic,copy)SXWonderfulAction tapAction;
+
+@property(nonatomic,strong)SXColorGradientView *leftFade;
+@property(nonatomic,strong)SXColorGradientView *rightFade;
+
+@property(nonatomic,assign)SXMarqueeTapMode tapMode;
+@property(nonatomic,assign)SXMarqueeSpeedLevel speedLevel;
 
 @end
 @implementation SXMarquee
 
-- (instancetype)initWithFrame:(CGRect)frame Msg:(NSString *)msg action:(void(^)())action color:(UIColor *)color{
+- (instancetype)initWithFrame:(CGRect)frame Msg:(NSString *)msg bgColor:(UIColor *)bgColor txtColor:(UIColor *)txtColor{
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = color;
         self.layer.cornerRadius = 5;
-        self.layer.masksToBounds = YES;
-        
-        self.tapAction = action;
-        self.bgColor = color;
+        self.bgColor = bgColor;
+        self.txtColor = txtColor;
         self.msg = msg;
-
-        [self timerStart];
-        [self addSubview:self.marqueeLbl];
-        [self addLeftAndRightGradient];
+        [self doSometingBeginning];
     }
     return self;
 }
 
-- (UIButton *)bgBtn
+- (instancetype)initWithFrame:(CGRect)frame Msg:(NSString *)msg{
+    if (self = [super initWithFrame:frame]) {
+        self.msg = msg;
+        self.bgColor = [UIColor whiteColor];
+        [self doSometingBeginning];
+    }
+    return self;
+}
+
+- (void)setFrame:(CGRect)frame
 {
+    [super setFrame:frame];
+    CGFloat w = self.frame.size.width;
+    CGFloat h = self.frame.size.height;
+    self.leftFade.frame = CGRectMake(0, 0, h, h);
+    self.rightFade.frame = CGRectMake(w - h, 0, h, h);
+}
+
+- (void)doSometingBeginning{
+    self.layer.masksToBounds = YES;
+    self.backgroundColor = self.bgColor;
+    self.speedLevel = 2;
+    [self timerStart];
+    [self addSubview:self.marqueeLbl];
+    [self addLeftAndRightGradient];
+}
+
+- (void)changeTapMarqueeAction:(void(^)())action{
+    [self addSubview:self.bgBtn];
+    self.tapAction = action;
+    self.tapMode = SXMarqueeTapForAction;
+}
+
+- (void)changeMarqueeSpeedLevel:(SXMarqueeSpeedLevel)speedLevel{
+    self.speedLevel = speedLevel;
+    [self timerStop];
+    [self timerStart];
+}
+
+- (void)changeMarqueeLabelFont:(UIFont *)font{
+    self.marqueeLbl.font = font;
+    CGSize msgSize = [_marqueeLbl.text sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:font,NSFontAttributeName, nil]];
+    CGRect fr = self.marqueeLbl.frame;
+    fr.size.width = msgSize.width;
+    self.marqueeLbl.frame = fr;
+}
+
+- (UIButton *)bgBtn{
     if (!_bgBtn) {
-        
         CGFloat w = self.frame.size.width;
         CGFloat h = self.frame.size.height;
         _bgBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, w, h)];
-        [_bgBtn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
-
+        [_bgBtn addTarget:self action:@selector(bgButtonClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _bgBtn;
 }
 
-- (UILabel *)marqueeLbl
-{
+- (UILabel *)marqueeLbl{
     if (!_marqueeLbl) {
-//        CGFloat w = self.frame.size.width;
+        self.tapMode = SXMarqueeTapForMove;
         CGFloat h = self.frame.size.height;
         _marqueeLbl = [[UILabel alloc]init];
         _marqueeLbl.text = self.msg;
-        
         UIFont *fnt = [UIFont fontWithName:@"HelveticaNeue" size:14.0f];
         _marqueeLbl.font = fnt;
-        
         CGSize msgSize = [_marqueeLbl.text sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:fnt,NSFontAttributeName, nil]];
         _marqueeLbl.frame = CGRectMake(0, 0, msgSize.width, h);
         
-        NSLog(@"%f",msgSize.width);
-        
-        _marqueeLbl.textColor = [UIColor whiteColor];
+        _marqueeLbl.textColor = self.txtColor;
     }
     return _marqueeLbl;
 }
 
-- (void)addLeftAndRightGradient
-{
+- (void)addLeftAndRightGradient{
     CGFloat w = self.frame.size.width;
     CGFloat h = self.frame.size.height;
-    SXColorGradientView *left = [SXColorGradientView createWithColor:self.bgColor frame:CGRectMake(0, 0, h, h) visible:YES direction:SXColorGradientToRight];
+    SXColorGradientView *leftFade = [SXColorGradientView createWithColor:self.bgColor frame:CGRectMake(0, 0, h, h) visible:YES direction:SXColorGradientToRight];
+    self.leftFade = leftFade;
     
-    SXColorGradientView *right = [SXColorGradientView createWithColor:self.bgColor frame:CGRectMake(w - h, 0, h, h) visible:YES direction:SXColorGradientToLeft];
+    SXColorGradientView *rightFade = [SXColorGradientView createWithColor:self.bgColor frame:CGRectMake(w - h, 0, h, h) visible:YES direction:SXColorGradientToLeft];
+    self.rightFade = rightFade;
     
-    [self addSubview:left];
-    [self addSubview:right];
+    [self addSubview:leftFade];
+    [self addSubview:rightFade];
 }
 
-- (void)btnClick
-{
+- (void)bgButtonClick{
     if (self.tapAction) {
         self.tapAction();
     }
 }
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    UITouch *tou = [touches anyObject];
-    CGPoint now = [tou locationInView:self];
-    CGPoint pre = [tou previousLocationInView:self];
-    CGFloat offsetX = now.x - pre.x;
-    CGRect frame = self.marqueeLbl.frame;
-    frame.origin.x = frame.origin.x + offsetX;
-    self.marqueeLbl.frame = frame;
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    if (self.tapMode == SXMarqueeTapForMove) {
+        UITouch *tou = [touches anyObject];
+        CGPoint now = [tou locationInView:self];
+        CGPoint pre = [tou previousLocationInView:self];
+        CGFloat offsetX = now.x - pre.x;
+        CGRect frame = self.marqueeLbl.frame;
+        frame.origin.x = frame.origin.x + offsetX;
+        self.marqueeLbl.frame = frame;
+    }
 }
 
-- (void)marqueeMove
-{
+- (void)marqueeMove{
     CGRect fr = self.marqueeLbl.frame;
     if (fr.origin.x + fr.size.width < 0) {
         fr.origin.x = self.frame.size.width;
@@ -114,28 +160,28 @@ typedef void(^SXWonderfulAction)();
     self.marqueeLbl.frame = fr;
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     NSLog(@"按下");
-    [self timerStop];
+    if (self.tapMode == SXMarqueeTapForMove) {
+        [self timerStop];
+    }
 }
 
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     NSLog(@"结束");
-    [self timerStart];
+    if (self.tapMode == SXMarqueeTapForMove) {
+        [self timerStart];
+    }
 }
 
 #pragma mark - 计时器关闭和开启
-- (void)timerStop
-{
+- (void)timerStop{
     [self.timer invalidate];
     self.timer = nil;
 }
 
-- (void)timerStart
-{
-    NSTimer *timer = [NSTimer timerWithTimeInterval:0.02 target:self selector:@selector(marqueeMove) userInfo:nil repeats:YES];
+- (void)timerStart{
+    NSTimer *timer = [NSTimer timerWithTimeInterval:(0.01 * self.speedLevel) target:self selector:@selector(marqueeMove) userInfo:nil repeats:YES];
     self.timer = timer;
     [[NSRunLoop mainRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
 }
