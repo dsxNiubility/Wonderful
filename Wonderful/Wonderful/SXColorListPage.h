@@ -10,4 +10,7 @@
 
 @interface SXColorListPage : UIViewController
 
+@property(nonatomic,strong)NSArray *titleArray;
+@property(nonatomic,strong)NSMutableArray *marray;
+
 @end
