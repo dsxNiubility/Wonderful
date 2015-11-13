@@ -60,6 +60,7 @@
     [self randomGradient];
     
     self.msgLabel1.text = @"a.提供了近百种扩充颜色可以以用户习惯的方式敲出\nb.上面的颜色也可以用阶梯的宏敲出\nc.提供了颜色微调的API\nd.可以取出颜色的内部属性也可以打印详细";
+    self.msgLabel2.text = @"a.可创建各种颜色的跑马灯\nb.默认按下停止可以拖动，也可绑定其他点击事件";
     
 //    self.view.backgroundColor = [[UIColor redColor]up:3 num:255];
     // Do any additional setup after loading the view, typically from a nib.
@@ -67,25 +68,24 @@
 //    SXColorGradientView *view2 = [SXColorGradientView createWithColor:[UIColor goldColor] frame:CGRectMake(0, 84, 375, 64) visible:NO direction:3];
     
     
-    SXColorGradientView *view2 = [SXColorGradientView createWithFromColor:[UIColor lawnGreen] toColor:[UIColor peachRed] frame:CGRectMake(0, 84, 375, 200) direction:2];
+//    SXColorGradientView *view2 = [SXColorGradientView createWithFromColor:[UIColor lawnGreen] toColor:[UIColor peachRed] frame:CGRectMake(0, 84, 375, 200) direction:2];
     
-//    SXMarquee *mar = [[SXMarquee alloc]initWithFrame:CGRectMake(20, 320, 335, 30) Msg:@"重大活动，天猫的双十一，然而并没卵用" bgColor:[UIColor salmonColor] txtColor:[UIColor whiteColor]];
-//    [mar changeTapMarqueeAction:^{
-//        NSLog(@"擦擦");
-//    }];
-//    
-//    SXMarquee *mar2 = [[SXMarquee alloc]initWithFrame:CGRectMake(20, 360, 335, 30) Msg:@"重大活动，京东的双十一，然而并没卵用"];
-//    [mar2 changeMarqueeSpeedLevel:2];
-//    [mar2 changeMarqueeLabelFont:[UIFont boldSystemFontOfSize:15]];
-//    
-//    SXMarquee *mar3 = [[SXMarquee alloc]initWithFrame:CGRectMake(20, 400, 335, 30) Msg:@"If you've submitted an update to fix a critical bug in your app on the App Store and you are requesting an expedited review, be sure to include the steps to reproduce the bug on the current version of your app." bgColor:[UIColor goldColor] txtColor:[UIColor goldenrod]];
-//    [mar3 changeMarqueeLabelFont:[UIFont boldSystemFontOfSize:12]];
-//    [mar3 changeMarqueeSpeedLevel:1];
-//    
-//    
-//    [self.view addSubview:mar];
-//    [self.view addSubview:mar2];
-//    [self.view addSubview:mar3];
+    SXMarquee *mar = [[SXMarquee alloc]initWithFrame:CGRectMake(20, 315, 335, 35) speed:2 Msg:@"重大活动，天猫的双十一，然而并没卵用" bgColor:[UIColor salmonColor] txtColor:[UIColor whiteColor]];
+    [mar changeMarqueeLabelFont:[UIFont systemFontOfSize:26]];
+    [mar changeTapMarqueeAction:^{
+        NSLog(@"擦擦");
+    }];
+    
+    SXMarquee *mar2 = [[SXMarquee alloc]initWithFrame:CGRectMake(20, 355, 335, 30) speed:1 Msg:@"重大活动，京东的双十一，然而并没卵用"];
+    [mar2 changeMarqueeLabelFont:[UIFont boldSystemFontOfSize:15]];
+    
+    SXMarquee *mar3 = [[SXMarquee alloc]initWithFrame:CGRectMake(20, 390, 335, 25) speed:3 Msg:@"If you've submitted an update to fix a critical bug in your app on the App Store and you are requesting an expedited review, be sure to include the steps to reproduce the bug on the current version of your app." bgColor:[UIColor goldColor] txtColor:[UIColor goldenrod]];
+    [mar3 changeMarqueeLabelFont:[UIFont boldSystemFontOfSize:12]];
+    
+    
+    [self.view addSubview:mar];
+    [self.view addSubview:mar2];
+    [self.view addSubview:mar3];
     
 //    [self.view addSubview:view2];
 }

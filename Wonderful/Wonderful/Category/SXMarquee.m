@@ -35,9 +35,9 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 @end
 @implementation SXMarquee
 
-- (instancetype)initWithFrame:(CGRect)frame Msg:(NSString *)msg bgColor:(UIColor *)bgColor txtColor:(UIColor *)txtColor{
+- (instancetype)initWithFrame:(CGRect)frame speed:(SXMarqueeSpeedLevel)speed Msg:(NSString *)msg bgColor:(UIColor *)bgColor txtColor:(UIColor *)txtColor{
     if (self = [super initWithFrame:frame]) {
-        self.layer.cornerRadius = 5;
+        self.layer.cornerRadius = 2;
         if(bgColor){
             self.bgColor = bgColor;
         }else{
@@ -49,20 +49,44 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
         }else{
             self.txtColor = [UIColor darkGrayColor];
         }
+        
+        if (speed) {
+            self.speedLevel = speed;
+        }else{
+            self.speedLevel = 3;
+        }
+        
         self.msg = msg;
         [self doSometingBeginning];
     }
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame Msg:(NSString *)msg{
+- (instancetype)initWithFrame:(CGRect)frame speed:(SXMarqueeSpeedLevel)speed Msg:(NSString *)msg{
     if (self = [super initWithFrame:frame]) {
         self.msg = msg;
+        if (speed) {
+            self.speedLevel = speed;
+        }else{
+            self.speedLevel = 3;
+        }
         self.bgColor = [UIColor whiteColor];
         self.txtColor = [UIColor darkGrayColor];
         [self doSometingBeginning];
     }
     return self;
+}
+
+- (void)newThread
+{
+    @autoreleasepool
+    {
+        NSTimer *timer = [NSTimer timerWithTimeInterval:(0.01 * self.speedLevel) target:self selector:@selector(marqueeMove) userInfo:nil repeats:YES];
+        self.timer = timer;
+        
+        [[NSRunLoop currentRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
+        [[NSRunLoop currentRunLoop]run];
+    }
 }
 
 - (void)setFrame:(CGRect)frame
@@ -75,10 +99,12 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 }
 
 - (void)doSometingBeginning{
+    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(newThread) object:nil];
+    [thread start];
     self.layer.masksToBounds = YES;
     self.backgroundColor = self.bgColor;
-    self.speedLevel = 2;
-    [self timerStart];
+//    self.speedLevel = 3;
+//    [self timerStart];
     [self addSubview:self.marqueeLbl];
     [self addLeftAndRightGradient];
 }
@@ -89,11 +115,9 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
     self.tapMode = SXMarqueeTapForAction;
 }
 
-- (void)changeMarqueeSpeedLevel:(SXMarqueeSpeedLevel)speedLevel{
-    self.speedLevel = speedLevel;
-    [self timerStop];
-    [self timerStart];
-}
+//- (void)changeMarqueeSpeedLevel:(SXMarqueeSpeedLevel)speedLevel{
+//    self.speedLevel = speedLevel;
+//}
 
 - (void)changeMarqueeLabelFont:(UIFont *)font{
     self.marqueeLbl.font = font;
@@ -161,6 +185,7 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 }
 
 - (void)marqueeMove{
+//    NSLog(@"Timer %@", [NSThread currentThread]);
     CGRect fr = self.marqueeLbl.frame;
     if (fr.origin.x + fr.size.width < 0) {
         fr.origin.x = self.frame.size.width;
@@ -191,9 +216,16 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 }
 
 - (void)timerStart{
-    NSTimer *timer = [NSTimer timerWithTimeInterval:(0.01 * self.speedLevel) target:self selector:@selector(marqueeMove) userInfo:nil repeats:YES];
-    self.timer = timer;
-    [[NSRunLoop mainRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
+    [self newThread];
+//    NSTimer *timer = [NSTimer timerWithTimeInterval:(0.01 * self.speedLevel) target:self selector:@selector(marqueeMove) userInfo:nil repeats:YES];
+//    self.timer = timer;
+//    [[NSRunLoop mainRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
+    
+//    NSTimer *timer = [NSTimer timerWithTimeInterval:(0.01 * self.speedLevel) target:self selector:@selector(marqueeMove) userInfo:nil repeats:YES];
+//    self.timer = timer;
+//    
+//    [[NSRunLoop currentRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
+//    [[NSRunLoop currentRunLoop]run];
 }
 
 @end

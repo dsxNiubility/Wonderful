@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1DB8ECC51BE3741E0066CF40 /* SXColorListPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC41BE3741E0066CF40 /* SXColorListPage.m */; settings = {ASSET_TAGS = (); }; };
-		1DB8ECC81BE38B500066CF40 /* SXColorListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC71BE38B500066CF40 /* SXColorListCell.m */; settings = {ASSET_TAGS = (); }; };
-		1DB8ECCB1BE39ABE0066CF40 /* SXCLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECCA1BE39ABE0066CF40 /* SXCLE.m */; settings = {ASSET_TAGS = (); }; };
-		1DB8ECCE1BE63B2A0066CF40 /* SXColorGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECCD1BE63B2A0066CF40 /* SXColorGradientView.m */; settings = {ASSET_TAGS = (); }; };
-		1DB8ECD11BE647070066CF40 /* UIColor+Separate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECD01BE647070066CF40 /* UIColor+Separate.m */; settings = {ASSET_TAGS = (); }; };
+		1DB8ECC51BE3741E0066CF40 /* SXColorListPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC41BE3741E0066CF40 /* SXColorListPage.m */; };
+		1DB8ECC81BE38B500066CF40 /* SXColorListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC71BE38B500066CF40 /* SXColorListCell.m */; };
+		1DB8ECCB1BE39ABE0066CF40 /* SXCLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECCA1BE39ABE0066CF40 /* SXCLE.m */; };
+		1DB8ECCE1BE63B2A0066CF40 /* SXColorGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECCD1BE63B2A0066CF40 /* SXColorGradientView.m */; };
+		1DB8ECD11BE647070066CF40 /* UIColor+Separate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECD01BE647070066CF40 /* UIColor+Separate.m */; };
 		1DCCF4801BDE214900DB5EB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF47F1BDE214900DB5EB7 /* main.m */; };
 		1DCCF4831BDE214900DB5EB7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF4821BDE214900DB5EB7 /* AppDelegate.m */; };
 		1DCCF4861BDE214900DB5EB7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF4851BDE214900DB5EB7 /* ViewController.m */; };
 		1DCCF4891BDE214900DB5EB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DCCF4871BDE214900DB5EB7 /* Main.storyboard */; };
 		1DCCF48B1BDE214900DB5EB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DCCF48A1BDE214900DB5EB7 /* Assets.xcassets */; };
 		1DCCF48E1BDE214900DB5EB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DCCF48C1BDE214900DB5EB7 /* LaunchScreen.storyboard */; };
-		1DCCF49B1BDF121000DB5EB7 /* UIColor+Wonderful.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF49A1BDF121000DB5EB7 /* UIColor+Wonderful.m */; settings = {ASSET_TAGS = (); }; };
-		1DEA00301BEB558A00D40E49 /* SXMarquee.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA002F1BEB558A00D40E49 /* SXMarquee.m */; settings = {ASSET_TAGS = (); }; };
+		1DCCF49B1BDF121000DB5EB7 /* UIColor+Wonderful.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF49A1BDF121000DB5EB7 /* UIColor+Wonderful.m */; };
+		1DEA00301BEB558A00D40E49 /* SXMarquee.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA002F1BEB558A00D40E49 /* SXMarquee.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -314,6 +314,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: shangxian dong (NNY956QPWY)";
 				INFOPLIST_FILE = Wonderful/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sankuai.Wonderful;
@@ -325,6 +326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: shangxian dong (NNY956QPWY)";
 				INFOPLIST_FILE = Wonderful/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sankuai.Wonderful;

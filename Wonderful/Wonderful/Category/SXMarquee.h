@@ -17,11 +17,11 @@ typedef NS_ENUM(NSInteger, SXMarqueeSpeedLevel) {
 
 @interface SXMarquee : UIView
 
-- (instancetype)initWithFrame:(CGRect)frame Msg:(NSString *)msg bgColor:(UIColor *)bgColor txtColor:(UIColor *)txtColor;
+- (instancetype)initWithFrame:(CGRect)frame speed:(SXMarqueeSpeedLevel)speed Msg:(NSString *)msg bgColor:(UIColor *)bgColor txtColor:(UIColor *)txtColor;
 
-- (instancetype)initWithFrame:(CGRect)frame Msg:(NSString *)msg;
+- (instancetype)initWithFrame:(CGRect)frame speed:(SXMarqueeSpeedLevel)speed Msg:(NSString *)msg ;
 
 - (void)changeTapMarqueeAction:(void(^)())action;
 - (void)changeMarqueeLabelFont:(UIFont *)font;
-- (void)changeMarqueeSpeedLevel:(SXMarqueeSpeedLevel)speedLevel;
+//- (void)changeMarqueeSpeedLevel:(SXMarqueeSpeedLevel)speedLevel;
 @end
