@@ -21,6 +21,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *msgLabel1;
 @property (weak, nonatomic) IBOutlet UILabel *msgLabel2;
 
+@property (weak, nonatomic) IBOutlet UIView *gradientContent;
+@property(nonatomic,weak)SXColorGradientView *grv1;
+@property(nonatomic,weak)SXColorGradientView *grv2;
+@property(nonatomic,weak)SXColorGradientView *grv3;
+@property(nonatomic,weak)SXColorGradientView *grv4;
+
+@property(nonatomic,weak)SXColorGradientView *grv5;
+
 @property(nonatomic,strong)NSArray *titleArray;
 @property(nonatomic,strong)NSMutableArray *marray;
 
@@ -48,6 +56,8 @@
     float alpha= [testC alpha];
     
     NSLog(@"******  %f,%f,%f,%f",r,g,b,alpha);
+    [self randomColor];
+    [self randomGradient];
     
 //    self.view.backgroundColor = [[UIColor redColor]up:3 num:255];
     // Do any additional setup after loading the view, typically from a nib.
@@ -57,17 +67,23 @@
     
     SXColorGradientView *view2 = [SXColorGradientView createWithFromColor:[UIColor lawnGreen] toColor:[UIColor peachRed] frame:CGRectMake(0, 84, 375, 200) direction:2];
     
-    SXMarquee *mar = [[SXMarquee alloc]initWithFrame:CGRectMake(40, 300, 250, 30) Msg:@"重大活动，天猫的双十一，然而并没卵用" bgColor:[UIColor salmonColor] txtColor:[UIColor whiteColor]];
-    [mar changeTapMarqueeAction:^{
-        NSLog(@"擦擦");
-    }];
-    
-    SXMarquee *mar2 = [[SXMarquee alloc]initWithFrame:CGRectMake(40, 350, 250, 30) Msg:@"重大活动，京东的双十一，然而并没卵用"];
-//    mar2.frame = CGRectMake(40, 350, 100, 30);
-    [mar2 changeMarqueeSpeedLevel:2];
-    [mar2 changeMarqueeLabelFont:[UIFont boldSystemFontOfSize:15]];
-    
-    [self.view addSubview:mar2];
+//    SXMarquee *mar = [[SXMarquee alloc]initWithFrame:CGRectMake(20, 320, 335, 30) Msg:@"重大活动，天猫的双十一，然而并没卵用" bgColor:[UIColor salmonColor] txtColor:[UIColor whiteColor]];
+//    [mar changeTapMarqueeAction:^{
+//        NSLog(@"擦擦");
+//    }];
+//    
+//    SXMarquee *mar2 = [[SXMarquee alloc]initWithFrame:CGRectMake(20, 360, 335, 30) Msg:@"重大活动，京东的双十一，然而并没卵用"];
+//    [mar2 changeMarqueeSpeedLevel:2];
+//    [mar2 changeMarqueeLabelFont:[UIFont boldSystemFontOfSize:15]];
+//    
+//    SXMarquee *mar3 = [[SXMarquee alloc]initWithFrame:CGRectMake(20, 400, 335, 30) Msg:@"If you've submitted an update to fix a critical bug in your app on the App Store and you are requesting an expedited review, be sure to include the steps to reproduce the bug on the current version of your app." bgColor:[UIColor goldColor] txtColor:[UIColor goldenrod]];
+//    [mar3 changeMarqueeLabelFont:[UIFont boldSystemFontOfSize:12]];
+//    [mar3 changeMarqueeSpeedLevel:1];
+//    
+//    
+//    [self.view addSubview:mar];
+//    [self.view addSubview:mar2];
+//    [self.view addSubview:mar3];
     
 //    [self.view addSubview:view2];
 }
@@ -79,6 +95,75 @@
 }
 
 - (IBAction)randomColor {
+    SXCLE *item1 = [self randomAColorEntity];
+    self.showLbl1.backgroundColor = SXRGB16Color(item1.colorValue);
+    self.showLbl1.text = [NSString stringWithFormat:@"[UIColor %@]",item1.methodName];
+    
+    SXCLE *item2 = [self randomAColorEntity];
+    self.showLbl2.backgroundColor = SXRGB16Color(item2.colorValue);
+    self.showLbl2.text = [NSString stringWithFormat:@"[UIColor %@]",item2.methodName];
+    
+    SXCLE *item3 = [self randomAColorEntity];
+    self.showLbl3.backgroundColor = SXRGB16Color(item3.colorValue);
+    self.showLbl3.text = [NSString stringWithFormat:@"[UIColor %@]",item3.methodName];
+    
+}
+
+- (IBAction)randomGradient {
+    [self.grv1 removeFromSuperview];
+    [self.grv2 removeFromSuperview];
+    [self.grv3 removeFromSuperview];
+    [self.grv4 removeFromSuperview];
+    [self.grv5 removeFromSuperview];
+    self.grv1 = nil;
+    self.grv2 = nil;
+    self.grv3 = nil;
+    self.grv4 = nil;
+    self.grv5 = nil;
+    
+    SXCLE *item1 = [self randomAColorEntity];
+    SXColorGradientView *grv1 = [SXColorGradientView createWithColor:SXRGB16Color(item1.colorValue) frame:CGRectMake(10, 10, 80, 30) visible:YES direction:SXColorGradientToRight];
+    [self.gradientContent addSubview:grv1];
+    
+    SXCLE *item2 = [self randomAColorEntity];
+    SXColorGradientView *grv2 = [SXColorGradientView createWithColor:SXRGB16Color(item2.colorValue) frame:CGRectMake(100, 10, 80, 30) visible:YES direction:SXColorGradientToRight];
+    [self.gradientContent addSubview:grv2];
+    
+    SXCLE *item3 = [self randomAColorEntity];
+    SXCLE *item31 = [self randomAColorEntity];
+    SXColorGradientView *grv3 = [SXColorGradientView createWithFromColor:SXRGB16Color(item3.colorValue) toColor:SXRGB16Color(item31.colorValue) frame:CGRectMake(10, 50, 80, 30) direction:SXColorGradientToRight];
+    [self.gradientContent addSubview:grv3];
+    
+    SXCLE *item4 = [self randomAColorEntity];
+    SXCLE *item41 = [self randomAColorEntity];
+    SXColorGradientView *grv4 = [SXColorGradientView createWithFromColor:SXRGB16Color(item4.colorValue) toColor:SXRGB16Color(item41.colorValue) frame:CGRectMake(100, 50, 80, 30) direction:SXColorGradientToRight];
+    [self.gradientContent addSubview:grv4];
+    
+    
+    SXCLE *item5 = [self randomAColorEntity];
+    SXColorGradientView *grv5 = [SXColorGradientView createWithColor:SXRGB16Color(item5.colorValue) frame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 60, 375, 60) visible:YES direction:SXColorGradientToTop];
+    [self.view addSubview:grv5];
+    
+    grv1.layer.cornerRadius = 2;
+    grv1.layer.masksToBounds = YES;
+    self.grv1 = grv1;
+    
+    grv2.layer.cornerRadius = 2;
+    grv2.layer.masksToBounds = YES;
+    self.grv2 = grv2;
+    
+    grv3.layer.cornerRadius = 2;
+    grv3.layer.masksToBounds = YES;
+    self.grv3 = grv3;
+    
+    grv4.layer.cornerRadius = 2;
+    grv4.layer.masksToBounds = YES;
+    self.grv4 = grv4;
+    self.grv5 = grv5;
+}
+
+- (SXCLE *)randomAColorEntity
+{
     NSInteger x1 = arc4random() % 10;
     NSInteger y1 = arc4random() % 10;
     NSArray *ary1 = self.marray[x1];
@@ -88,35 +173,8 @@
     }else{
         item1 = ary1[y1/2];
     }
-    self.showLbl1.backgroundColor = SXRGB16Color(item1.colorValue);
-    self.showLbl1.text = [NSString stringWithFormat:@"[UIColor %@]",item1.methodName];
-    
-    NSInteger x2 = arc4random() % 10;
-    NSInteger y2 = arc4random() % 10;
-    NSArray *ary2 = self.marray[x2];
-    SXCLE *item2 = nil;
-    if (ary2.count < y2) {
-        item2 = ary2[y2/2];
-    }else{
-        item2 = ary2[y2/2];
-    }
-    self.showLbl2.backgroundColor = SXRGB16Color(item2.colorValue);
-    self.showLbl2.text = [NSString stringWithFormat:@"[UIColor %@]",item2.methodName];
-    
-    NSInteger x3 = arc4random() % 10;
-    NSInteger y3 = arc4random() % 10;
-    NSArray *ary3 = self.marray[x3];
-    SXCLE *item3 = nil;
-    if (ary3.count < y3) {
-        item3 = ary3[y3/2];
-    }else{
-        item3 = ary3[y3/2];
-    }
-    self.showLbl3.backgroundColor = SXRGB16Color(item3.colorValue);
-    self.showLbl3.text = [NSString stringWithFormat:@"[UIColor %@]",item3.methodName];
-    
+    return item1;
 }
-
 
 
 
