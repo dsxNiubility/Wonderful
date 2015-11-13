@@ -59,6 +59,8 @@
     [self randomColor];
     [self randomGradient];
     
+    self.msgLabel1.text = @"a.提供了近百种扩充颜色可以以用户习惯的方式敲出\nb.上面的颜色也可以用阶梯的宏敲出\nc.提供了颜色微调的API\nd.可以取出颜色的内部属性也可以打印详细";
+    
 //    self.view.backgroundColor = [[UIColor redColor]up:3 num:255];
     // Do any additional setup after loading the view, typically from a nib.
     
