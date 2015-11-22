@@ -77,18 +77,6 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
     return self;
 }
 
-- (void)newThread
-{
-    @autoreleasepool
-    {
-        NSTimer *timer = [NSTimer timerWithTimeInterval:(0.01 * self.speedLevel) target:self selector:@selector(marqueeMove) userInfo:nil repeats:YES];
-        self.timer = timer;
-        
-        [[NSRunLoop currentRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
-        [[NSRunLoop currentRunLoop]run];
-    }
-}
-
 - (void)setFrame:(CGRect)frame
 {
     [super setFrame:frame];
@@ -184,16 +172,7 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
     }
 }
 
-- (void)marqueeMove{
-//    NSLog(@"Timer %@", [NSThread currentThread]);
-    CGRect fr = self.marqueeLbl.frame;
-    if (fr.origin.x + fr.size.width < 0) {
-        fr.origin.x = self.frame.size.width;
-    }else{
-        fr.origin.x += -1;
-    }
-    self.marqueeLbl.frame = fr;
-}
+
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     NSLog(@"按下");
@@ -209,7 +188,7 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
     }
 }
 
-#pragma mark - 计时器关闭和开启
+#pragma mark - 计时器关闭和开启 RunLoop相关
 - (void)timerStop{
     [self.timer invalidate];
     self.timer = nil;
@@ -217,15 +196,33 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 
 - (void)timerStart{
     [self newThread];
-//    NSTimer *timer = [NSTimer timerWithTimeInterval:(0.01 * self.speedLevel) target:self selector:@selector(marqueeMove) userInfo:nil repeats:YES];
-//    self.timer = timer;
-//    [[NSRunLoop mainRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
-    
-//    NSTimer *timer = [NSTimer timerWithTimeInterval:(0.01 * self.speedLevel) target:self selector:@selector(marqueeMove) userInfo:nil repeats:YES];
-//    self.timer = timer;
-//    
-//    [[NSRunLoop currentRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
-//    [[NSRunLoop currentRunLoop]run];
 }
+
+- (void)newThread
+{
+    @autoreleasepool
+    {
+        NSTimer *timer = [NSTimer timerWithTimeInterval:(0.01 * self.speedLevel) target:self selector:@selector(marqueeMove) userInfo:nil repeats:YES];
+        self.timer = timer;
+    
+        [[NSThread currentThread]setName:[NSString stringWithFormat:@"%d号",arc4random()%100]];
+        
+        [[NSRunLoop currentRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
+//        [[NSRunLoop currentRunLoop]addPort:[NSMachPort port] forMode:NSRunLoopCommonModes];
+        [[NSRunLoop currentRunLoop]run];
+    }
+}
+
+- (void)marqueeMove{
+        NSLog(@"Timer %@", [NSThread currentThread]);
+    CGRect fr = self.marqueeLbl.frame;
+    if (fr.origin.x + fr.size.width < 0) {
+        fr.origin.x = self.frame.size.width;
+    }else{
+        fr.origin.x += -1;
+    }
+    self.marqueeLbl.frame = fr;
+}
+
 
 @end
