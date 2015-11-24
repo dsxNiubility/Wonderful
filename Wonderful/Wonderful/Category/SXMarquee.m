@@ -91,7 +91,7 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 - (void)doSometingBeginning{
 //    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(newThread) object:nil];
 //    [thread start];
-    [self moveAction];
+//    [self moveAction];
     self.layer.masksToBounds = YES;
     self.backgroundColor = self.bgColor;
 
@@ -184,39 +184,43 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     if (self.tapMode == SXMarqueeTapForMove) {
-        [self timerStop];
+        [self stop];
     }
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     if (self.tapMode == SXMarqueeTapForMove) {
-        [self timerStart];
+        [self restart];
     }
 }
 
-#pragma mark - 计时器关闭和开启 RunLoop相关
-- (void)timerStop{
+#pragma mark - 操作
+- (void)start{
+    [self moveAction];
+}
+
+- (void)stop{
     [self pauseLayer:self.marqueeLbl.layer];
 }
 
-- (void)timerStart{
+- (void)restart{
     [self resumeLayer:self.marqueeLbl.layer];
 }
 
-- (void)newThread
-{
-    @autoreleasepool
-    {
+//- (void)newThread
+//{
+//    @autoreleasepool
+//    {
 //        NSTimer *timer = [NSTimer timerWithTimeInterval:(12) target:self selector:@selector(moveAction) userInfo:nil repeats:YES];
 //        self.timer = timer;
-    
-        [[NSThread currentThread]setName:[NSString stringWithFormat:@"%d号",arc4random()%100]];
-        
+//    
+//        [[NSThread currentThread]setName:[NSString stringWithFormat:@"%d号",arc4random()%100]];
+//        
 //        [[NSRunLoop currentRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
 //        [[NSRunLoop currentRunLoop]addPort:[NSMachPort port] forMode:NSRunLoopCommonModes];
-        [[NSRunLoop currentRunLoop]run];
-    }
-}
+//        [[NSRunLoop currentRunLoop]run];
+//    }
+//}
 
 //- (void)marqueeMove{
 //        NSLog(@"Timer %@", [NSThread currentThread]);
@@ -273,7 +277,6 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
     if (flag) {
-//        NSLog(@"动画结束");
         [self moveAction];
     }
 }

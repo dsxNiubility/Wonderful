@@ -23,4 +23,8 @@ typedef NS_ENUM(NSInteger, SXMarqueeSpeedLevel) {
 
 - (void)changeTapMarqueeAction:(void(^)())action;
 - (void)changeMarqueeLabelFont:(UIFont *)font;
+
+- (void)start;
+- (void)stop;
+- (void)restart;
 @end
