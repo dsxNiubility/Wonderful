@@ -183,14 +183,12 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    NSLog(@"按下");
     if (self.tapMode == SXMarqueeTapForMove) {
         [self timerStop];
     }
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    NSLog(@"结束");
     if (self.tapMode == SXMarqueeTapForMove) {
         [self timerStart];
     }
@@ -198,14 +196,10 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 
 #pragma mark - 计时器关闭和开启 RunLoop相关
 - (void)timerStop{
-//    [self.timer invalidate];
-//    self.timer = nil;
     [self pauseLayer:self.marqueeLbl.layer];
 }
 
 - (void)timerStart{
-//    [self moveAction];
-//    [self newThread];
     [self resumeLayer:self.marqueeLbl.layer];
 }
 
@@ -224,22 +218,23 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
     }
 }
 
-- (void)marqueeMove{
-        NSLog(@"Timer %@", [NSThread currentThread]);
-    CGRect fr = self.marqueeLbl.frame;
-    if (fr.origin.x + fr.size.width < 0) {
-        fr.origin.x = self.frame.size.width;
-    }else{
-        fr.origin.x += -1;
-    }
-    self.marqueeLbl.frame = fr;
-}
+//- (void)marqueeMove{
+//        NSLog(@"Timer %@", [NSThread currentThread]);
+//    CGRect fr = self.marqueeLbl.frame;
+//    if (fr.origin.x + fr.size.width < 0) {
+//        fr.origin.x = self.frame.size.width;
+//    }else{
+//        fr.origin.x += -1;
+//    }
+//    self.marqueeLbl.frame = fr;
+//}
 
 
 - (void)moveAction
 {
     CGRect fr = self.marqueeLbl.frame;
     fr.origin.x = self.frame.size.width;
+    self.marqueeLbl.frame = fr;
     
     CGPoint fromPoint = CGPointMake(self.frame.size.width + self.marqueeLbl.frame.size.width/2, self.frame.size.height/2);
     
@@ -252,7 +247,8 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
     moveAnim.path = movePath.CGPath;
     moveAnim.removedOnCompletion = YES;
     
-    moveAnim.duration = 12;
+//    NSLog(@"%@",NSStringFromCGRect(self.marqueeLbl.frame));
+    moveAnim.duration = self.marqueeLbl.frame.size.width * self.speedLevel * 0.01;
     [moveAnim setDelegate:self];
     
     [self.marqueeLbl.layer addAnimation:moveAnim forKey:nil];
@@ -277,7 +273,7 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
     if (flag) {
-        NSLog(@"动画结束");
+//        NSLog(@"动画结束");
         [self moveAction];
     }
 }
