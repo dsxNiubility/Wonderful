@@ -22,4 +22,6 @@ typedef NS_ENUM(NSInteger, SXColorType) {
 - (CGFloat) green;
 - (CGFloat) blue;
 - (CGFloat) alpha;
+
+- (UIColor *)reverseColor;
 @end

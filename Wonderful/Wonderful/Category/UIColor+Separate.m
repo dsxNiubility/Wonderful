@@ -66,4 +66,14 @@
     return c[CGColorGetNumberOfComponents(self.CGColor)-1];
 }
 
+- (UIColor *)reverseColor
+{
+    float r= 1 - [self red];
+    float g= 1 - [self green];
+    float b= 1 - [self blue];
+    float alpha= [self alpha];
+    UIColor *rcolor = [UIColor colorWithRed:r green:g blue:b alpha:alpha];
+    return rcolor;
+}
+
 @end
