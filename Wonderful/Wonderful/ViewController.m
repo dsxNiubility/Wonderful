@@ -49,13 +49,13 @@
     self.showLbl3.layer.cornerRadius = 4;
     self.showLbl3.layer.masksToBounds = YES;
     
-    UIColor *testC = [UIColor redColor];
+    UIColor *testC = [UIColor salmonColor];
     float r= [testC red];
     float g= [testC green];
     float b= [testC blue];
     float alpha= [testC alpha];
-    
     NSLog(@"******  %f,%f,%f,%f",r,g,b,alpha);
+    
     [self randomColor];
     [self randomGradient];
     
@@ -69,6 +69,18 @@
     
     
 //    SXColorGradientView *view2 = [SXColorGradientView createWithFromColor:[UIColor lawnGreen] toColor:[UIColor peachRed] frame:CGRectMake(0, 84, 375, 200) direction:2];
+    
+//    self.view.backgroundColor = [UIColor khakiColor];
+//    self.view.backgroundColor = [UIColor chocolateColor];
+//    
+//    self.view.backgroundColor = Wonderful_YelloeColor4;
+//    self.view.backgroundColor = Wonderful_BrownColor4;
+//    
+//    UIColor *navColor = [[UIColor redColor]up:SXColorTypeBlue num:30]; // 在红色上把蓝色色值提高30
+//    UIColor *barColor = [[UIColor blueColor]up:1 num:140]; // 可以直接用枚举对应的tag
+//    UIColor *bgColor = [[UIColor blackColor]down:SXColorTypeAlpha num:10]; // 取一个比黑色稍微淡的颜色
+//    UIColor *lineColor = [bgColor up:3 num:20]; // 不管背景是什么颜色 线都比背景浅20.
+    
     
     SXMarquee *mar = [[SXMarquee alloc]initWithFrame:CGRectMake(20, 315, 335, 35) speed:4 Msg:@"重大活动，天猫的双十一，然而并没卵用" bgColor:[UIColor salmonColor] txtColor:[UIColor whiteColor]];
     [mar changeMarqueeLabelFont:[UIFont systemFontOfSize:26]];
