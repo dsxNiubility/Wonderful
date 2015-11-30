@@ -42,7 +42,14 @@ _颜色列表_<br />
 	self.showLbl1.backgroundColor = [UIColor peachRed];
 	self.showLbl1.textColor = [[UIColor peachRed]reverseColor];
 	
-＊3.后续会直接增加取一个颜色反色的方法。<br />
+3.也可以直接打印这个颜色的各项详细数值。<br />
+
+	[[UIColor salmonColor]printDetail];
+	// 打印结果
+	This Color's Red:250, Green:128, Blue:114, Alpha:1
+	decimal red:0.9804 green:0.5020 blue:0.4471
+	Hexadecimal 0xfa8072
+	
 
 ####三、SXColorGradientView
 1.颜色渐变的view，可以设置任何颜色到透明的过渡。<br />
