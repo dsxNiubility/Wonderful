@@ -76,4 +76,16 @@
     return rcolor;
 }
 
+- (void)printDetail
+{
+    float r= [self red];
+    float g= [self green];
+    float b= [self blue];
+    float R= [self red] * 255;
+    float G= [self green] *255;
+    float B= [self blue] *255;
+    float alpha= [self alpha];
+    NSLog(@"\nThis Color's Red:%.0f, Green:%.0f, Blue:%.0f, Alpha:%.0f\ndecimal red:%.4f green:%.4f blue:%.4f \nHexadecimal 0x%x%x%x",R,G,B,alpha,r,g,b,(int)R,(int)G,(int)B);
+}
+
 @end

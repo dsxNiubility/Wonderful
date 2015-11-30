@@ -56,6 +56,8 @@
     float alpha= [testC alpha];
     NSLog(@"******  %f,%f,%f,%f",r,g,b,alpha);
     
+    [[UIColor salmonColor]printDetail];
+    
     [self randomColor];
     [self randomGradient];
     
