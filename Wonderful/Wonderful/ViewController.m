@@ -84,6 +84,14 @@
 //    UIColor *lineColor = [bgColor up:3 num:20]; // 不管背景是什么颜色 线都比背景浅20.
     
     
+
+    
+//    [self.view addSubview:view2];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     SXMarquee *mar = [[SXMarquee alloc]initWithFrame:CGRectMake(20, 315, 335, 35) speed:4 Msg:@"重大活动，天猫的双十一，然而并没卵用" bgColor:[UIColor salmonColor] txtColor:[UIColor whiteColor]];
     [mar changeMarqueeLabelFont:[UIFont systemFontOfSize:26]];
     [mar changeTapMarqueeAction:^{
@@ -103,8 +111,6 @@
     [self.view addSubview:mar];
     [self.view addSubview:mar2];
     [self.view addSubview:mar3];
-    
-//    [self.view addSubview:view2];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
