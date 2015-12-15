@@ -25,16 +25,14 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 @property(nonatomic,copy)NSString *msg;
 @property(nonatomic,strong)NSTimer *timer;
 @property(nonatomic,copy)SXWonderfulAction tapAction;
-
 @property(nonatomic,strong)SXColorGradientView *leftFade;
 @property(nonatomic,strong)SXColorGradientView *rightFade;
-
 @property(nonatomic,assign)SXMarqueeTapMode tapMode;
 @property(nonatomic,assign)SXMarqueeSpeedLevel speedLevel;
-
 @property(nonatomic,strong)UIView *middleView;
 
 @end
+
 @implementation SXMarquee
 
 - (instancetype)initWithFrame:(CGRect)frame speed:(SXMarqueeSpeedLevel)speed Msg:(NSString *)msg bgColor:(UIColor *)bgColor txtColor:(UIColor *)txtColor{
@@ -89,19 +87,12 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 }
 
 - (void)doSometingBeginning{
-//    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(newThread) object:nil];
-//    [thread start];
-//    [self moveAction];
     self.layer.masksToBounds = YES;
     self.backgroundColor = self.bgColor;
-
-    
     UIView *middleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     self.middleView = middleView;
     [_middleView addSubview:self.marqueeLbl];
     [self addSubview:_middleView];
-    
-//    [self addSubview:self.marqueeLbl];
     [self addLeftAndRightGradient];
 }
 
@@ -110,10 +101,6 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
     self.tapAction = action;
     self.tapMode = SXMarqueeTapForAction;
 }
-
-//- (void)changeMarqueeSpeedLevel:(SXMarqueeSpeedLevel)speedLevel{
-//    self.speedLevel = speedLevel;
-//}
 
 - (void)changeMarqueeLabelFont:(UIFont *)font{
     self.marqueeLbl.font = font;
@@ -168,20 +155,6 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
     }
 }
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-//    if (self.tapMode == SXMarqueeTapForMove) {
-//        UITouch *tou = [touches anyObject];
-//        CGPoint now = [tou locationInView:self];
-//        CGPoint pre = [tou previousLocationInView:self];
-//        CGFloat offsetX = now.x - pre.x;
-//        CGRect frame = self.middleView.frame;
-//        frame.origin.x = frame.origin.x + offsetX;
-//        self.middleView.frame = frame;
-//    }
-}
-
-
-
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     if (self.tapMode == SXMarqueeTapForMove) {
         [self stop];
@@ -207,33 +180,6 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
     [self resumeLayer:self.marqueeLbl.layer];
 }
 
-//- (void)newThread
-//{
-//    @autoreleasepool
-//    {
-//        NSTimer *timer = [NSTimer timerWithTimeInterval:(12) target:self selector:@selector(moveAction) userInfo:nil repeats:YES];
-//        self.timer = timer;
-//    
-//        [[NSThread currentThread]setName:[NSString stringWithFormat:@"%d号",arc4random()%100]];
-//        
-//        [[NSRunLoop currentRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
-//        [[NSRunLoop currentRunLoop]addPort:[NSMachPort port] forMode:NSRunLoopCommonModes];
-//        [[NSRunLoop currentRunLoop]run];
-//    }
-//}
-
-//- (void)marqueeMove{
-//        NSLog(@"Timer %@", [NSThread currentThread]);
-//    CGRect fr = self.marqueeLbl.frame;
-//    if (fr.origin.x + fr.size.width < 0) {
-//        fr.origin.x = self.frame.size.width;
-//    }else{
-//        fr.origin.x += -1;
-//    }
-//    self.marqueeLbl.frame = fr;
-//}
-
-
 - (void)moveAction
 {
     CGRect fr = self.marqueeLbl.frame;
@@ -242,16 +188,14 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
     
     CGPoint fromPoint = CGPointMake(self.frame.size.width + self.marqueeLbl.frame.size.width/2, self.frame.size.height/2);
     
-    //路径曲线
     UIBezierPath *movePath = [UIBezierPath bezierPath];
     [movePath moveToPoint:fromPoint];
     [movePath addLineToPoint:CGPointMake(-self.marqueeLbl.frame.size.width/2, self.frame.size.height/2)];
-    //关键帧
+
     CAKeyframeAnimation *moveAnim = [CAKeyframeAnimation animationWithKeyPath:@"position"];
     moveAnim.path = movePath.CGPath;
     moveAnim.removedOnCompletion = YES;
     
-//    NSLog(@"%@",NSStringFromCGRect(self.marqueeLbl.frame));
     moveAnim.duration = self.marqueeLbl.frame.size.width * self.speedLevel * 0.01;
     [moveAnim setDelegate:self];
     
@@ -281,6 +225,31 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
     }
 }
 
+//- (void)newThread
+//{
+//    @autoreleasepool
+//    {
+//        NSTimer *timer = [NSTimer timerWithTimeInterval:(12) target:self selector:@selector(moveAction) userInfo:nil repeats:YES];
+//        self.timer = timer;
+//
+//        [[NSThread currentThread]setName:[NSString stringWithFormat:@"%d号",arc4random()%100]];
+//
+//        [[NSRunLoop currentRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
+//        [[NSRunLoop currentRunLoop]addPort:[NSMachPort port] forMode:NSRunLoopCommonModes];
+//        [[NSRunLoop currentRunLoop]run];
+//    }
+//}
+
+//- (void)marqueeMove{
+//        NSLog(@"Timer %@", [NSThread currentThread]);
+//    CGRect fr = self.marqueeLbl.frame;
+//    if (fr.origin.x + fr.size.width < 0) {
+//        fr.origin.x = self.frame.size.width;
+//    }else{
+//        fr.origin.x += -1;
+//    }
+//    self.marqueeLbl.frame = fr;
+//}
 
 
 @end
