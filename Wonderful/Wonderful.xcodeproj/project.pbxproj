@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D85C96E1C253EB800E80C89 /* SXColorLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D85C96D1C253EB800E80C89 /* SXColorLabel.m */; };
 		1DB8ECC51BE3741E0066CF40 /* SXColorListPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC41BE3741E0066CF40 /* SXColorListPage.m */; };
 		1DB8ECC81BE38B500066CF40 /* SXColorListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC71BE38B500066CF40 /* SXColorListCell.m */; };
 		1DB8ECCB1BE39ABE0066CF40 /* SXCLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECCA1BE39ABE0066CF40 /* SXCLE.m */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D85C96C1C253EB800E80C89 /* SXColorLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXColorLabel.h; sourceTree = "<group>"; };
+		1D85C96D1C253EB800E80C89 /* SXColorLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXColorLabel.m; sourceTree = "<group>"; };
 		1DB8ECC31BE3741E0066CF40 /* SXColorListPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXColorListPage.h; sourceTree = "<group>"; };
 		1DB8ECC41BE3741E0066CF40 /* SXColorListPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXColorListPage.m; sourceTree = "<group>"; };
 		1DB8ECC61BE38B500066CF40 /* SXColorListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXColorListCell.h; sourceTree = "<group>"; };
@@ -116,6 +119,8 @@
 				1DB8ECD01BE647070066CF40 /* UIColor+Separate.m */,
 				1DB8ECCC1BE63B2A0066CF40 /* SXColorGradientView.h */,
 				1DB8ECCD1BE63B2A0066CF40 /* SXColorGradientView.m */,
+				1D85C96C1C253EB800E80C89 /* SXColorLabel.h */,
+				1D85C96D1C253EB800E80C89 /* SXColorLabel.m */,
 				1DEA002E1BEB558A00D40E49 /* SXMarquee.h */,
 				1DEA002F1BEB558A00D40E49 /* SXMarquee.m */,
 			);
@@ -195,6 +200,7 @@
 			files = (
 				1DB8ECCB1BE39ABE0066CF40 /* SXCLE.m in Sources */,
 				1DCCF4861BDE214900DB5EB7 /* ViewController.m in Sources */,
+				1D85C96E1C253EB800E80C89 /* SXColorLabel.m in Sources */,
 				1DB8ECD11BE647070066CF40 /* UIColor+Separate.m in Sources */,
 				1DCCF49B1BDF121000DB5EB7 /* UIColor+Wonderful.m in Sources */,
 				1DB8ECCE1BE63B2A0066CF40 /* SXColorGradientView.m in Sources */,
