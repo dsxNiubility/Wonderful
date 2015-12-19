@@ -115,8 +115,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    SXColorListPage *page = (SXColorListPage *)segue.destinationViewController;
-    page.marray = self.marray;
+    if ([segue.destinationViewController isKindOfClass:[SXColorListPage class]]) {
+        SXColorListPage *page = (SXColorListPage *)segue.destinationViewController;
+        page.marray = self.marray;
+    }
 }
 
 - (IBAction)randomColor {

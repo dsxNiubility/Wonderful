@@ -103,6 +103,13 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbf-hp-Isj">
+                                <rect key="frame" x="242" y="164" width="121" height="30"/>
+                                <state key="normal" title="colorLabel的入口"/>
+                                <connections>
+                                    <segue destination="P30-9D-DUT" kind="show" id="FBX-fa-g5e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -119,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="395.5" y="694.5"/>
+            <point key="canvasLocation" x="336.5" y="1094.5"/>
         </scene>
         <!--Color List Page-->
         <scene sceneID="0Zn-lg-lw0">
@@ -196,6 +203,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAG-Cp-iLi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="878.5" y="557.5"/>
+        </scene>
+        <!--Color Lbl DemoVC-->
+        <scene sceneID="gqO-zn-3JE">
+            <objects>
+                <viewController id="P30-9D-DUT" customClass="SXColorLblDemoVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HKP-je-c2k"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Zt-gU-Q25"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uAH-my-gdK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LTw-PU-7w6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="957" y="1331"/>
         </scene>
     </scenes>
 </document>

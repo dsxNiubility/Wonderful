@@ -1,5 +1,5 @@
 //
-//  SXColorLabel.h
+//  SXColorLblDemoVC.h
 //  Wonderful
 //
 //  Created by dongshangxian on 15/12/19.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SXColorLabel : UILabel
-
-@property(nonatomic,strong)UIColor *color;
-@property(nonatomic,strong)UIFont *anotherFont;
+@interface SXColorLblDemoVC : UIViewController
 
 @end
