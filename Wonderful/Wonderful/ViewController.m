@@ -15,10 +15,7 @@
 #import "SXColorListPage.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *showLbl1;
-@property (weak, nonatomic) IBOutlet UILabel *showLbl2;
-@property (weak, nonatomic) IBOutlet UILabel *showLbl3;
-@property (weak, nonatomic) IBOutlet UILabel *msgLabel1;
+
 @property (weak, nonatomic) IBOutlet UILabel *msgLabel2;
 
 @property (weak, nonatomic) IBOutlet UIView *gradientContent;
@@ -36,18 +33,19 @@
 
 @implementation ViewController
 
+- (instancetype)init
+{
+    if (self = [super init]) {
+        [self getDataSource];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self getDataSource];
     
-    self.showLbl1.layer.cornerRadius = 4;
-    self.showLbl1.layer.masksToBounds = YES;
     
-    self.showLbl2.layer.cornerRadius = 4;
-    self.showLbl2.layer.masksToBounds = YES;
-    
-    self.showLbl3.layer.cornerRadius = 4;
-    self.showLbl3.layer.masksToBounds = YES;
+
     
     UIColor *testC = [UIColor salmonColor];
     float r= [testC red];
@@ -58,10 +56,10 @@
     
     [[UIColor salmonColor]printDetail];
     
-    [self randomColor];
+
     [self randomGradient];
     
-    self.msgLabel1.text = @"a.提供了近百种扩充颜色可以以用户习惯的方式敲出\nb.上面的颜色也可以用阶梯的宏敲出\nc.提供了颜色微调的API\nd.可以取出颜色的内部属性也可以打印详细";
+
     self.msgLabel2.text = @"a.可创建各种颜色的跑马灯\nb.默认按下停止可以拖动，也可绑定其他点击事件";
     
 //    self.view.backgroundColor = [[UIColor redColor]up:3 num:255];
@@ -121,20 +119,7 @@
     }
 }
 
-- (IBAction)randomColor {
-    SXCLE *item1 = [self randomAColorEntity];
-    self.showLbl1.backgroundColor = SXRGB16Color(item1.colorValue);
-    self.showLbl1.text = [NSString stringWithFormat:@"[UIColor %@]",item1.methodName];
-    
-    SXCLE *item2 = [self randomAColorEntity];
-    self.showLbl2.backgroundColor = SXRGB16Color(item2.colorValue);
-    self.showLbl2.text = [NSString stringWithFormat:@"[UIColor %@]",item2.methodName];
-    
-    SXCLE *item3 = [self randomAColorEntity];
-    self.showLbl3.backgroundColor = SXRGB16Color(item3.colorValue);
-    self.showLbl3.text = [NSString stringWithFormat:@"[UIColor %@]",item3.methodName];
-    
-}
+
 
 - (IBAction)randomGradient {
     [self.grv1 removeFromSuperview];
