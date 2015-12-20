@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1D85C96E1C253EB800E80C89 /* SXColorLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D85C96D1C253EB800E80C89 /* SXColorLabel.m */; };
 		1D85C9711C25419900E80C89 /* SXColorLblDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D85C9701C25419900E80C89 /* SXColorLblDemoVC.m */; };
+		1D85C9741C26F5CD00E80C89 /* SXColorWonderfulDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D85C9731C26F5CD00E80C89 /* SXColorWonderfulDemoVC.m */; };
+		1D85C97A1C26F62700E80C89 /* SXColorGradientDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D85C9791C26F62700E80C89 /* SXColorGradientDemoVC.m */; };
+		1D85C97D1C26F63D00E80C89 /* SXColorSeparateDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D85C97C1C26F63D00E80C89 /* SXColorSeparateDemoVC.m */; };
+		1D85C9801C26F65B00E80C89 /* SXMarqueeDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D85C97F1C26F65B00E80C89 /* SXMarqueeDemoVC.m */; };
 		1DB8ECC51BE3741E0066CF40 /* SXColorListPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC41BE3741E0066CF40 /* SXColorListPage.m */; };
 		1DB8ECC81BE38B500066CF40 /* SXColorListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC71BE38B500066CF40 /* SXColorListCell.m */; };
 		1DB8ECCB1BE39ABE0066CF40 /* SXCLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECCA1BE39ABE0066CF40 /* SXCLE.m */; };
@@ -29,6 +33,14 @@
 		1D85C96D1C253EB800E80C89 /* SXColorLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXColorLabel.m; sourceTree = "<group>"; };
 		1D85C96F1C25419900E80C89 /* SXColorLblDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXColorLblDemoVC.h; sourceTree = "<group>"; };
 		1D85C9701C25419900E80C89 /* SXColorLblDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXColorLblDemoVC.m; sourceTree = "<group>"; };
+		1D85C9721C26F5CD00E80C89 /* SXColorWonderfulDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXColorWonderfulDemoVC.h; sourceTree = "<group>"; };
+		1D85C9731C26F5CD00E80C89 /* SXColorWonderfulDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXColorWonderfulDemoVC.m; sourceTree = "<group>"; };
+		1D85C9781C26F62700E80C89 /* SXColorGradientDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXColorGradientDemoVC.h; sourceTree = "<group>"; };
+		1D85C9791C26F62700E80C89 /* SXColorGradientDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXColorGradientDemoVC.m; sourceTree = "<group>"; };
+		1D85C97B1C26F63D00E80C89 /* SXColorSeparateDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXColorSeparateDemoVC.h; sourceTree = "<group>"; };
+		1D85C97C1C26F63D00E80C89 /* SXColorSeparateDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXColorSeparateDemoVC.m; sourceTree = "<group>"; };
+		1D85C97E1C26F65B00E80C89 /* SXMarqueeDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXMarqueeDemoVC.h; sourceTree = "<group>"; };
+		1D85C97F1C26F65B00E80C89 /* SXMarqueeDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXMarqueeDemoVC.m; sourceTree = "<group>"; };
 		1DB8ECC31BE3741E0066CF40 /* SXColorListPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXColorListPage.h; sourceTree = "<group>"; };
 		1DB8ECC41BE3741E0066CF40 /* SXColorListPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXColorListPage.m; sourceTree = "<group>"; };
 		1DB8ECC61BE38B500066CF40 /* SXColorListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXColorListCell.h; sourceTree = "<group>"; };
@@ -96,6 +108,14 @@
 				1DB8ECC71BE38B500066CF40 /* SXColorListCell.m */,
 				1D85C96F1C25419900E80C89 /* SXColorLblDemoVC.h */,
 				1D85C9701C25419900E80C89 /* SXColorLblDemoVC.m */,
+				1D85C9721C26F5CD00E80C89 /* SXColorWonderfulDemoVC.h */,
+				1D85C9731C26F5CD00E80C89 /* SXColorWonderfulDemoVC.m */,
+				1D85C9781C26F62700E80C89 /* SXColorGradientDemoVC.h */,
+				1D85C9791C26F62700E80C89 /* SXColorGradientDemoVC.m */,
+				1D85C97B1C26F63D00E80C89 /* SXColorSeparateDemoVC.h */,
+				1D85C97C1C26F63D00E80C89 /* SXColorSeparateDemoVC.m */,
+				1D85C97E1C26F65B00E80C89 /* SXMarqueeDemoVC.h */,
+				1D85C97F1C26F65B00E80C89 /* SXMarqueeDemoVC.m */,
 				1DB8ECC91BE39ABD0066CF40 /* SXCLE.h */,
 				1DB8ECCA1BE39ABE0066CF40 /* SXCLE.m */,
 				1DCCF4871BDE214900DB5EB7 /* Main.storyboard */,
@@ -208,13 +228,17 @@
 				1D85C96E1C253EB800E80C89 /* SXColorLabel.m in Sources */,
 				1DB8ECD11BE647070066CF40 /* UIColor+Separate.m in Sources */,
 				1DCCF49B1BDF121000DB5EB7 /* UIColor+Wonderful.m in Sources */,
+				1D85C9801C26F65B00E80C89 /* SXMarqueeDemoVC.m in Sources */,
 				1DB8ECCE1BE63B2A0066CF40 /* SXColorGradientView.m in Sources */,
+				1D85C97A1C26F62700E80C89 /* SXColorGradientDemoVC.m in Sources */,
 				1DEA00301BEB558A00D40E49 /* SXMarquee.m in Sources */,
 				1D85C9711C25419900E80C89 /* SXColorLblDemoVC.m in Sources */,
 				1DB8ECC81BE38B500066CF40 /* SXColorListCell.m in Sources */,
 				1DCCF4831BDE214900DB5EB7 /* AppDelegate.m in Sources */,
 				1DCCF4801BDE214900DB5EB7 /* main.m in Sources */,
+				1D85C9741C26F5CD00E80C89 /* SXColorWonderfulDemoVC.m in Sources */,
 				1DB8ECC51BE3741E0066CF40 /* SXColorListPage.m in Sources */,
+				1D85C97D1C26F63D00E80C89 /* SXColorSeparateDemoVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
