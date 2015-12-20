@@ -28,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"SXColorGradientView";
     
     self.dataSource = [ViewController new];
     [self randomGradient];

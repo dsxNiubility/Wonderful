@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"UIColor+Wonderful";
     
     self.showLbl1.layer.cornerRadius = 4;
     self.showLbl1.layer.masksToBounds = YES;

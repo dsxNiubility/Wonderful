@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"UIColor+Separate";
     // Do any additional setup after loading the view.
 }
 
