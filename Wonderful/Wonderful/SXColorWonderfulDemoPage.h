@@ -1,5 +1,5 @@
 //
-//  SXColorSeparateDemoVC.h
+//  SXColorWonderfulDemoVC.h
 //  Wonderful
 //
 //  Created by dongshangxian on 15/12/20.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SXColorSeparateDemoVC : UIViewController
+@interface SXColorWonderfulDemoPage : UIViewController
 
 @end

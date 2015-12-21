@@ -1,13 +1,14 @@
 //
-//  SXMarqueeDemoVC.h
+//  ViewController.h
 //  Wonderful
 //
-//  Created by dongshangxian on 15/12/20.
+//  Created by dongshangxian on 15/10/26.
 //  Copyright © 2015年 Sankuai. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface SXMarqueeDemoVC : UIViewController
+@interface SXMainDemoPage : UIViewController
 
 @end
+

@@ -1,5 +1,5 @@
 //
-//  SXColorGradientDemoVC.h
+//  SXColorSeparateDemoVC.h
 //  Wonderful
 //
 //  Created by dongshangxian on 15/12/20.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SXColorGradientDemoVC : UIViewController
+@interface SXColorSeparateDemoPage : UIViewController
 
 @end

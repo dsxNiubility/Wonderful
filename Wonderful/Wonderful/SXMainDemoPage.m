@@ -6,18 +6,18 @@
 //  Copyright © 2015年 Sankuai. All rights reserved.
 //
 
-#import "SXMainDemoVC.h"
+#import "SXMainDemoPage.h"
 #import "UIColor+Wonderful.h"
 #import "SXColorGradientView.h"
 #import "UIColor+Separate.h"
 #import "SXMarquee.h"
-#import "SXCLE.h"
+#import "SXCLEntity.h"
 
-@interface SXMainDemoVC ()
+@interface SXMainDemoPage ()
 
 @end
 
-@implementation SXMainDemoVC
+@implementation SXMainDemoPage
 
 
 - (void)viewDidLoad {

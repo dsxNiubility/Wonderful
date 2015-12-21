@@ -7,7 +7,7 @@
         <!--Wonderful-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SXMainDemoVC" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SXMainDemoPage" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="951.5" y="1007.5"/>
         </scene>
-        <!--Color Separate DemoVC-->
+        <!--Color Separate Demo Page-->
         <scene sceneID="fxV-h3-QFL">
             <objects>
-                <viewController id="8Jm-pr-OuU" customClass="SXColorSeparateDemoVC" sceneMemberID="viewController">
+                <viewController id="8Jm-pr-OuU" customClass="SXColorSeparateDemoPage" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q0e-Hs-BW9"/>
                         <viewControllerLayoutGuide type="bottom" id="rPO-Xa-hw8"/>
@@ -167,10 +167,10 @@
             </objects>
             <point key="canvasLocation" x="1995.5" y="549.5"/>
         </scene>
-        <!--Color Lbl DemoVC-->
+        <!--Color Lbl Demo Page-->
         <scene sceneID="gqO-zn-3JE">
             <objects>
-                <viewController id="P30-9D-DUT" customClass="SXColorLblDemoVC" sceneMemberID="viewController">
+                <viewController id="P30-9D-DUT" customClass="SXColorLblDemoPage" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HKP-je-c2k"/>
                         <viewControllerLayoutGuide type="bottom" id="3Zt-gU-Q25"/>
@@ -195,6 +195,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MZM-YH-2q7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -205,10 +209,10 @@
             </objects>
             <point key="canvasLocation" x="409" y="1038"/>
         </scene>
-        <!--Color Lbl DemoVC-->
+        <!--Color Lbl Demo Page-->
         <scene sceneID="v59-Au-Ceq">
             <objects>
-                <viewController id="akN-An-iqi" customClass="SXColorLblDemoVC" sceneMemberID="viewController">
+                <viewController id="akN-An-iqi" customClass="SXColorLblDemoPage" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="B3d-Is-W8Y"/>
                         <viewControllerLayoutGuide type="bottom" id="MK9-WG-P86"/>
@@ -224,10 +228,10 @@
             </objects>
             <point key="canvasLocation" x="1253.5" y="145.5"/>
         </scene>
-        <!--Color Gradient DemoVC-->
+        <!--Color Gradient Demo Page-->
         <scene sceneID="au4-Fd-JVZ">
             <objects>
-                <viewController id="TxE-Gq-mqW" customClass="SXColorGradientDemoVC" sceneMemberID="viewController">
+                <viewController id="TxE-Gq-mqW" customClass="SXColorGradientDemoPage" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zvH-CV-Uq5"/>
                         <viewControllerLayoutGuide type="bottom" id="MCh-LS-Sc0"/>
@@ -267,10 +271,10 @@
             </objects>
             <point key="canvasLocation" x="1519.5" y="1093.5"/>
         </scene>
-        <!--Color Wonderful DemoVC-->
+        <!--Color Wonderful Demo Page-->
         <scene sceneID="G8n-xG-Oau">
             <objects>
-                <viewController id="kmM-79-83o" customClass="SXColorWonderfulDemoVC" sceneMemberID="viewController">
+                <viewController id="kmM-79-83o" customClass="SXColorWonderfulDemoPage" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xLS-VQ-6fp"/>
                         <viewControllerLayoutGuide type="bottom" id="9Kq-4u-rkF"/>
@@ -344,10 +348,10 @@
             </objects>
             <point key="canvasLocation" x="1299.5" y="495.5"/>
         </scene>
-        <!--Marquee DemoVC-->
+        <!--Marquee Demo Page-->
         <scene sceneID="fey-VP-QOs">
             <objects>
-                <viewController id="fF0-aM-xsc" customClass="SXMarqueeDemoVC" sceneMemberID="viewController">
+                <viewController id="fF0-aM-xsc" customClass="SXMarqueeDemoPage" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WBr-Ax-yTf"/>
                         <viewControllerLayoutGuide type="bottom" id="P0b-AP-cfF"/>

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SXColorLblDemoVC : UIViewController
+@interface SXColorLblDemoPage : UIViewController
 
 @end

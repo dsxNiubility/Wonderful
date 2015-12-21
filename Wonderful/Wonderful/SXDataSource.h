@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SXCLE.h"
+#import "SXCLEntity.h"
 
 @interface SXDataSource : NSObject
 
 @property(nonatomic,strong)NSArray *titleArray;
 @property(nonatomic,strong)NSMutableArray *marray;
 
-- (SXCLE *)randomAColorEntity;
+- (SXCLEntity *)randomAColorEntity;
 - (void)getDataSource;
 
 @end

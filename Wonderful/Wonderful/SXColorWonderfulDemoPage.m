@@ -6,12 +6,12 @@
 //  Copyright © 2015年 Sankuai. All rights reserved.
 //
 
-#import "SXColorWonderfulDemoVC.h"
+#import "SXColorWonderfulDemoPage.h"
 #import "SXDataSource.h"
 #import "UIColor+Wonderful.h"
 #import "SXColorListPage.h"
 
-@interface SXColorWonderfulDemoVC ()
+@interface SXColorWonderfulDemoPage ()
 @property (weak, nonatomic) IBOutlet UILabel *showLbl1;
 @property (weak, nonatomic) IBOutlet UILabel *showLbl2;
 @property (weak, nonatomic) IBOutlet UILabel *showLbl3;
@@ -20,7 +20,7 @@
 @property(nonatomic,strong)SXDataSource *dataSource;
 @end
 
-@implementation SXColorWonderfulDemoVC
+@implementation SXColorWonderfulDemoPage
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,15 +42,15 @@
 }
 
 - (IBAction)randomColor {
-    SXCLE *item1 = [self.dataSource randomAColorEntity];
+    SXCLEntity *item1 = [self.dataSource randomAColorEntity];
     self.showLbl1.backgroundColor = SXRGB16Color(item1.colorValue);
     self.showLbl1.text = [NSString stringWithFormat:@"[UIColor %@]",item1.methodName];
     
-    SXCLE *item2 = [self.dataSource randomAColorEntity];
+    SXCLEntity *item2 = [self.dataSource randomAColorEntity];
     self.showLbl2.backgroundColor = SXRGB16Color(item2.colorValue);
     self.showLbl2.text = [NSString stringWithFormat:@"[UIColor %@]",item2.methodName];
     
-    SXCLE *item3 = [self.dataSource randomAColorEntity];
+    SXCLEntity *item3 = [self.dataSource randomAColorEntity];
     self.showLbl3.backgroundColor = SXRGB16Color(item3.colorValue);
     self.showLbl3.text = [NSString stringWithFormat:@"[UIColor %@]",item3.methodName];
     

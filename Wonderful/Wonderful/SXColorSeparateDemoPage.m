@@ -1,29 +1,22 @@
 //
-//  SXColorLblDemoVC.m
+//  SXColorSeparateDemoVC.m
 //  Wonderful
 //
-//  Created by dongshangxian on 15/12/19.
+//  Created by dongshangxian on 15/12/20.
 //  Copyright © 2015年 Sankuai. All rights reserved.
 //
 
-#import "SXColorLblDemoVC.h"
-#import "SXColorLabel.h"
+#import "SXColorSeparateDemoPage.h"
 
-@interface SXColorLblDemoVC ()
+@interface SXColorSeparateDemoPage ()
 
 @end
 
-@implementation SXColorLblDemoVC
+@implementation SXColorSeparateDemoPage
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = @"SXColorLabel";
-    
-    SXColorLabel *label = [[SXColorLabel alloc]initWithFrame:CGRectMake(30, 300, 300, 30)];
-    label.text  = @"我<也>不知道<是>什么";
-    
-    [self.view addSubview:label];
+    self.title = @"UIColor+Separate";
     // Do any additional setup after loading the view.
 }
 

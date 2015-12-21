@@ -1,5 +1,5 @@
 //
-//  SXColorWonderfulDemoVC.h
+//  SXMarqueeDemoVC.h
 //  Wonderful
 //
 //  Created by dongshangxian on 15/12/20.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SXColorWonderfulDemoVC : UIViewController
+@interface SXMarqueeDemoPage : UIViewController
 
 @end

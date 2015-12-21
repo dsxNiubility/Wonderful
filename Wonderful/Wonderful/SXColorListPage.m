@@ -11,7 +11,7 @@
 #import "UIColor+Wonderful.h"
 #import "UIColor+Separate.h"
 #import <objc/runtime.h>
-#import "SXCLE.h"
+#import "SXCLEntity.h"
 
 @interface SXColorListPage ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -79,7 +79,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SXCLE *cle = self.marray[indexPath.section][indexPath.row];
+    SXCLEntity *cle = self.marray[indexPath.section][indexPath.row];
     SXColorListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"colorCell"];
     cell.NameLabel.text = cle.desc;
     cell.NumLabel.text = cle.methodName;
@@ -99,7 +99,7 @@
     NSMutableArray *temArray = [NSMutableArray array];
     [temArray addObjectsFromArray:self.marray[sourceIndexPath.section]];
     
-    SXCLE *cle = temArray[sourceIndexPath.row];
+    SXCLEntity *cle = temArray[sourceIndexPath.row];
     [temArray removeObjectAtIndex:sourceIndexPath.row];
     [temArray insertObject:cle atIndex:destinationIndexPath.row];
     

@@ -6,13 +6,13 @@
 //  Copyright © 2015年 Sankuai. All rights reserved.
 //
 
-#import "SXCLE.h"
+#import "SXCLEntity.h"
 
-@implementation SXCLE
+@implementation SXCLEntity
 
 + (instancetype)CWV:(int)value D:(NSString *)desc N:(NSString *)name
 {
-    SXCLE *entity = [[self alloc]init];
+    SXCLEntity *entity = [[self alloc]init];
     entity.colorValue = value;
     entity.desc = desc;
     entity.methodName = name;

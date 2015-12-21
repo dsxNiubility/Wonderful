@@ -6,15 +6,15 @@
 //  Copyright © 2015年 Sankuai. All rights reserved.
 //
 
-#import "SXMarqueeDemoVC.h"
+#import "SXMarqueeDemoPage.h"
 #import "UIColor+Wonderful.h"
 #import "SXMarquee.h"
 
-@interface SXMarqueeDemoVC ()
+@interface SXMarqueeDemoPage ()
 @property (weak, nonatomic) IBOutlet UILabel *msgLabel2;
 @end
 
-@implementation SXMarqueeDemoVC
+@implementation SXMarqueeDemoPage
 
 - (void)viewDidLoad {
     [super viewDidLoad];
