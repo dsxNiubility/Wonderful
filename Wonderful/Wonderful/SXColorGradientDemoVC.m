@@ -9,8 +9,7 @@
 #import "SXColorGradientDemoVC.h"
 #import "UIColor+Wonderful.h"
 #import "SXColorGradientView.h"
-#import "SXMainDemoVC.h"
-#import "SXCLE.h"
+#import "SXDataSource.h"
 
 @interface SXColorGradientDemoVC ()
 @property (weak, nonatomic) IBOutlet UIView *gradientContent;
@@ -21,7 +20,7 @@
 
 @property(nonatomic,weak)SXColorGradientView *grv5;
 
-@property(nonatomic,strong)SXMainDemoVC *dataSource;
+@property(nonatomic,strong)SXDataSource *dataSource;
 @end
 
 @implementation SXColorGradientDemoVC
@@ -30,7 +29,7 @@
     [super viewDidLoad];
     self.title = @"SXColorGradientView";
     
-    self.dataSource = [ViewController new];
+    self.dataSource = [SXDataSource new];
     [self randomGradient];
     // Do any additional setup after loading the view.
 }

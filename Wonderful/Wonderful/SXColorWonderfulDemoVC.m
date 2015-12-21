@@ -7,8 +7,7 @@
 //
 
 #import "SXColorWonderfulDemoVC.h"
-#import "SXCLE.h"
-#import "SXMainDemoVC.h"
+#import "SXDataSource.h"
 #import "UIColor+Wonderful.h"
 
 @interface SXColorWonderfulDemoVC ()
@@ -17,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *showLbl3;
 @property (weak, nonatomic) IBOutlet UILabel *msgLabel1;
 
-@property(nonatomic,strong)SXMainDemoVC *dataSource;
+@property(nonatomic,strong)SXDataSource *dataSource;
 @end
 
 @implementation SXColorWonderfulDemoVC
@@ -36,7 +35,7 @@
     self.showLbl3.layer.masksToBounds = YES;
     self.msgLabel1.text = @"a.提供了近百种扩充颜色可以以用户习惯的方式敲出\nb.上面的颜色也可以用阶梯的宏敲出\nc.提供了颜色微调的API\nd.可以取出颜色的内部属性也可以打印详细";
     
-    self.dataSource = [ViewController new];
+    self.dataSource = [SXDataSource new];
     
     [self randomColor];
 }
