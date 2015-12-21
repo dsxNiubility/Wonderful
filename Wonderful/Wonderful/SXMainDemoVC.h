@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class SXCLE;
 
-@interface ViewController : UIViewController
+@interface SXMainDemoVC : UIViewController
 
 - (SXCLE *)randomAColorEntity;
 - (void)getDataSource;

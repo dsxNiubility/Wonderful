@@ -9,7 +9,7 @@
 #import "SXColorGradientDemoVC.h"
 #import "UIColor+Wonderful.h"
 #import "SXColorGradientView.h"
-#import "ViewController.h"
+#import "SXMainDemoVC.h"
 #import "SXCLE.h"
 
 @interface SXColorGradientDemoVC ()
@@ -21,7 +21,7 @@
 
 @property(nonatomic,weak)SXColorGradientView *grv5;
 
-@property(nonatomic,strong)ViewController *dataSource;
+@property(nonatomic,strong)SXMainDemoVC *dataSource;
 @end
 
 @implementation SXColorGradientDemoVC

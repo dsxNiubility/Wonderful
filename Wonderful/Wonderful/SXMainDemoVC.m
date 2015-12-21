@@ -6,7 +6,7 @@
 //  Copyright © 2015年 Sankuai. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SXMainDemoVC.h"
 #import "UIColor+Wonderful.h"
 #import "SXColorGradientView.h"
 #import "UIColor+Separate.h"
@@ -14,7 +14,7 @@
 #import "SXCLE.h"
 #import "SXColorListPage.h"
 
-@interface ViewController ()
+@interface SXMainDemoVC ()
 
 
 
@@ -25,7 +25,7 @@
 
 @end
 
-@implementation ViewController
+@implementation SXMainDemoVC
 
 - (instancetype)init
 {

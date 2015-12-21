@@ -20,7 +20,7 @@
 		1DB8ECD11BE647070066CF40 /* UIColor+Separate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECD01BE647070066CF40 /* UIColor+Separate.m */; };
 		1DCCF4801BDE214900DB5EB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF47F1BDE214900DB5EB7 /* main.m */; };
 		1DCCF4831BDE214900DB5EB7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF4821BDE214900DB5EB7 /* AppDelegate.m */; };
-		1DCCF4861BDE214900DB5EB7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF4851BDE214900DB5EB7 /* ViewController.m */; };
+		1DCCF4861BDE214900DB5EB7 /* SXMainDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCF4851BDE214900DB5EB7 /* SXMainDemoVC.m */; };
 		1DCCF4891BDE214900DB5EB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DCCF4871BDE214900DB5EB7 /* Main.storyboard */; };
 		1DCCF48B1BDE214900DB5EB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DCCF48A1BDE214900DB5EB7 /* Assets.xcassets */; };
 		1DCCF48E1BDE214900DB5EB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DCCF48C1BDE214900DB5EB7 /* LaunchScreen.storyboard */; };
@@ -55,8 +55,8 @@
 		1DCCF47F1BDE214900DB5EB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1DCCF4811BDE214900DB5EB7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1DCCF4821BDE214900DB5EB7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1DCCF4841BDE214900DB5EB7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1DCCF4851BDE214900DB5EB7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1DCCF4841BDE214900DB5EB7 /* SXMainDemoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMainDemoVC.h; sourceTree = "<group>"; };
+		1DCCF4851BDE214900DB5EB7 /* SXMainDemoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMainDemoVC.m; sourceTree = "<group>"; };
 		1DCCF4881BDE214900DB5EB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1DCCF48A1BDE214900DB5EB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DCCF48D1BDE214900DB5EB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -100,8 +100,8 @@
 				1DCCF4981BDF121000DB5EB7 /* Category */,
 				1DCCF4811BDE214900DB5EB7 /* AppDelegate.h */,
 				1DCCF4821BDE214900DB5EB7 /* AppDelegate.m */,
-				1DCCF4841BDE214900DB5EB7 /* ViewController.h */,
-				1DCCF4851BDE214900DB5EB7 /* ViewController.m */,
+				1DCCF4841BDE214900DB5EB7 /* SXMainDemoVC.h */,
+				1DCCF4851BDE214900DB5EB7 /* SXMainDemoVC.m */,
 				1DB8ECC31BE3741E0066CF40 /* SXColorListPage.h */,
 				1DB8ECC41BE3741E0066CF40 /* SXColorListPage.m */,
 				1DB8ECC61BE38B500066CF40 /* SXColorListCell.h */,
@@ -224,7 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DB8ECCB1BE39ABE0066CF40 /* SXCLE.m in Sources */,
-				1DCCF4861BDE214900DB5EB7 /* ViewController.m in Sources */,
+				1DCCF4861BDE214900DB5EB7 /* SXMainDemoVC.m in Sources */,
 				1D85C96E1C253EB800E80C89 /* SXColorLabel.m in Sources */,
 				1DB8ECD11BE647070066CF40 /* UIColor+Separate.m in Sources */,
 				1DCCF49B1BDF121000DB5EB7 /* UIColor+Wonderful.m in Sources */,

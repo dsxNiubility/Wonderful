@@ -8,7 +8,7 @@
 
 #import "SXColorWonderfulDemoVC.h"
 #import "SXCLE.h"
-#import "ViewController.h"
+#import "SXMainDemoVC.h"
 #import "UIColor+Wonderful.h"
 
 @interface SXColorWonderfulDemoVC ()
@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *showLbl3;
 @property (weak, nonatomic) IBOutlet UILabel *msgLabel1;
 
-@property(nonatomic,strong)ViewController *dataSource;
+@property(nonatomic,strong)SXMainDemoVC *dataSource;
 @end
 
 @implementation SXColorWonderfulDemoVC
