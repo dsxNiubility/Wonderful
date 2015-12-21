@@ -31,6 +31,14 @@
 
 - (void)printDetailWithBtn:(UIButton *)sender
 {
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        sender.transform = CGAffineTransformMakeScale(0.6, 0.6);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.2 animations:^{
+            sender.transform = CGAffineTransformIdentity;
+        }];
+    }];
     UIColor *color = sender.backgroundColor;
     self.printLabel.text = [color printDetail];
 }
@@ -39,7 +47,16 @@
 {
     UIButton *btn = sender.superview.subviews[0];
     UIColor *bgColor = btn.backgroundColor;
-    btn.backgroundColor = [bgColor reverseColor];
+
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        btn.transform = CGAffineTransformMakeScale(0.6, 0.6);
+    } completion:^(BOOL finished) {
+        btn.backgroundColor = [bgColor reverseColor];
+        [UIView animateWithDuration:0.2 animations:^{
+            btn.transform = CGAffineTransformIdentity;
+        }];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,11 +82,12 @@
         view.frame = CGRectMake(x, y, w, h);
         
         UIButton *btn = [[UIButton alloc]init];
-        btn.frame = CGRectMake(5, 10, 60, 60);
+        btn.frame = CGRectMake(10, 10, 60, 60);
         
-        NSInteger r = arc4random()%256;
-        NSInteger g = arc4random()%256;
-        NSInteger b = arc4random()%256;
+        // ------这里这么写是为了吧rgb 0~30 和 235~256 隔离了，避免出现很极端很难看的颜色。
+        NSInteger r = arc4random()%205 + 30;
+        NSInteger g = arc4random()%205 + 30;
+        NSInteger b = arc4random()%205 + 30;
         btn.backgroundColor = SXRGBAColor(r, g, b, 1);
         [btn addTarget:self action:@selector(printDetailWithBtn:) forControlEvents:UIControlEventTouchUpInside];
         

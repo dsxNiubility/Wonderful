@@ -110,10 +110,20 @@
                                     <constraint firstAttribute="bottom" secondItem="wiT-VX-A0G" secondAttribute="bottom" constant="20" id="mLD-iF-4ep"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下面随机生成了10种颜色供测试" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="My5-TH-VYm">
+                                <rect key="frame" x="10" y="89" width="360" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="My5-TH-VYm" firstAttribute="top" secondItem="Q0e-Hs-BW9" secondAttribute="bottom" constant="25" id="5SV-yH-err"/>
+                            <constraint firstItem="My5-TH-VYm" firstAttribute="leading" secondItem="8d2-ip-1Bj" secondAttribute="leading" constant="10" id="Aga-dv-86i"/>
                             <constraint firstItem="ahl-VI-HG8" firstAttribute="leading" secondItem="8d2-ip-1Bj" secondAttribute="leading" id="Dku-0b-jcy"/>
+                            <constraint firstAttribute="trailing" secondItem="My5-TH-VYm" secondAttribute="trailing" constant="5" id="JGd-ab-Zak"/>
+                            <constraint firstItem="iVA-aN-atO" firstAttribute="top" secondItem="My5-TH-VYm" secondAttribute="bottom" constant="10" id="OES-C5-mjJ"/>
                             <constraint firstItem="iVA-aN-atO" firstAttribute="top" secondItem="Q0e-Hs-BW9" secondAttribute="bottom" constant="56" id="QrJ-Aj-IY7"/>
                             <constraint firstItem="iVA-aN-atO" firstAttribute="leading" secondItem="8d2-ip-1Bj" secondAttribute="leading" id="agY-ys-cLe"/>
                             <constraint firstAttribute="trailing" secondItem="ahl-VI-HG8" secondAttribute="trailing" id="bBw-GP-8Sx"/>
