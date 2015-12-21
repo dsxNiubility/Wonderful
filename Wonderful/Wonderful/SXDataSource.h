@@ -11,6 +11,9 @@
 
 @interface SXDataSource : NSObject
 
+@property(nonatomic,strong)NSArray *titleArray;
+@property(nonatomic,strong)NSMutableArray *marray;
+
 - (SXCLE *)randomAColorEntity;
 - (void)getDataSource;
 

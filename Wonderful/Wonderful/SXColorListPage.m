@@ -31,22 +31,22 @@
     self.tableView.delegate = self;
     self.tableView.rowHeight = 40;
 
-    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(20, 20, 50, 50)];
-    btn.backgroundColor = [UIColor blackColor];
-    btn.layer.cornerRadius = 25;
-    btn.layer.masksToBounds = YES;
-    [btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
-    [btn setTitle:@"dismiss" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    btn.titleLabel.font = [UIFont boldSystemFontOfSize:11];
-    [self.view addSubview:btn];
+//    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(20, 120, 50, 50)];
+//    btn.backgroundColor = [UIColor blackColor];
+//    btn.layer.cornerRadius = 25;
+//    btn.layer.masksToBounds = YES;
+//    [btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+//    [btn setTitle:@"dismiss" forState:UIControlStateNormal];
+//    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    btn.titleLabel.font = [UIFont boldSystemFontOfSize:11];
+//    [self.view addSubview:btn];
 
 }
 
-- (void)btnClick
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+//- (void)btnClick
+//{
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//}
 
 
 //- (void)runTests

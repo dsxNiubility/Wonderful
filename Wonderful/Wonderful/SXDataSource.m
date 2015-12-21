@@ -10,9 +10,6 @@
 
 @interface SXDataSource ()
 
-@property(nonatomic,strong)NSArray *titleArray;
-@property(nonatomic,strong)NSMutableArray *marray;
-
 @end
 @implementation SXDataSource
 

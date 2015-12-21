@@ -12,7 +12,6 @@
 #import "UIColor+Separate.h"
 #import "SXMarquee.h"
 #import "SXCLE.h"
-#import "SXColorListPage.h"
 
 @interface SXMainDemoVC ()
 
@@ -57,15 +56,5 @@
     
 //    [self.view addSubview:view2];
 }
-
-
-
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([segue.destinationViewController isKindOfClass:[SXColorListPage class]]) {
-//        SXColorListPage *page = (SXColorListPage *)segue.destinationViewController;
-//        page.marray = self.marray;
-//    }
-//}
 
 @end

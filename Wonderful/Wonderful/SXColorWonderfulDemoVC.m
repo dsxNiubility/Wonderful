@@ -9,6 +9,7 @@
 #import "SXColorWonderfulDemoVC.h"
 #import "SXDataSource.h"
 #import "UIColor+Wonderful.h"
+#import "SXColorListPage.h"
 
 @interface SXColorWonderfulDemoVC ()
 @property (weak, nonatomic) IBOutlet UILabel *showLbl1;
@@ -53,6 +54,15 @@
     self.showLbl3.backgroundColor = SXRGB16Color(item3.colorValue);
     self.showLbl3.text = [NSString stringWithFormat:@"[UIColor %@]",item3.methodName];
     
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.destinationViewController isKindOfClass:[SXColorListPage class]]) {
+        SXColorListPage *page = (SXColorListPage *)segue.destinationViewController;
+        page.marray = self.dataSource.marray;
+        page.titleArray = self.dataSource.titleArray;
+    }
 }
 
 @end
