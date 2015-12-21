@@ -7,6 +7,7 @@
 //
 
 #import "UIColor+Separate.h"
+#import "UIColor+Wonderful.h"
 
 @implementation UIColor (Separate)
 
@@ -76,7 +77,7 @@
     return rcolor;
 }
 
-- (void)printDetail
+- (NSString *)printDetail
 {
     float r= [self red];
     float g= [self green];
@@ -85,7 +86,62 @@
     float G= [self green] *255;
     float B= [self blue] *255;
     float alpha= [self alpha];
-    NSLog(@"\nThis Color's Red:%.0f, Green:%.0f, Blue:%.0f, Alpha:%.0f\ndecimal red:%.4f green:%.4f blue:%.4f \nHexadecimal 0x%x%x%x",R,G,B,alpha,r,g,b,(int)R,(int)G,(int)B);
+    
+    NSString *str = [NSString stringWithFormat:@"\nThis Color's Red:%.0f, Green:%.0f, Blue:%.0f, Alpha:%.0f\nDecimal red:%.4f green:%.4f blue:%.4f \nHexadecimal 0x%x%x%x",R,G,B,alpha,r,g,b,(int)R,(int)G,(int)B];
+    NSLog(@"%@",str);
+    return str;
 }
+
+- (UIColor *)up:(SXColorType)type num:(NSInteger)num
+{
+    float r = [self red] * 255.0;
+    float g = [self green] * 255.0;
+    float b = [self blue] * 255.0;
+    float a = [self alpha];
+    
+    switch (type) {
+        case 1:
+            return SXRGBAColor(r+num, g, b, a);
+            break;
+        case 2:
+            return SXRGBAColor(r, g+num, b, a);
+            break;
+        case 3:
+            return SXRGBAColor(r, g, b+num, a);
+            break;
+        case 4:
+            return SXRGBAColor(r, g, b, a+num/255.0);
+            break;
+        default:
+            return self;
+            break;
+    }
+}
+- (UIColor *)down:(SXColorType)type num:(NSInteger)num
+{
+    float r = [self red] * 255.0;
+    float g = [self green] * 255.0;
+    float b = [self blue] * 255.0;
+    float a = [self alpha];
+    
+    switch (type) {
+        case 1:
+            return SXRGBAColor(r-num, g, b, a);
+            break;
+        case 2:
+            return SXRGBAColor(r, g-num, b, a);
+            break;
+        case 3:
+            return SXRGBAColor(r, g, b-num, a);
+            break;
+        case 4:
+            return SXRGBAColor(r, g, b, a-num/255.0);
+            break;
+        default:
+            return self;
+            break;
+    }
+}
+
 
 @end

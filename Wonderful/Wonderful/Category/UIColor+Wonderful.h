@@ -120,9 +120,6 @@
 
 @interface UIColor (Wonderful)
 
-- (UIColor *)up:(SXColorType)type num:(NSInteger)num;
-- (UIColor *)down:(SXColorType)type num:(NSInteger)num;
-
 #pragma mark - **************** 红色系
 /** 薄雾玫瑰*/
 + (UIColor *)mistyRose;

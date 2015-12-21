@@ -8,62 +8,7 @@
 
 #import "UIColor+Wonderful.h"
 
-
-
 @implementation UIColor (Wonderful)
-
-
-- (UIColor *)up:(SXColorType)type num:(NSInteger)num
-{
-    float r = [self red] * 255.0;
-    float g = [self green] * 255.0;
-    float b = [self blue] * 255.0;
-    float a = [self alpha];
-    
-    switch (type) {
-        case 1:
-            return SXRGBAColor(r+num, g, b, a);
-            break;
-        case 2:
-            return SXRGBAColor(r, g+num, b, a);
-            break;
-        case 3:
-            return SXRGBAColor(r, g, b+num, a);
-            break;
-        case 4:
-            return SXRGBAColor(r, g, b, a+num/255.0);
-            break;
-        default:
-            return self;
-            break;
-    }
-}
-- (UIColor *)down:(SXColorType)type num:(NSInteger)num
-{
-    float r = [self red] * 255.0;
-    float g = [self green] * 255.0;
-    float b = [self blue] * 255.0;
-    float a = [self alpha];
-    
-    switch (type) {
-        case 1:
-            return SXRGBAColor(r-num, g, b, a);
-            break;
-        case 2:
-            return SXRGBAColor(r, g-num, b, a);
-            break;
-        case 3:
-            return SXRGBAColor(r, g, b-num, a);
-            break;
-        case 4:
-            return SXRGBAColor(r, g, b, a-num/255.0);
-            break;
-        default:
-            return self;
-            break;
-    }
-}
-
 
 #pragma mark - **************** 红色系
 /** 薄雾玫瑰*/

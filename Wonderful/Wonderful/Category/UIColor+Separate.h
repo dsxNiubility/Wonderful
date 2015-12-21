@@ -17,12 +17,16 @@ typedef NS_ENUM(NSInteger, SXColorType) {
 
 @interface UIColor (Separate)
 
-- (CGColorSpaceModel) colorSpaceModel ;
+- (CGColorSpaceModel) colorSpaceModel;
 - (CGFloat) red;
 - (CGFloat) green;
 - (CGFloat) blue;
 - (CGFloat) alpha;
 
 - (UIColor *)reverseColor;
-- (void)printDetail;
+- (NSString *)printDetail;
+
+- (UIColor *)up:(SXColorType)type num:(NSInteger)num;
+- (UIColor *)down:(SXColorType)type num:(NSInteger)num;
+
 @end
