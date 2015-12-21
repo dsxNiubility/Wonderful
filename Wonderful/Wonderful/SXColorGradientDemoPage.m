@@ -66,7 +66,7 @@
     
     
     SXCLEntity *item5 = [self.dataSource randomAColorEntity];
-    SXColorGradientView *grv5 = [SXColorGradientView createWithColor:SXRGB16Color(item5.colorValue) frame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 60, 375, 60) visible:YES direction:SXColorGradientToTop];
+    SXColorGradientView *grv5 = [SXColorGradientView createWithColor:SXRGB16Color(item5.colorValue) frame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 255, 375, 255) visible:YES direction:SXColorGradientToTop];
     [self.view addSubview:grv5];
     
     grv1.layer.cornerRadius = 2;
