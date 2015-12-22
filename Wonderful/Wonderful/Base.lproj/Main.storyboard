@@ -410,11 +410,16 @@
                                     <segue destination="ina-eM-cnh" kind="show" id="s75-m3-R0c"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ak2-cn-uFJ">
+                                <rect key="frame" x="25" y="483" width="323" height="165"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="bottomView" destination="ak2-cn-uFJ" id="ks3-uQ-RGD"/>
                         <outlet property="msgLabel1" destination="jeW-cd-LGl" id="kj1-DU-SYN"/>
                         <outlet property="showLbl1" destination="lp1-qI-VUn" id="QeN-5u-dik"/>
                         <outlet property="showLbl2" destination="lX7-hH-lTm" id="GEk-9l-bRJ"/>

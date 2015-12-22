@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *showLbl4;
 @property (weak, nonatomic) IBOutlet UILabel *showLbl5;
 @property (weak, nonatomic) IBOutlet UILabel *msgLabel1;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 
 @property(nonatomic,strong)SXDataSource *dataSource;
 @end
@@ -47,6 +48,7 @@
     self.dataSource = [SXDataSource new];
     
     [self randomColor];
+    [self addBottom];
 }
 
 - (IBAction)randomColor {
@@ -71,6 +73,42 @@
     self.showLbl5.text = [NSString stringWithFormat:@"[UIColor %@]\n%@",item5.methodName,item5.desc];
     
     
+}
+
+- (void)addBottom
+{
+    for (int i = 0; i < 5; i++) {
+        UILabel *lbl = [[UILabel alloc]initWithFrame:CGRectMake(0,i*30, 170, 25)];
+        lbl.text = [NSString stringWithFormat:@"Wonderful_GreenColor%d",2*i+1];
+        lbl.textColor = SXRGBAColor(100, 56, 32, 1);
+        lbl.font = [UIFont boldSystemFontOfSize:14];
+        [self.bottomView addSubview:lbl];
+        
+        UIView *view = [[UIView alloc]initWithFrame:CGRectMake(180, i*30, 140, 25)];
+        view.layer.cornerRadius = 2;
+        view.layer.masksToBounds = YES;
+        switch (2*i+1) {
+            case 1:
+                view.backgroundColor = Wonderful_GreenColor1;
+                break;
+            case 3:
+                view.backgroundColor = Wonderful_GreenColor3;
+                break;
+            case 5:
+                view.backgroundColor = Wonderful_GreenColor5;
+                break;
+            case 7:
+                view.backgroundColor = Wonderful_GreenColor7;
+                break;
+            case 9:
+                view.backgroundColor = Wonderful_GreenColor9;
+                break;
+                
+            default:
+                break;
+        }
+        [self.bottomView addSubview:view];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
