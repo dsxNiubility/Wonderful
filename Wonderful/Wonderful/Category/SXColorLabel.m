@@ -15,6 +15,9 @@
     if (([text rangeOfString:@"<"].location != NSNotFound)||([text rangeOfString:@"["].location != NSNotFound)) {
         NSMutableString *mstr = [NSMutableString string];
         [mstr appendString:text];
+        
+        NSMutableString *mstr2 = [NSMutableString string];
+        [mstr2 appendString:text];
         NSMutableAttributedString *AttributedStr;
         
         NSRange range1;
@@ -22,7 +25,14 @@
         NSUInteger location =0;
         NSUInteger length = 0;
         
-        NSMutableArray *rangeArray = [NSMutableArray array];
+        NSMutableArray *rangeColorArray = [NSMutableArray array];
+        NSMutableArray *rangeBoldArray = [NSMutableArray array];
+        
+        [mstr replaceOccurrencesOfString:@"[" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr.length)];
+        [mstr replaceOccurrencesOfString:@"]" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr.length)];
+        
+        [mstr2 replaceOccurrencesOfString:@"<" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr.length)];
+        [mstr2 replaceOccurrencesOfString:@">" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr.length)];
         
         while (range1.location != NSNotFound) {
             range1 = [mstr rangeOfString:@"<"];
@@ -39,21 +49,48 @@
                 break;
             }
             NSDictionary *dict = @{@"location":@(location),@"length":@(length)};
-            [rangeArray addObject:dict];
+            [rangeColorArray addObject:dict];
         }
-        [mstr replaceOccurrencesOfString:@"<" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr.length)];
-        [mstr replaceOccurrencesOfString:@">" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr.length)];
+        
+        range1.location = 0;
+        while (range1.location != NSNotFound) {
+            range1 = [mstr2 rangeOfString:@"["];
+            range2 = [mstr2 rangeOfString:@"]"];
+            
+            if (range1.location != NSNotFound) {
+                location = range1.location;
+                length = range2.location - range1.location-1;
+                
+                [mstr2 replaceOccurrencesOfString:@"[" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, range1.location + range1.length)];
+                [mstr2 replaceOccurrencesOfString:@"]" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, range2.location + range2.length - 1)];
+            }
+            if (length > 5000) {
+                break;
+            }
+            NSDictionary *dict = @{@"location":@(location),@"length":@(length)};
+            [rangeBoldArray addObject:dict];
+        }
+        
+        [mstr2 replaceOccurrencesOfString:@"[" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr.length)];
+        [mstr2 replaceOccurrencesOfString:@"]" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr.length)];
+        
         AttributedStr = [[NSMutableAttributedString alloc]initWithString:mstr];
-        for (NSDictionary *dict in rangeArray) {
+        for (NSDictionary *dict in rangeColorArray) {
             NSUInteger lo = [dict[@"location"] integerValue];
             NSUInteger le = [dict[@"length"] integerValue];
             [AttributedStr addAttribute:NSForegroundColorAttributeName
                                   value:[UIColor redColor]
                                   range:NSMakeRange(lo, le)];
+        }
+        
+        for (NSDictionary *dict in rangeBoldArray) {
+            NSUInteger lo = [dict[@"location"] integerValue];
+            NSUInteger le = [dict[@"length"] integerValue];
             [AttributedStr addAttribute:NSFontAttributeName
-                                  value:[UIFont boldSystemFontOfSize:15]
+                                  value:[UIFont boldSystemFontOfSize:11]
                                   range:NSMakeRange(lo, le)];
         }
+
         [self setAttributedText:AttributedStr];
     }else{
         [super setText:text];
