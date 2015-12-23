@@ -10,10 +10,18 @@
 
 @implementation SXColorLabel
 
+static UIColor *SXColorLabelAnotherColor;
+static UIFont *SXColorLabelAnotherFont;
+
 - (void)setText:(NSString *)text
 {
     if (([text rangeOfString:@"<"].location != NSNotFound)||([text rangeOfString:@"["].location != NSNotFound)) {
-        
+        if (!SXColorLabelAnotherFont) {
+            SXColorLabelAnotherFont = [UIFont boldSystemFontOfSize:18];
+        }
+        if (!SXColorLabelAnotherColor) {
+            SXColorLabelAnotherColor = [UIColor redColor];
+        }
         NSMutableAttributedString *AttributedStr;
         NSRange range1;
         NSRange range2;
@@ -77,7 +85,7 @@
             NSUInteger lo = [dict[@"location"] integerValue];
             NSUInteger le = [dict[@"length"] integerValue];
             [AttributedStr addAttribute:NSForegroundColorAttributeName
-                                  value:[UIColor redColor]
+                                  value:SXColorLabelAnotherColor
                                   range:NSMakeRange(lo, le)];
         }
         
@@ -85,7 +93,7 @@
             NSUInteger lo = [dict[@"location"] integerValue];
             NSUInteger le = [dict[@"length"] integerValue];
             [AttributedStr addAttribute:NSFontAttributeName
-                                  value:[UIFont boldSystemFontOfSize:18]
+                                  value:SXColorLabelAnotherFont
                                   range:NSMakeRange(lo, le)];
         }
 
@@ -93,8 +101,16 @@
     }else{
         [super setText:text];
     }
-    
+}
 
++ (void)setAnotherColor:(UIColor *)color
+{
+    SXColorLabelAnotherColor = color;
+}
+
++ (void)setAnotherFont:(UIFont *)font
+{
+    SXColorLabelAnotherFont = font;
 }
 
 @end

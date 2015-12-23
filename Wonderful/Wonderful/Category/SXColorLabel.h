@@ -10,7 +10,7 @@
 
 @interface SXColorLabel : UILabel
 
-@property(nonatomic,strong)UIColor *color;
-@property(nonatomic,strong)UIFont *anotherFont;
++ (void)setAnotherColor:(UIColor *)color;
++ (void)setAnotherFont:(UIFont *)font;
 
 @end
