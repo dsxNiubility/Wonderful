@@ -13,27 +13,25 @@
 - (void)setText:(NSString *)text
 {
     if (([text rangeOfString:@"<"].location != NSNotFound)||([text rangeOfString:@"["].location != NSNotFound)) {
-        NSMutableString *mstr = [NSMutableString string];
-        [mstr appendString:text];
         
-        NSMutableString *mstr2 = [NSMutableString string];
-        [mstr2 appendString:text];
         NSMutableAttributedString *AttributedStr;
-        
         NSRange range1;
         NSRange range2;
         NSUInteger location =0;
         NSUInteger length = 0;
-        
         NSMutableArray *rangeColorArray = [NSMutableArray array];
         NSMutableArray *rangeBoldArray = [NSMutableArray array];
+        NSMutableString *mstr = [NSMutableString string];
+        NSMutableString *mstr2 = [NSMutableString string];
+        [mstr appendString:text];
+        [mstr2 appendString:text];
         
         [mstr replaceOccurrencesOfString:@"[" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr.length)];
         [mstr replaceOccurrencesOfString:@"]" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr.length)];
+        [mstr2 replaceOccurrencesOfString:@"<" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr2.length)];
+        [mstr2 replaceOccurrencesOfString:@">" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr2.length)];
         
-        [mstr2 replaceOccurrencesOfString:@"<" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr.length)];
-        [mstr2 replaceOccurrencesOfString:@">" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr.length)];
-        
+        range1.location = 0;
         while (range1.location != NSNotFound) {
             range1 = [mstr rangeOfString:@"<"];
             range2 = [mstr rangeOfString:@">"];
@@ -41,13 +39,12 @@
             if (range1.location != NSNotFound) {
                 location = range1.location;
                 length = range2.location - range1.location-1;
+                if (length > 5000)break;
                 
                 [mstr replaceOccurrencesOfString:@"<" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, range1.location + range1.length)];
                 [mstr replaceOccurrencesOfString:@">" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, range2.location + range2.length - 1)];
             }
-            if (length > 5000) {
-                break;
-            }
+
             NSDictionary *dict = @{@"location":@(location),@"length":@(length)};
             [rangeColorArray addObject:dict];
         }
@@ -60,19 +57,18 @@
             if (range1.location != NSNotFound) {
                 location = range1.location;
                 length = range2.location - range1.location-1;
+                if (length > 5000)break;
                 
                 [mstr2 replaceOccurrencesOfString:@"[" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, range1.location + range1.length)];
                 [mstr2 replaceOccurrencesOfString:@"]" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, range2.location + range2.length - 1)];
             }
-            if (length > 5000) {
-                break;
-            }
+
             NSDictionary *dict = @{@"location":@(location),@"length":@(length)};
             [rangeBoldArray addObject:dict];
         }
         
-        [mstr2 replaceOccurrencesOfString:@"[" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr.length)];
-        [mstr2 replaceOccurrencesOfString:@"]" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr.length)];
+        [mstr2 replaceOccurrencesOfString:@"[" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr2.length)];
+        [mstr2 replaceOccurrencesOfString:@"]" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr2.length)];
         
         AttributedStr = [[NSMutableAttributedString alloc]initWithString:mstr];
         for (NSDictionary *dict in rangeColorArray) {
