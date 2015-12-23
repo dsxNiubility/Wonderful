@@ -50,6 +50,8 @@
         }
         
         range1.location = 0;
+        length = 0;
+        location = 0;
         while (range1.location != NSNotFound) {
             range1 = [mstr2 rangeOfString:@"["];
             range2 = [mstr2 rangeOfString:@"]"];
@@ -83,7 +85,7 @@
             NSUInteger lo = [dict[@"location"] integerValue];
             NSUInteger le = [dict[@"length"] integerValue];
             [AttributedStr addAttribute:NSFontAttributeName
-                                  value:[UIFont boldSystemFontOfSize:11]
+                                  value:[UIFont boldSystemFontOfSize:18]
                                   range:NSMakeRange(lo, le)];
         }
 

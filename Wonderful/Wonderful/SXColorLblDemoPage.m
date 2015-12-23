@@ -10,6 +10,8 @@
 #import "SXColorLabel.h"
 
 @interface SXColorLblDemoPage ()
+@property (weak, nonatomic) IBOutlet UILabel *msgLabel;
+@property (weak, nonatomic) IBOutlet UIView *bodyView;
 
 @end
 
@@ -20,11 +22,51 @@
     
     self.title = @"SXColorLabel";
     
-    SXColorLabel *label = [[SXColorLabel alloc]initWithFrame:CGRectMake(30, 300, 300, 30)];
-    label.text  = @"我<也>不知道[<是>什么][啊啊]啊";
+//    SXColorLabel *label = [[SXColorLabel alloc]initWithFrame:CGRectMake(30, 300, 300, 30)];
+//    label.text  = @"我<也>不知道[<是>什么][啊啊]啊";
     
-    [self.view addSubview:label];
+//    [self.view addSubview:label];
+    
+    self.msgLabel.text = @"a.把text里重要的内容用特殊符号包起来，就会特殊显示\nb.如果用<>包起来，就会显示高亮颜色。\nc.如果用[]包起来，就会显示高亮的字体。\nd.两者也可以混合使用。 高亮的字体里有高亮颜色。\ne.如果输入格式错误，将会不正常显示";
+    
+    [self addBody];
     // Do any additional setup after loading the view.
+}
+
+- (void)addBody
+{
+    UILabel *lbl = [[UILabel alloc]initWithFrame:CGRectMake(5, 10, 350, 30)];
+    lbl.font = [UIFont systemFontOfSize:14];
+    lbl.text = @"例1：今天要记得通知<Peter>和<Robin>去开会。";
+    [self.bodyView addSubview:lbl];
+    
+    SXColorLabel *sxlbl = [[SXColorLabel alloc]initWithFrame:CGRectMake(40, 40, 350, 30)];
+    sxlbl.font = [UIFont systemFontOfSize:14];
+    sxlbl.text = @"今天要记得通知<Peter>和<Robin>去开会。";
+    [self.bodyView addSubview:sxlbl];
+    
+    UILabel *lbl2 = [[UILabel alloc]initWithFrame:CGRectMake(5, 90, 350, 30)];
+    lbl2.font = [UIFont systemFontOfSize:14];
+    lbl2.text = @"例2：礼物很有[粪]量，你会大吃一[斤]！";
+    [self.bodyView addSubview:lbl2];
+    
+    SXColorLabel *sxlbl2 = [[SXColorLabel alloc]initWithFrame:CGRectMake(40, 120, 350, 30)];
+    sxlbl2.font = [UIFont systemFontOfSize:14];
+    sxlbl2.text = @"礼物很有[粪]量，你会大吃一[斤]！";
+    [self.bodyView addSubview:sxlbl2];
+    
+    UILabel *lbl3 = [[UILabel alloc]initWithFrame:CGRectMake(5, 170, 350, 30)];
+    lbl3.font = [UIFont systemFontOfSize:14];
+    lbl3.text = @"例3：一定要：[通知<Peter>和<Robin>去开会]";
+    [self.bodyView addSubview:lbl3];
+    
+    SXColorLabel *sxlbl3 = [[SXColorLabel alloc]initWithFrame:CGRectMake(40, 200, 350, 30)];
+    sxlbl3.font = [UIFont systemFontOfSize:14];
+    sxlbl3.text = @"一定要：[通知<Peter>和<Robin>去开会]";
+    [self.bodyView addSubview:sxlbl3];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
