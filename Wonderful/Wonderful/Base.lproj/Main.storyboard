@@ -60,8 +60,43 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9WU-PX-Tv3">
+                                <rect key="frame" x="0.0" y="517" width="375" height="90"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="001" translatesAutoresizingMaskIntoConstraints="NO" id="k97-OV-5nw">
+                                        <rect key="frame" x="10" y="7" width="48" height="48"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="https://github.com/dsxNiubility" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huz-LQ-o4T">
+                                        <rect key="frame" x="11" y="59" width="200" height="21"/>
+                                        <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="董铂然" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nu0-On-aHk">
+                                        <rect key="frame" x="64" y="37" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="13"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="haQ-R4-JtX"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9WU-PX-Tv3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LD7-9C-Lbn"/>
+                            <constraint firstAttribute="trailing" secondItem="9WU-PX-Tv3" secondAttribute="trailing" id="cVo-sD-2Oc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9WU-PX-Tv3" secondAttribute="bottom" constant="60" id="vy9-ca-eef"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Wonderful" id="e5M-qX-Zix">
                         <barButtonItem key="backBarButtonItem" title=" " id="Pk4-gg-1Ya"/>
@@ -492,6 +527,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="001" width="446" height="452"/>
         <image name="bgImg" width="549" height="549"/>
     </resources>
 </document>
