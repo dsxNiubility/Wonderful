@@ -26,14 +26,14 @@
     
 
     
-    UIColor *testC = [UIColor salmonColor];
-    float r= [testC red];
-    float g= [testC green];
-    float b= [testC blue];
-    float alpha= [testC alpha];
-    NSLog(@"******  %f,%f,%f,%f",r,g,b,alpha);
-    
-    [[UIColor salmonColor]printDetail];
+//    UIColor *testC = [UIColor salmonColor];
+//    float r= [testC red];
+//    float g= [testC green];
+//    float b= [testC blue];
+//    float alpha= [testC alpha];
+//    NSLog(@"******  %f,%f,%f,%f",r,g,b,alpha);
+//    
+//    [[UIColor salmonColor]printDetail];
     
 //    self.view.backgroundColor = [[UIColor redColor]up:3 num:255];
     // Do any additional setup after loading the view, typically from a nib.
@@ -55,6 +55,13 @@
 //    UIColor *lineColor = [bgColor up:3 num:20]; // 不管背景是什么颜色 线都比背景浅20.
     
 //    [self.view addSubview:view2];
+    
+    
+//    self.view.backgroundColor = [UIColor salmonColor];
+//    
+//    [UIView animateWithDuration:5 animations:^{
+//        self.view.backgroundColor = [UIColor lightPink];
+//    }];
 }
 
 @end
