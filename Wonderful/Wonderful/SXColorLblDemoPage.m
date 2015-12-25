@@ -18,6 +18,7 @@
 
 @implementation SXColorLblDemoPage
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -29,7 +30,6 @@
 //    [self.view addSubview:label];
     
     self.msgLabel.text = @"a.把text里重要的内容用特殊符号包起来，就会特殊显示\nb.如果用<>包起来，就会显示高亮颜色。\nc.如果用[]包起来，就会显示高亮的字体。\nd.这个高亮颜色和高亮字体可以自行设置。\ne.两者也可以混合使用。 高亮的字体里有高亮颜色。\nf.如果输入格式错误，将会不正常显示";
-    
     [self addBody];
     // Do any additional setup after loading the view.
 }

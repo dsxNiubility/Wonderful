@@ -1,5 +1,6 @@
 # Wonderful
-一个关于色彩的库<br />
+	一个关于色彩的库<br />
+
 ![image](https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1000.png)
 
 
@@ -20,13 +21,6 @@ _颜色列表_<br />
 
 		self.view.backgroundColor = Wonderful_YelloeColor4;
 		self.view.backgroundColor = Wonderful_BrownColor4;
-
-3.提供了颜色微调方案，可以让一个已知颜色的rgb的某值上升或下降若干，可用于不管背景是什么色，边框都比背景深20。 也可以将认可颜色的详细值打印出来。<br />
-
-		UIColor *navColor = [[UIColor redColor]up:SXColorTypeBlue num:30]; // 在红色上把蓝色色值提高30
-		UIColor *barColor = [[UIColor blueColor]up:1 num:140]; // 可以直接用枚举对应的tag
-		UIColor *bgColor = [[UIColor blackColor]down:SXColorTypeAlpha num:10]; // 取一个比黑色稍微淡的颜色
-		UIColor *lineColor = [bgColor up:3 num:20]; // 不管背景是什么颜色 线都比背景浅20.
 
 ####二、UIColor+Separate
 1.提供颜色分离方案，可以将任何颜色的rgb喝alpha的值取出。<br />
@@ -50,6 +44,13 @@ _颜色列表_<br />
 	This Color's Red:250, Green:128, Blue:114, Alpha:1
 	decimal red:0.9804 green:0.5020 blue:0.4471
 	Hexadecimal 0xfa8072
+	
+4.提供了颜色微调方案，可以让一个已知颜色的rgb的某值上升或下降若干，可用于不管背景是什么色，边框都比背景深20。 也可以将认可颜色的详细值打印出来。<br />
+
+		UIColor *navColor = [[UIColor redColor]up:SXColorTypeBlue num:30]; // 在红色上把蓝色色值提高30
+		UIColor *barColor = [[UIColor blueColor]up:1 num:140]; // 可以直接用枚举对应的tag
+		UIColor *bgColor = [[UIColor blackColor]down:SXColorTypeAlpha num:10]; // 取一个比黑色稍微淡的颜色
+		UIColor *lineColor = [bgColor up:3 num:20]; // 不管背景是什么颜色 线都比背景浅20.
 	
 
 ####三、SXColorGradientView
@@ -80,4 +81,23 @@ _颜色列表_<br />
 
 2.跑马灯的背景可以设置任何颜色，这个是基于颜色过渡view做的。<br />
 3.跑马灯可以实现点击拖动，或者绑定更多点击事件。
+
+####五、SXColorLabel
+1.把text里重要的内容用特殊符号包起来，就会特殊显示
+
+	
+	
+2.如果用<>包起来，就会显示高亮颜色。如果用[]包起来，就会显示高亮的字体。
+
+	lbl.text = @"例1：今天要记得通知<Peter>和<Robin>去开会。";
+	lbl2.text = @"例2：礼物很有[粪]量，你会大吃一[斤]！";
+	
+3.这个高亮颜色和高亮字体可以自行设置。
+
+    [SXColorLabel setAnotherColor:[UIColor salmonColor]];
+    [SXColorLabel setAnotherFont:[UIFont boldSystemFontOfSize:18]];
+    
+4.两者也可以混合使用。 高亮的字体里有高亮颜色。
+
+    lbl3.text = @"例3：一定要：[通知<Peter>和<Robin>去开会]";
 
