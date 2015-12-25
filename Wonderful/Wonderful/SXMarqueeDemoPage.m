@@ -41,10 +41,15 @@
     [mar3 changeMarqueeLabelFont:[UIFont boldSystemFontOfSize:12]];
     [mar3 start];
     
+    SXMarquee *mar4 = [[SXMarquee alloc]initWithFrame:CGRectMake(20, 390, 335, 25) speed:8 Msg:@"If you've submitted an update to fix a critical bug in your app on the App Store and you are requesting an expedited review, be sure to include the steps to reproduce the bug on the current version of your app." bgColor:[UIColor paleGreen] txtColor:[UIColor plumColor]];
+    [mar4 changeMarqueeLabelFont:[UIFont boldSystemFontOfSize:13]];
+    [mar4 start];
+    
     
     [self.view addSubview:mar];
     [self.view addSubview:mar2];
     [self.view addSubview:mar3];
+    [self.view addSubview:mar4];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

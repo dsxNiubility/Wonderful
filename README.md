@@ -1,5 +1,5 @@
 # Wonderful
-	一个关于色彩的库<br />
+	一个关于色彩的库
 
 ![image](https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1000.png)
 
