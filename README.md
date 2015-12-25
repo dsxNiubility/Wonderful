@@ -1,5 +1,8 @@
 # Wonderful
-一个关于色彩的库
+一个关于色彩的库<br />
+![image](https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1000.png)
+
+
 ####效果图
 _demo展示，提供了随机配色。_<br />
 _颜色列表_<br />
