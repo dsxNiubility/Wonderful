@@ -4,7 +4,10 @@
 ![image](https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1000.png)
 
 
-####效果图
+
+<br />
+<br />
+####Demo程序截图
 ![image](https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1001.png)<br />
 
 ####一、UIColor+Wonderful
@@ -83,7 +86,7 @@
 3.跑马灯可以实现点击拖动，或者绑定更多点击事件。
 
 ####五、SXColorLabel
-1.把text里重要的内容用特殊符号包起来，就会特殊显示
+1.把text里重要的内容用特殊符号包起来，就会特殊显示<br />
 ![image](https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1002.png)<br />
 	
 	
