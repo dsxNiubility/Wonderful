@@ -5,13 +5,9 @@
 
 
 ####效果图
-_demo展示，提供了随机配色。_<br />
-_颜色列表_<br />
-![image](https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/002.gif)
-
+![image](https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1001.png)<br />
 
 ####一、UIColor+Wonderful
-
 1.这个分类里扩充了更多的颜色扩展，以后随手写个小Demo再也不需要redColor buleColor了。<br />
 
 		self.view.backgroundColor = [UIColor khakiColor];
@@ -21,6 +17,9 @@ _颜色列表_<br />
 
 		self.view.backgroundColor = Wonderful_YelloeColor4;
 		self.view.backgroundColor = Wonderful_BrownColor4;
+<br />
+![image](https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1003.png)
+![image](https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1005.png)<br />
 
 ####二、UIColor+Separate
 1.提供颜色分离方案，可以将任何颜色的rgb喝alpha的值取出。<br />
@@ -51,7 +50,8 @@ _颜色列表_<br />
 		UIColor *barColor = [[UIColor blueColor]up:1 num:140]; // 可以直接用枚举对应的tag
 		UIColor *bgColor = [[UIColor blackColor]down:SXColorTypeAlpha num:10]; // 取一个比黑色稍微淡的颜色
 		UIColor *lineColor = [bgColor up:3 num:20]; // 不管背景是什么颜色 线都比背景浅20.
-	
+
+![image](https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/003.gif)<br />
 
 ####三、SXColorGradientView
 1.颜色渐变的view，可以设置任何颜色到透明的过渡。<br />
@@ -84,7 +84,7 @@ _颜色列表_<br />
 
 ####五、SXColorLabel
 1.把text里重要的内容用特殊符号包起来，就会特殊显示
-
+![image](https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1002.png)<br />
 	
 	
 2.如果用<>包起来，就会显示高亮颜色。如果用[]包起来，就会显示高亮的字体。
@@ -101,3 +101,6 @@ _颜色列表_<br />
 
     lbl3.text = @"例3：一定要：[通知<Peter>和<Robin>去开会]";
 
+_旧版demo_<br />
+_颜色列表_<br />
+![image](https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/002.gif)
