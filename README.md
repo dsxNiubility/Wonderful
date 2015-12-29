@@ -1,4 +1,11 @@
 # Wonderful
+
+[![Platform](https://img.shields.io/badge/platform-iOS-red.svg)](https://developer.apple.com/iphone/index.action)
+[![Language](http://img.shields.io/badge/language-OC-yellow.svg?style=flat
+)](https://en.wikipedia.org/wiki/Objective-C)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](http://mit-license.org)
+![CocoaPods Version](https://img.shields.io/badge/pod-v1.0.0-brightgreen.svg)
+
 	一个关于色彩的库
 
 ![image](https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1000.png)
