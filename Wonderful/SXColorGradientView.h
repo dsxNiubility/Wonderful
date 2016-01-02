@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, SXColorGradientDirection) {
-    SXColorGradientToTop = 1,
-    SXColorGradientToLeft = 2,
-    SXColorGradientToBottom = 3,
-    SXColorGradientToRight = 4,
+    SXGradientToTop = 1,
+    SXGradientToLeft = 2,
+    SXGradientToBottom = 3,
+    SXGradientToRight = 4,
 };
 
 @interface SXColorGradientView : UIView
@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, SXColorGradientDirection) {
  *
  *  @return
  */
-+ (instancetype)createWithColor:(UIColor *)color frame:(CGRect)frame visible:(BOOL)visible direction:(SXColorGradientDirection)direction;
++ (instancetype)createWithColor:(UIColor *)color frame:(CGRect)frame direction:(SXColorGradientDirection)direction;
 
 /**
  *  use two color to init the gradientView, from fromColor gradient to toColor

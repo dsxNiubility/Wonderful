@@ -11,11 +11,11 @@
 
 @implementation SXColorGradientView
 
-+ (instancetype)createWithColor:(UIColor *)color frame:(CGRect)frame visible:(BOOL)visible direction:(SXColorGradientDirection)direction{
-    return [[self alloc]initWithColor:color frame:frame visible:visible direction:(SXColorGradientDirection)direction];
++ (instancetype)createWithColor:(UIColor *)color frame:(CGRect)frame direction:(SXColorGradientDirection)direction{
+    return [[self alloc]initWithColor:color frame:frame direction:(SXColorGradientDirection)direction];
 }
 
-- (instancetype)initWithColor:(UIColor *)color frame:(CGRect)frame visible:(BOOL)visible direction:(SXColorGradientDirection)direction{
+- (instancetype)initWithColor:(UIColor *)color frame:(CGRect)frame direction:(SXColorGradientDirection)direction{
     if (self = [super initWithFrame:frame]) {
     
         switch (direction) {
@@ -66,9 +66,6 @@
             default:
                 break;
         }
-    }
-    if (!visible) {
-        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }
@@ -152,22 +149,5 @@
     self.backgroundColor = [UIColor whiteColor];
     return self;
 }
-
-//- (instancetype)initWithFrame:(CGRect)frame
-//{
-//    
-//}
-
-//- (void)drawRect:(CGRect)rect {
-
-//    CGContextRef ctx = UIGraphicsGetCurrentContext();
-//
-//    for (int i = 0; i < 200; i++) {
-//        CGContextMoveToPoint(ctx, i, 0);
-//        CGContextAddLineToPoint(ctx, i, 80);
-//        [[UIColor colorWithRed:245/255.0 green:(50 + i)/255.0 blue:40/255.0 alpha:1-i/200.0]setStroke] ;
-//        CGContextStrokePath(ctx);
-//    }
-//}
 
 @end
