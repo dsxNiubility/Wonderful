@@ -189,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYu-4J-Uba" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1443.5" y="695.5"/>
+            <point key="canvasLocation" x="1427.5" y="543.5"/>
         </scene>
         <!--Color List Page-->
         <scene sceneID="0Zn-lg-lw0">
@@ -284,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LTw-PU-7w6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2301.5" y="1791.5"/>
+            <point key="canvasLocation" x="2413.5" y="547.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ng5-KN-2w1">
@@ -307,7 +307,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pyp-pA-aTL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409" y="1038"/>
+            <point key="canvasLocation" x="456.5" y="989.5"/>
         </scene>
         <!--Color Lbl Demo Page-->
         <scene sceneID="v59-Au-Ceq">
@@ -363,35 +363,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3.实现颜色渐变的View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgX-hG-HKW">
-                                <rect key="frame" x="22" y="111" width="182" height="21"/>
+                                <rect key="frame" x="18" y="92" width="182" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YHe-jK-Ac6">
-                                <rect key="frame" x="24" y="151" width="234" height="84"/>
+                                <rect key="frame" x="10" y="219" width="352" height="164"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNT-HT-vWw">
-                                <rect key="frame" x="294" y="120" width="50" height="27"/>
+                                <rect key="frame" x="291" y="237" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="随机">
-                                    <color key="titleColor" red="0.80000000000000004" green="0.59999999999999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="1" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="randomGradient" destination="TxE-Gq-mqW" eventType="touchUpInside" id="Os0-GZ-SYD"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWO-zf-2Gb">
+                                <rect key="frame" x="15" y="123" width="348" height="85"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="gradientContent" destination="YHe-jK-Ac6" id="40H-uo-tp9"/>
+                        <outlet property="msgLabel" destination="AWO-zf-2Gb" id="c9s-Dc-IEU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pKB-JP-swD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1519.5" y="1093.5"/>
+            <point key="canvasLocation" x="1535.5" y="861.5"/>
         </scene>
         <!--Color Wonderful Demo Page-->
         <scene sceneID="G8n-xG-Oau">
@@ -504,7 +518,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0I-zO-6Z8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1299.5" y="495.5"/>
+            <point key="canvasLocation" x="1323.5" y="307.5"/>
         </scene>
         <!--Marquee Demo Page-->
         <scene sceneID="fey-VP-QOs">
@@ -540,7 +554,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5EQ-cb-vff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1707.5" y="1339.5"/>
+            <point key="canvasLocation" x="1651.5" y="1159.5"/>
         </scene>
     </scenes>
     <resources>
