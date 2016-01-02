@@ -36,4 +36,13 @@ typedef NS_ENUM(NSInteger, SXGradientDirection) {
  */
 + (instancetype)createWithFromColor:(UIColor *)fromColor toColor:(UIColor *)toColor frame:(CGRect)frame direction:(SXGradientDirection)direction;
 
+/**
+ *  use a colorArray to generate a wonderful gradientView.
+ *
+ *  @param colorArray array with UIColor
+ *
+ *  @return
+ */
++ (instancetype)createWithColorArray:(NSArray *)colorArray frame:(CGRect)frame direction:(SXGradientDirection)direction;
+
 @end
