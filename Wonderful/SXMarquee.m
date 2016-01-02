@@ -139,10 +139,10 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 - (void)addLeftAndRightGradient{
     CGFloat w = self.frame.size.width;
     CGFloat h = self.frame.size.height;
-    SXColorGradientView *leftFade = [SXColorGradientView createWithColor:self.bgColor frame:CGRectMake(0, 0, h, h) visible:YES direction:SXColorGradientToRight];
+    SXColorGradientView *leftFade = [SXColorGradientView createWithColor:self.bgColor frame:CGRectMake(0, 0, h, h) direction:SXGradientToRight];
     self.leftFade = leftFade;
     
-    SXColorGradientView *rightFade = [SXColorGradientView createWithColor:self.bgColor frame:CGRectMake(w - h, 0, h, h) visible:YES direction:SXColorGradientToLeft];
+    SXColorGradientView *rightFade = [SXColorGradientView createWithColor:self.bgColor frame:CGRectMake(w - h, 0, h, h) direction:SXGradientToLeft];
     self.rightFade = rightFade;
     
     [self addSubview:leftFade];

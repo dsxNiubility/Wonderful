@@ -47,26 +47,26 @@
     self.grv5 = nil;
     
     SXCLEntity *item1 = [self.dataSource randomAColorEntity];
-    SXColorGradientView *grv1 = [SXColorGradientView createWithColor:SXRGB16Color(item1.colorValue) frame:CGRectMake(10, 10, 80, 30) visible:YES direction:SXColorGradientToRight];
+    SXColorGradientView *grv1 = [SXColorGradientView createWithColor:SXRGB16Color(item1.colorValue) frame:CGRectMake(10, 10, 80, 30) direction:SXGradientToRight];
     [self.gradientContent addSubview:grv1];
     
     SXCLEntity *item2 = [self.dataSource randomAColorEntity];
-    SXColorGradientView *grv2 = [SXColorGradientView createWithColor:SXRGB16Color(item2.colorValue) frame:CGRectMake(100, 10, 80, 30) visible:YES direction:SXColorGradientToRight];
+    SXColorGradientView *grv2 = [SXColorGradientView createWithColor:SXRGB16Color(item2.colorValue) frame:CGRectMake(100, 10, 80, 30) direction:SXGradientToRight];
     [self.gradientContent addSubview:grv2];
     
     SXCLEntity *item3 = [self.dataSource randomAColorEntity];
     SXCLEntity *item31 = [self.dataSource randomAColorEntity];
-    SXColorGradientView *grv3 = [SXColorGradientView createWithFromColor:SXRGB16Color(item3.colorValue) toColor:SXRGB16Color(item31.colorValue) frame:CGRectMake(10, 50, 80, 30) direction:SXColorGradientToRight];
+    SXColorGradientView *grv3 = [SXColorGradientView createWithFromColor:SXRGB16Color(item3.colorValue) toColor:SXRGB16Color(item31.colorValue) frame:CGRectMake(10, 50, 80, 30) direction:SXGradientToRight];
     [self.gradientContent addSubview:grv3];
     
     SXCLEntity *item4 = [self.dataSource randomAColorEntity];
     SXCLEntity *item41 = [self.dataSource randomAColorEntity];
-    SXColorGradientView *grv4 = [SXColorGradientView createWithFromColor:SXRGB16Color(item4.colorValue) toColor:SXRGB16Color(item41.colorValue) frame:CGRectMake(100, 50, 80, 30) direction:SXColorGradientToRight];
+    SXColorGradientView *grv4 = [SXColorGradientView createWithFromColor:SXRGB16Color(item4.colorValue) toColor:SXRGB16Color(item41.colorValue) frame:CGRectMake(100, 50, 80, 30) direction:SXGradientToRight];
     [self.gradientContent addSubview:grv4];
     
     
     SXCLEntity *item5 = [self.dataSource randomAColorEntity];
-    SXColorGradientView *grv5 = [SXColorGradientView createWithColor:SXRGB16Color(item5.colorValue) frame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 255, 375, 255) visible:YES direction:SXColorGradientToTop];
+    SXColorGradientView *grv5 = [SXColorGradientView createWithColor:SXRGB16Color(item5.colorValue) frame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 255, 375, 255) direction:SXGradientToTop];
     [self.view addSubview:grv5];
     
     grv1.layer.cornerRadius = 2;

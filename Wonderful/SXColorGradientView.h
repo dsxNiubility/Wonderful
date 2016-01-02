@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, SXColorGradientDirection) {
+typedef NS_ENUM(NSInteger, SXGradientDirection) {
     SXGradientToTop = 1,
     SXGradientToLeft = 2,
     SXGradientToBottom = 3,
@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, SXColorGradientDirection) {
  *
  *  @return
  */
-+ (instancetype)createWithColor:(UIColor *)color frame:(CGRect)frame direction:(SXColorGradientDirection)direction;
++ (instancetype)createWithColor:(UIColor *)color frame:(CGRect)frame direction:(SXGradientDirection)direction;
 
 /**
  *  use two color to init the gradientView, from fromColor gradient to toColor
@@ -34,6 +34,6 @@ typedef NS_ENUM(NSInteger, SXColorGradientDirection) {
  *
  *  @return 
  */
-+ (instancetype)createWithFromColor:(UIColor *)fromColor toColor:(UIColor *)toColor frame:(CGRect)frame direction:(SXColorGradientDirection)direction;
++ (instancetype)createWithFromColor:(UIColor *)fromColor toColor:(UIColor *)toColor frame:(CGRect)frame direction:(SXGradientDirection)direction;
 
 @end
