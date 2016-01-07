@@ -27,6 +27,7 @@
 		1DCCF4891BDE214900DB5EB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DCCF4871BDE214900DB5EB7 /* Main.storyboard */; };
 		1DCCF48B1BDE214900DB5EB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DCCF48A1BDE214900DB5EB7 /* Assets.xcassets */; };
 		1DCCF48E1BDE214900DB5EB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DCCF48C1BDE214900DB5EB7 /* LaunchScreen.storyboard */; };
+		1DCF20121C3E6D0C0082716E /* UILabel+Wonderful.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF20111C3E6D0C0082716E /* UILabel+Wonderful.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,8 @@
 		1DCCF48A1BDE214900DB5EB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DCCF48D1BDE214900DB5EB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DCCF48F1BDE214900DB5EB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DCF20101C3E6D0C0082716E /* UILabel+Wonderful.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Wonderful.h"; sourceTree = "<group>"; };
+		1DCF20111C3E6D0C0082716E /* UILabel+Wonderful.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Wonderful.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				1D2E43D71C3273C30002B63B /* SXColorGradientView.m */,
 				1D2E43D81C3273C30002B63B /* SXColorLabel.h */,
 				1D2E43D91C3273C30002B63B /* SXColorLabel.m */,
+				1DCF20101C3E6D0C0082716E /* UILabel+Wonderful.h */,
+				1DCF20111C3E6D0C0082716E /* UILabel+Wonderful.m */,
 				1D2E43DA1C3273C30002B63B /* SXMarquee.h */,
 				1D2E43DB1C3273C30002B63B /* SXMarquee.m */,
 				1D2E43DC1C3273C30002B63B /* UIColor+Separate.h */,
@@ -256,6 +261,7 @@
 				1D2E43F81C3275040002B63B /* SXColorWonderfulDemoPage.m in Sources */,
 				1D2E43F61C3275040002B63B /* SXColorListPage.m in Sources */,
 				1D2E44051C32751A0002B63B /* SXCLEntity.m in Sources */,
+				1DCF20121C3E6D0C0082716E /* UILabel+Wonderful.m in Sources */,
 				1D2E43E31C3273C30002B63B /* UIColor+Separate.m in Sources */,
 				1D2E43F51C3275040002B63B /* SXColorLblDemoPage.m in Sources */,
 				1D2E44071C32751A0002B63B /* SXDataSource.m in Sources */,
