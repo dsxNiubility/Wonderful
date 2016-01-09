@@ -10,6 +10,8 @@
 #import "SXColorLabel.h"
 #import "UIColor+Wonderful.h"
 
+#import "UILabel+Wonderful.h"
+
 @interface SXColorLblDemoPage ()
 @property (weak, nonatomic) IBOutlet UILabel *msgLabel;
 @property (weak, nonatomic) IBOutlet UIView *bodyView;
@@ -24,9 +26,11 @@
     
     self.title = @"SXColorLabel";
     
-//    SXColorLabel *label = [[SXColorLabel alloc]initWithFrame:CGRectMake(30, 300, 300, 30)];
-//    label.text  = @"我<也>不知道[<是>什么][啊啊]啊";
-    
+//    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(30, 300, 300, 30)];
+//    label.font = [UIFont systemFontOfSize:14];
+//    [label setColorText:@"我<也>不知道[<是>什么][啊啊]<啊>"];
+//    [label setFontText:@"我<也>不知道[<是>]什么[>啊]啊[啊]"];
+//    [label setColorFontText:@"我<也>不知道[<是>什么]啊啊[啊]"];
 //    [self.view addSubview:label];
     
     self.msgLabel.text = @"a.把text里重要的内容用特殊符号包起来，就会特殊显示\nb.如果用<>包起来，就会显示高亮颜色。\nc.如果用[]包起来，就会显示高亮的字体。\nd.这个高亮颜色和高亮字体可以自行设置。\ne.两者也可以混合使用。 高亮的字体里有高亮颜色。\nf.如果输入格式错误，将会不正常显示";

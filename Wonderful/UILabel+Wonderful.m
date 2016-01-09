@@ -13,11 +13,95 @@ static UIFont *SXColorLabelAnotherFont;
 @implementation UILabel (Wonderful)
 
 - (void)setColorText:(NSString *)text{
-
+    if ([text rangeOfString:@"<"].location != NSNotFound){
+        if (!SXColorLabelAnotherColor) {
+            SXColorLabelAnotherColor = [UIColor redColor];
+        }
+        NSMutableAttributedString *AttributedStr;
+        NSRange range1;
+        NSRange range2;
+        NSUInteger location =0;
+        NSUInteger length = 0;
+        NSMutableArray *rangeColorArray = [NSMutableArray array];
+        NSMutableString *mstr = [NSMutableString string];
+        [mstr appendString:text];
+        
+        range1.location = 0;
+        while (range1.location != NSNotFound) {
+            range1 = [mstr rangeOfString:@"<"];
+            range2 = [mstr rangeOfString:@">"];
+            
+            if (range1.location != NSNotFound) {
+                location = range1.location;
+                length = range2.location - range1.location-1;
+                if (length > 5000)break;
+                
+                [mstr replaceOccurrencesOfString:@"<" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, range1.location + range1.length)];
+                [mstr replaceOccurrencesOfString:@">" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, range2.location + range2.length - 1)];
+            }
+            
+            NSDictionary *dict = @{@"location":@(location),@"length":@(length)};
+            [rangeColorArray addObject:dict];
+        }
+        
+        AttributedStr = [[NSMutableAttributedString alloc]initWithString:mstr];
+        for (NSDictionary *dict in rangeColorArray) {
+            NSUInteger lo = [dict[@"location"] integerValue];
+            NSUInteger le = [dict[@"length"] integerValue];
+            [AttributedStr addAttribute:NSForegroundColorAttributeName
+                                  value:SXColorLabelAnotherColor
+                                  range:NSMakeRange(lo, le)];
+        }
+        [self setAttributedText:AttributedStr];
+    }else{
+        [self setText:text];
+    }
 }
 
 - (void)setFontText:(NSString *)text{
-
+    if ([text rangeOfString:@"["].location != NSNotFound) {
+        if (!SXColorLabelAnotherFont) {
+            SXColorLabelAnotherFont = [UIFont boldSystemFontOfSize:18];
+        }
+        NSMutableAttributedString *AttributedStr;
+        NSRange range1;
+        NSRange range2;
+        NSUInteger location =0;
+        NSUInteger length = 0;
+        NSMutableArray *rangeBoldArray = [NSMutableArray array];
+        NSMutableString *mstr2 = [NSMutableString string];
+        [mstr2 appendString:text];
+        
+        range1.location = 0;
+        while (range1.location != NSNotFound) {
+            range1 = [mstr2 rangeOfString:@"["];
+            range2 = [mstr2 rangeOfString:@"]"];
+            
+            if (range1.location != NSNotFound) {
+                location = range1.location;
+                length = range2.location - range1.location-1;
+                if (length > 5000)break;
+                
+                [mstr2 replaceOccurrencesOfString:@"[" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, range1.location + range1.length)];
+                [mstr2 replaceOccurrencesOfString:@"]" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, range2.location + range2.length - 1)];
+            }
+            
+            NSDictionary *dict = @{@"location":@(location),@"length":@(length)};
+            [rangeBoldArray addObject:dict];
+        }
+        
+        AttributedStr = [[NSMutableAttributedString alloc]initWithString:mstr2];
+        for (NSDictionary *dict in rangeBoldArray) {
+            NSUInteger lo = [dict[@"location"] integerValue];
+            NSUInteger le = [dict[@"length"] integerValue];
+            [AttributedStr addAttribute:NSFontAttributeName
+                                  value:SXColorLabelAnotherFont
+                                  range:NSMakeRange(lo, le)];
+        }
+        [self setAttributedText:AttributedStr];
+    }else{
+        [self setText:text];
+    }
 }
 
 - (void)setColorFontText:(NSString *)text{
@@ -102,7 +186,6 @@ static UIFont *SXColorLabelAnotherFont;
                                   value:SXColorLabelAnotherFont
                                   range:NSMakeRange(lo, le)];
         }
-        
         [self setAttributedText:AttributedStr];
     }else{
         [self setText:text];
