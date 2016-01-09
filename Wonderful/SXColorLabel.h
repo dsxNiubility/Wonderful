@@ -10,7 +10,18 @@
 
 @interface SXColorLabel : UILabel
 
+/**
+ *  Set a highlight color to show emphasis between the beginmark and endmark
+ *
+ *  @param color A color different from label.TextColor
+ */
 + (void)setAnotherColor:(UIColor *)color;
+
+/**
+ *  Set a highlight font to show emphasis between the beginmark and endmark
+ *
+ *  @param font A font different from label.font
+ */
 + (void)setAnotherFont:(UIFont *)font;
 
 @end

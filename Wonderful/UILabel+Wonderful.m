@@ -78,6 +78,15 @@ typedef NS_ENUM(NSInteger, SXLabelType) {
     }
 }
 
+/**
+ *  通过传入的开始标记和结束标记在这个字符串中扫描并将获得的范围装在数组中返回
+ *
+ *  @param beginstr 开始标记
+ *  @param endstr   结束标记
+ *  @param text     信息
+ *
+ *  @return 字典数组装着一个个range
+ */
 - (NSArray *)scanBeginStr:(NSString *)beginstr endStr:(NSString *)endstr inText:(NSMutableString * *)text{
     NSRange range1;
     NSRange range2;
@@ -104,6 +113,15 @@ typedef NS_ENUM(NSInteger, SXLabelType) {
     return rangeBoldArray;
 }
 
+/**
+ *  通过传入的range数组在富文本中添加特殊文本，有两种类型
+ *
+ *  @param attributeStr 富文本
+ *  @param dictArray    字典数组里面装着range
+ *  @param type         1就是添加颜色相关，2就是添加字体相关
+ *
+ *  @return 把传入的富文本返回
+ */
 - (NSMutableAttributedString *)addAttributeString:(NSMutableAttributedString *)attributeStr withArray:(NSArray *)dictArray type:(SXLabelType)type{
     
     NSString *key = type == SXLabelTypeColor ? NSForegroundColorAttributeName : NSFontAttributeName;
