@@ -10,6 +10,13 @@
 
 static UIColor *SXColorLabelAnotherColor;
 static UIFont *SXColorLabelAnotherFont;
+
+typedef NS_ENUM(NSInteger, SXLabelType) {
+    SXLabelTypeColor = 1,
+    SXLabelTypeFont = 2,
+};
+
+
 @implementation UILabel (Wonderful)
 
 - (void)setColorText:(NSString *)text{
@@ -17,41 +24,11 @@ static UIFont *SXColorLabelAnotherFont;
         if (!SXColorLabelAnotherColor) {
             SXColorLabelAnotherColor = [UIColor redColor];
         }
-        NSMutableAttributedString *AttributedStr;
-        NSRange range1;
-        NSRange range2;
-        NSUInteger location =0;
-        NSUInteger length = 0;
-        NSMutableArray *rangeColorArray = [NSMutableArray array];
         NSMutableString *mstr = [NSMutableString string];
         [mstr appendString:text];
-        
-        range1.location = 0;
-        while (range1.location != NSNotFound) {
-            range1 = [mstr rangeOfString:@"<"];
-            range2 = [mstr rangeOfString:@">"];
-            
-            if (range1.location != NSNotFound) {
-                location = range1.location;
-                length = range2.location - range1.location-1;
-                if (length > 5000)break;
-                
-                [mstr replaceOccurrencesOfString:@"<" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, range1.location + range1.length)];
-                [mstr replaceOccurrencesOfString:@">" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, range2.location + range2.length - 1)];
-            }
-            
-            NSDictionary *dict = @{@"location":@(location),@"length":@(length)};
-            [rangeColorArray addObject:dict];
-        }
-        
-        AttributedStr = [[NSMutableAttributedString alloc]initWithString:mstr];
-        for (NSDictionary *dict in rangeColorArray) {
-            NSUInteger lo = [dict[@"location"] integerValue];
-            NSUInteger le = [dict[@"length"] integerValue];
-            [AttributedStr addAttribute:NSForegroundColorAttributeName
-                                  value:SXColorLabelAnotherColor
-                                  range:NSMakeRange(lo, le)];
-        }
+        NSArray *rangeColorArray = [self scanBeginStr:@"<" endStr:@">" inText:&mstr];
+        NSMutableAttributedString *AttributedStr = [[NSMutableAttributedString alloc]initWithString:mstr];
+        AttributedStr = [self addAttributeString:AttributedStr withArray:rangeColorArray type:1];
         [self setAttributedText:AttributedStr];
     }else{
         [self setText:text];
@@ -63,41 +40,11 @@ static UIFont *SXColorLabelAnotherFont;
         if (!SXColorLabelAnotherFont) {
             SXColorLabelAnotherFont = [UIFont boldSystemFontOfSize:18];
         }
-        NSMutableAttributedString *AttributedStr;
-        NSRange range1;
-        NSRange range2;
-        NSUInteger location =0;
-        NSUInteger length = 0;
-        NSMutableArray *rangeBoldArray = [NSMutableArray array];
         NSMutableString *mstr2 = [NSMutableString string];
         [mstr2 appendString:text];
-        
-        range1.location = 0;
-        while (range1.location != NSNotFound) {
-            range1 = [mstr2 rangeOfString:@"["];
-            range2 = [mstr2 rangeOfString:@"]"];
-            
-            if (range1.location != NSNotFound) {
-                location = range1.location;
-                length = range2.location - range1.location-1;
-                if (length > 5000)break;
-                
-                [mstr2 replaceOccurrencesOfString:@"[" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, range1.location + range1.length)];
-                [mstr2 replaceOccurrencesOfString:@"]" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, range2.location + range2.length - 1)];
-            }
-            
-            NSDictionary *dict = @{@"location":@(location),@"length":@(length)};
-            [rangeBoldArray addObject:dict];
-        }
-        
-        AttributedStr = [[NSMutableAttributedString alloc]initWithString:mstr2];
-        for (NSDictionary *dict in rangeBoldArray) {
-            NSUInteger lo = [dict[@"location"] integerValue];
-            NSUInteger le = [dict[@"length"] integerValue];
-            [AttributedStr addAttribute:NSFontAttributeName
-                                  value:SXColorLabelAnotherFont
-                                  range:NSMakeRange(lo, le)];
-        }
+        NSArray *rangeBoldArray = [self scanBeginStr:@"[" endStr:@"]" inText:&mstr2];
+        NSMutableAttributedString *AttributedStr = [[NSMutableAttributedString alloc]initWithString:mstr2];
+        AttributedStr = [self addAttributeString:AttributedStr withArray:rangeBoldArray type:2];
         [self setAttributedText:AttributedStr];
     }else{
         [self setText:text];
@@ -112,84 +59,64 @@ static UIFont *SXColorLabelAnotherFont;
         if (!SXColorLabelAnotherColor) {
             SXColorLabelAnotherColor = [UIColor redColor];
         }
-        NSMutableAttributedString *AttributedStr;
-        NSRange range1;
-        NSRange range2;
-        NSUInteger location =0;
-        NSUInteger length = 0;
-        NSMutableArray *rangeColorArray = [NSMutableArray array];
-        NSMutableArray *rangeBoldArray = [NSMutableArray array];
         NSMutableString *mstr = [NSMutableString string];
         NSMutableString *mstr2 = [NSMutableString string];
         [mstr appendString:text];
         [mstr2 appendString:text];
-        
         [mstr replaceOccurrencesOfString:@"[" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr.length)];
         [mstr replaceOccurrencesOfString:@"]" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr.length)];
         [mstr2 replaceOccurrencesOfString:@"<" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr2.length)];
         [mstr2 replaceOccurrencesOfString:@">" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr2.length)];
-        
-        range1.location = 0;
-        while (range1.location != NSNotFound) {
-            range1 = [mstr rangeOfString:@"<"];
-            range2 = [mstr rangeOfString:@">"];
-            
-            if (range1.location != NSNotFound) {
-                location = range1.location;
-                length = range2.location - range1.location-1;
-                if (length > 5000)break;
-                
-                [mstr replaceOccurrencesOfString:@"<" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, range1.location + range1.length)];
-                [mstr replaceOccurrencesOfString:@">" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, range2.location + range2.length - 1)];
-            }
-            
-            NSDictionary *dict = @{@"location":@(location),@"length":@(length)};
-            [rangeColorArray addObject:dict];
-        }
-        
-        range1.location = 0;
-        length = 0;
-        location = 0;
-        while (range1.location != NSNotFound) {
-            range1 = [mstr2 rangeOfString:@"["];
-            range2 = [mstr2 rangeOfString:@"]"];
-            
-            if (range1.location != NSNotFound) {
-                location = range1.location;
-                length = range2.location - range1.location-1;
-                if (length > 5000)break;
-                
-                [mstr2 replaceOccurrencesOfString:@"[" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, range1.location + range1.length)];
-                [mstr2 replaceOccurrencesOfString:@"]" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, range2.location + range2.length - 1)];
-            }
-            
-            NSDictionary *dict = @{@"location":@(location),@"length":@(length)};
-            [rangeBoldArray addObject:dict];
-        }
-        
-        [mstr2 replaceOccurrencesOfString:@"[" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr2.length)];
-        [mstr2 replaceOccurrencesOfString:@"]" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, mstr2.length)];
-        
-        AttributedStr = [[NSMutableAttributedString alloc]initWithString:mstr];
-        for (NSDictionary *dict in rangeColorArray) {
-            NSUInteger lo = [dict[@"location"] integerValue];
-            NSUInteger le = [dict[@"length"] integerValue];
-            [AttributedStr addAttribute:NSForegroundColorAttributeName
-                                  value:SXColorLabelAnotherColor
-                                  range:NSMakeRange(lo, le)];
-        }
-        
-        for (NSDictionary *dict in rangeBoldArray) {
-            NSUInteger lo = [dict[@"location"] integerValue];
-            NSUInteger le = [dict[@"length"] integerValue];
-            [AttributedStr addAttribute:NSFontAttributeName
-                                  value:SXColorLabelAnotherFont
-                                  range:NSMakeRange(lo, le)];
-        }
+        NSArray *rangeColorArray = [self scanBeginStr:@"<" endStr:@">" inText:&mstr];
+        NSArray *rangeBoldArray = [self scanBeginStr:@"[" endStr:@"]" inText:&mstr2];
+        NSMutableAttributedString *AttributedStr = [[NSMutableAttributedString alloc]initWithString:mstr];
+        AttributedStr = [self addAttributeString:AttributedStr withArray:rangeColorArray type:1];
+        AttributedStr = [self addAttributeString:AttributedStr withArray:rangeBoldArray type:2];
         [self setAttributedText:AttributedStr];
     }else{
         [self setText:text];
     }
+}
+
+- (NSArray *)scanBeginStr:(NSString *)beginstr endStr:(NSString *)endstr inText:(NSMutableString * *)text{
+    NSRange range1;
+    NSRange range2;
+    NSUInteger location =0;
+    NSUInteger length = 0;
+    range1.location = 0;
+    
+    NSMutableString *mstr2 = *text;
+    NSMutableArray *rangeBoldArray = [NSMutableArray array];
+    while (range1.location != NSNotFound) {
+        range1 = [mstr2 rangeOfString:beginstr];
+        range2 = [mstr2 rangeOfString:endstr];
+        if (range1.location != NSNotFound) {
+            location = range1.location;
+            length = range2.location - range1.location-1;
+            if (length > 5000)break;
+            
+            [mstr2 replaceOccurrencesOfString:beginstr withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, range1.location + range1.length)];
+            [mstr2 replaceOccurrencesOfString:endstr withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, range2.location + range2.length - 1)];
+        }
+        NSDictionary *dict = @{@"location":@(location),@"length":@(length)};
+        [rangeBoldArray addObject:dict];
+    }
+    return rangeBoldArray;
+}
+
+- (NSMutableAttributedString *)addAttributeString:(NSMutableAttributedString *)attributeStr withArray:(NSArray *)dictArray type:(SXLabelType)type{
+    
+    NSString *key = type == SXLabelTypeColor ? NSForegroundColorAttributeName : NSFontAttributeName;
+    NSObject *value = type == SXLabelTypeColor ? SXColorLabelAnotherColor : SXColorLabelAnotherFont;
+    
+    for (NSDictionary *dict in dictArray) {
+        NSUInteger lo = [dict[@"location"] integerValue];
+        NSUInteger le = [dict[@"length"] integerValue];
+        [attributeStr addAttribute:key
+                              value:value
+                              range:NSMakeRange(lo, le)];
+    }
+    return attributeStr;
 }
 
 
