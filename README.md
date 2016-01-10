@@ -15,6 +15,7 @@
 <br />
 <br />
 ####Demo程序截图
+_建议使用iPhone6运行Demo程序_<br />
 ![image](https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1001.png)<br />
 
 ####一、UIColor+Wonderful
@@ -80,7 +81,9 @@
     	SXColorGradientToBottom = 3,
     	SXColorGradientToRight = 4,
 	};
-＊4.后续会增加传入一个数组，然后搭建一个多个颜色过渡的view。
+	
+4.支持增加传入一个数组，然后搭建一个多个颜色过渡的view。<br />
+![image](https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1006.png)<br />
 
 ####四、SXMarquee
 1.实现任何样式的跑马灯。<br />
