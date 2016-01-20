@@ -16,8 +16,9 @@ typedef NS_ENUM(NSInteger, SXLabelType) {
     SXLabelTypeFont = 2,
 };
 
-
 @implementation UILabel (Wonderful)
+@dynamic anotherFont;
+@dynamic anotherColor;
 
 - (void)setColorText:(NSString *)text{
     if ([text rangeOfString:@"<"].location != NSNotFound){
@@ -147,4 +148,12 @@ typedef NS_ENUM(NSInteger, SXLabelType) {
 {
     SXColorLabelAnotherFont = font;
 }
+
+- (void)setAnotherColor:(UIColor *)color{
+    self.anotherColor = color;
+}
+- (void)setAnotherFont:(UIFont *)font{
+    self.anotherFont = font;
+}
+
 @end
