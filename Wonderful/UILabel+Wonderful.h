@@ -45,10 +45,4 @@
  */
 + (void)setAnotherFont:(UIFont *)font;
 
-- (void)setAnotherColor:(UIColor *)color;
-- (void)setAnotherFont:(UIFont *)font;
-
-@property(nonatomic,strong)UIColor *anotherColor;
-@property(nonatomic,strong)UIFont *anotherFont;
-
 @end

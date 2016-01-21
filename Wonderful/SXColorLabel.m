@@ -140,7 +140,8 @@ typedef NS_ENUM(NSInteger, SXLabelType) {
 - (NSMutableAttributedString *)addAttributeString:(NSMutableAttributedString *)attributeStr withArray:(NSArray *)dictArray type:(SXLabelType)type{
     
     NSString *key = type == SXLabelTypeColor ? NSForegroundColorAttributeName : NSFontAttributeName;
-    NSObject *value = type == SXLabelTypeColor ? SXColorLabelAnotherColor : SXColorLabelAnotherFont;
+    UIColor *showColor = self.anotherColor == nil ? SXColorLabelAnotherColor : self.anotherColor;
+    NSObject *value = type == SXLabelTypeColor ? showColor : SXColorLabelAnotherFont;
     
     for (NSDictionary *dict in dictArray) {
         NSUInteger lo = [dict[@"location"] integerValue];
@@ -152,7 +153,6 @@ typedef NS_ENUM(NSInteger, SXLabelType) {
     return attributeStr;
 }
 
-
 + (void)setAnotherColor:(UIColor *)color
 {
     SXColorLabelAnotherColor = color;
@@ -161,6 +161,13 @@ typedef NS_ENUM(NSInteger, SXLabelType) {
 + (void)setAnotherFont:(UIFont *)font
 {
     SXColorLabelAnotherFont = font;
+}
+
+- (void)setAnotherColor:(UIColor *)color{
+    _anotherColor = color;
+}
+- (void)setAnotherFont:(UIFont *)font{
+    _anotherFont = font;
 }
 
 @end

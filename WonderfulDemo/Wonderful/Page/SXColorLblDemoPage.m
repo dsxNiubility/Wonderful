@@ -48,6 +48,7 @@
     [self.bodyView addSubview:lbl];
     
     SXColorLabel *sxlbl = [[SXColorLabel alloc]initWithFrame:CGRectMake(40, 40, 350, 30)];
+    [sxlbl setAnotherColor:[UIColor springGreen]];
     sxlbl.font = [UIFont systemFontOfSize:14];
     sxlbl.text = @"今天要记得通知<Peter>和<Robin>去开会。";
     [self.bodyView addSubview:sxlbl];
