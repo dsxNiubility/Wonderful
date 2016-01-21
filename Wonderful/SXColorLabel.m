@@ -139,9 +139,10 @@ typedef NS_ENUM(NSInteger, SXLabelType) {
  */
 - (NSMutableAttributedString *)addAttributeString:(NSMutableAttributedString *)attributeStr withArray:(NSArray *)dictArray type:(SXLabelType)type{
     
+    UIFont *showFont = self.anotherFont == nil ? SXColorLabelAnotherFont : self.anotherFont;
     NSString *key = type == SXLabelTypeColor ? NSForegroundColorAttributeName : NSFontAttributeName;
     UIColor *showColor = self.anotherColor == nil ? SXColorLabelAnotherColor : self.anotherColor;
-    NSObject *value = type == SXLabelTypeColor ? showColor : SXColorLabelAnotherFont;
+    NSObject *value = type == SXLabelTypeColor ? showColor : showFont;
     
     for (NSDictionary *dict in dictArray) {
         NSUInteger lo = [dict[@"location"] integerValue];

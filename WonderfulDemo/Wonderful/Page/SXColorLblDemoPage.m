@@ -59,6 +59,7 @@
     [self.bodyView addSubview:lbl2];
     
     SXColorLabel *sxlbl2 = [[SXColorLabel alloc]initWithFrame:CGRectMake(40, 120, 350, 30)];
+    [sxlbl2 setAnotherFont:[UIFont systemFontOfSize:25]];
     sxlbl2.font = [UIFont systemFontOfSize:14];
     sxlbl2.text = @"礼物很有[粪]量，你会大吃一[斤]！";
     [self.bodyView addSubview:sxlbl2];
