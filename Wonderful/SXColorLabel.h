@@ -24,9 +24,25 @@
  */
 + (void)setAnotherFont:(UIFont *)font;
 
+/**
+ *  Instance method to set color, the priority is higher.
+ *
+ */
 - (void)setAnotherColor:(UIColor *)color;
+
+/**
+ *  Instance method to set font, the priority is higher.
+ *
+ */
 - (void)setAnotherFont:(UIFont *)font;
+
+/**
+ *  The color for this label instance
+ */
 @property(nonatomic,strong)UIColor *anotherColor;
+/**
+ *  The font for this label instance
+ */
 @property(nonatomic,strong)UIFont *anotherFont;
 
 @end
