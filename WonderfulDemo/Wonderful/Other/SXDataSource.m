@@ -24,15 +24,9 @@
 - (SXCLEntity *)randomAColorEntity
 {
     NSInteger x1 = arc4random() % 10;
-    NSInteger y1 = arc4random() % 10;
     NSArray *ary1 = self.marray[x1];
-    SXCLEntity *item1 = nil;
-    if (ary1.count < y1) {
-        item1 = ary1[y1/2];
-    }else{
-        item1 = ary1[y1/2];
-    }
-    return item1;
+    NSInteger y1 = arc4random() % ary1.count;
+    return ary1[y1];
 }
 
 
