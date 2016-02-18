@@ -10,4 +10,7 @@
 
 @interface SXHeadLine : UIView
 
+@property(nonatomic,strong)NSArray *messageArray;
+@property(nonatomic,strong)NSTimer *timer;
+
 @end
