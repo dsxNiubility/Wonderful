@@ -27,18 +27,14 @@
         UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(10, _h, frame.size.width, _h)];
         label1.font = [UIFont systemFontOfSize:12];
         label2.font = label1.font;
-        label1.textColor = [UIColor lightGrayColor];
-        label2.textColor = [UIColor lightGrayColor];
+        label1.textColor = [UIColor blackColor];
+        label2.textColor = [UIColor blackColor];
         
         self.label1 = label1;
         self.label2 = label2;
-        
         [self addSubview:label1];
         [self addSubview:label2];
-        
-        NSTimer *timer = [NSTimer timerWithTimeInterval:3 target:self selector:@selector(scrollAnimate) userInfo:nil repeats:YES];
-        [[NSRunLoop currentRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
-        self.timer = timer;
+        self.clipsToBounds = YES;
     }
     return self;
 }
@@ -62,11 +58,11 @@
 
 - (void)scrollAnimate
 {
+    CGRect rect1 = self.label1.frame;
+    CGRect rect2 = self.label2.frame;
+    rect1.origin.y -= _h;
+    rect2.origin.y -= _h;
     [UIView animateWithDuration:0.5 animations:^{
-        CGRect rect1 = self.label1.frame;
-        CGRect rect2 = self.label2.frame;
-        rect1.origin.y -= _h;
-        rect2.origin.y -= _h;
         self.label1.frame = rect1;
         self.label2.frame = rect2;
     } completion:^(BOOL finished) {
@@ -77,9 +73,6 @@
 
 - (void)checkLabelFrameChange:(UILabel *)label
 {
-    CGRect rect = label.frame;
-    rect.origin.y -= _h;
-    label.frame = rect;
     if (label.frame.origin.y < -10) {
         CGRect rect = label.frame;
         rect.origin.y = _h;
@@ -92,5 +85,16 @@
         }
     }
 }
+
+- (void)start{
+    NSTimer *timer = [NSTimer timerWithTimeInterval:3 target:self selector:@selector(scrollAnimate) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
+    self.timer = timer;
+}
+
+- (void)stop{
+    [self.timer invalidate];
+}
+
 @end
 

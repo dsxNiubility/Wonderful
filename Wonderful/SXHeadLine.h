@@ -13,4 +13,8 @@
 @property(nonatomic,strong)NSArray *messageArray;
 @property(nonatomic,strong)NSTimer *timer;
 
+- (void)start;
+
+- (void)stop;
+
 @end

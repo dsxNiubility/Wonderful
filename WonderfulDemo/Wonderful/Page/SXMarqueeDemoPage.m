@@ -9,6 +9,7 @@
 #import "SXMarqueeDemoPage.h"
 #import "UIColor+Wonderful.h"
 #import "SXMarquee.h"
+#import "SXHeadLine.h"
 
 @interface SXMarqueeDemoPage ()
 @property (weak, nonatomic) IBOutlet UILabel *msgLabel2;
@@ -45,11 +46,22 @@
     [mar4 changeMarqueeLabelFont:[UIFont boldSystemFontOfSize:13]];
     [mar4 start];
     
+    SXHeadLine *headLine1 = [[SXHeadLine alloc]initWithFrame:CGRectMake(20, 430, 200, 30)];
+    headLine1.messageArray = @[@"重大活动，天猫的双十一，然而并没卵用",@"库里43分，勇士吊打骑士",@"范冰冰李晨回家过年，年夜饭朴素"];
+    [headLine1 start];
+    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [headLine1 stop];
+//    });
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [headLine1 start];
+//    });
     
     [self.view addSubview:mar];
     [self.view addSubview:mar2];
     [self.view addSubview:mar3];
     [self.view addSubview:mar4];
+    [self.view addSubview:headLine1];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
