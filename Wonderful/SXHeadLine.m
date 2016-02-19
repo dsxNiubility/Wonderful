@@ -17,7 +17,7 @@
 @property(nonatomic,assign)NSInteger messageIndex;
 @property(nonatomic,assign)CGFloat h;
 @property(nonatomic,assign)CGFloat w;
-
+@property(nonatomic,strong)NSTimer *timer;
 @property(nonatomic,strong)SXColorGradientView *viewTop;
 @property(nonatomic,strong)SXColorGradientView *viewBottom;
 
@@ -50,6 +50,7 @@
     return self;
 }
 
+#pragma mark - **************** animate
 - (void)scrollAnimate
 {
     CGRect rect1 = self.label1.frame;
@@ -80,6 +81,7 @@
     }
 }
 
+#pragma mark - **************** opration
 - (void)start{
     NSTimer *timer = [NSTimer timerWithTimeInterval:_stayDuration target:self selector:@selector(scrollAnimate) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
@@ -90,6 +92,7 @@
     [self.timer invalidate];
 }
 
+#pragma mark - **************** set
 -(void)setMessageArray:(NSArray *)messageArray
 {
     _messageArray = messageArray;
