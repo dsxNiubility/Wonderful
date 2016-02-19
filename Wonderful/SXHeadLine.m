@@ -9,6 +9,7 @@
 #import "SXHeadLine.h"
 #import "SXColorGradientView.h"
 
+#define kSXHeadLineMargin 10
 @interface SXHeadLine ()
 
 @property(nonatomic,strong)UILabel *label1;
@@ -29,13 +30,16 @@
     if (self) {
         self.h = frame.size.height;
         self.w = frame.size.width;
-        UILabel *label1 = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, frame.size.width, _h)];
-        UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(10, _h, frame.size.width, _h)];
-        label1.font = [UIFont systemFontOfSize:12];
-        label2.font = label1.font;
-        label1.textColor = [UIColor blackColor];
-        label2.textColor = [UIColor blackColor];
-        
+        UILabel *label1 = [[UILabel alloc]initWithFrame:CGRectMake(kSXHeadLineMargin, 0, frame.size.width, _h)];
+        UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(kSXHeadLineMargin, _h, frame.size.width, _h)];
+        self.bgColor = [UIColor whiteColor];
+        self.textColor = [UIColor blackColor];
+        self.scrollDuration = 1;
+        self.stayDuration = 4;
+        self.hasGradient = YES;
+        self.textFont = [UIFont systemFontOfSize:12];
+        label1.font = label2.font = _textFont;
+        label1.textColor = label2.textColor = _textColor;
         self.label1 = label1;
         self.label2 = label2;
         [self addSubview:label1];
@@ -51,7 +55,7 @@
     CGRect rect2 = self.label2.frame;
     rect1.origin.y -= _h;
     rect2.origin.y -= _h;
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:_scrollDuration animations:^{
         self.label1.frame = rect1;
         self.label2.frame = rect2;
     } completion:^(BOOL finished) {
@@ -76,7 +80,7 @@
 }
 
 - (void)start{
-    NSTimer *timer = [NSTimer timerWithTimeInterval:3 target:self selector:@selector(scrollAnimate) userInfo:nil repeats:YES];
+    NSTimer *timer = [NSTimer timerWithTimeInterval:_stayDuration target:self selector:@selector(scrollAnimate) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
     self.timer = timer;
 }
