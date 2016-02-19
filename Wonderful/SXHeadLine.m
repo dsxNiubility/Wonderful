@@ -83,6 +83,9 @@
 
 #pragma mark - **************** opration
 - (void)start{
+    if (self.messageArray.count < 2) {
+        return;
+    }
     NSTimer *timer = [NSTimer timerWithTimeInterval:_stayDuration target:self selector:@selector(scrollAnimate) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
     self.timer = timer;
@@ -102,7 +105,6 @@
         self.messageIndex = 2;
     }else if (self.messageArray.count == 1){
         self.label1.text = self.messageArray[0];
-        [self.timer invalidate];
     }else if (self.messageArray.count == 2){
         self.label1.text = self.messageArray[0];
         self.label2.text = self.messageArray[1];

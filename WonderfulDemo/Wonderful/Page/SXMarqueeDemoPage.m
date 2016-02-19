@@ -46,24 +46,50 @@
     [mar4 changeMarqueeLabelFont:[UIFont boldSystemFontOfSize:13]];
     [mar4 start];
     
-    SXHeadLine *headLine1 = [[SXHeadLine alloc]initWithFrame:CGRectMake(20, 430, 200, 30)];
-    headLine1.messageArray = @[@"重大活动，天猫的双十一，然而并没卵用",@"库里43分，勇士吊打骑士",@"范冰冰李晨回家过年，年夜饭朴素"];
-    headLine1.bgColor = [UIColor springGreen];
-    headLine1.hasGradient = YES;
+    UILabel *label1 = [[UILabel alloc]initWithFrame:CGRectMake(20, 450, 80, 30)];
+    label1.text = @"一条信息";
+    label1.font = [UIFont systemFontOfSize:12];
+    
+    UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(20, 490, 80, 30)];
+    label2.text = @"两条信息";
+    label2.font = [UIFont systemFontOfSize:12];
+    
+    UILabel *label3 = [[UILabel alloc]initWithFrame:CGRectMake(20, 530, 80, 30)];
+    label3.text = @"三条以上";
+    label3.font = [UIFont systemFontOfSize:12];
+    
+
+    SXHeadLine *headLine1 = [[SXHeadLine alloc]initWithFrame:CGRectMake(100, 450, 250, 30)];
+    headLine1.messageArray = @[@"天猫的双十一，然而并没卵用"];
+    [headLine1 setBgColor:[UIColor springGreen] textColor:[UIColor darkGreen] textFont:[UIFont systemFontOfSize:14]];
     [headLine1 start];
     
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [headLine1 stop];
-//    });
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [headLine1 start];
-//    });
+    SXHeadLine *headLine2 = [[SXHeadLine alloc]initWithFrame:CGRectMake(100, 490, 250, 30)];
+    headLine2.messageArray = @[@"郑爽胡彦斌约会，瘦成一道闪电",@"范冰冰李晨回家过年，年夜饭朴素"];
+    [headLine2 setBgColor:[UIColor violetColor] textColor:[UIColor mistyRose] textFont:[UIFont boldSystemFontOfSize:12]];
+    [headLine2 setScrollDuration:1.0 stayDuration:5.0];
+    headLine2.hasGradient = YES;
+    [headLine2 start];
+    
+    SXHeadLine *headLine3 = [[SXHeadLine alloc]initWithFrame:CGRectMake(100, 530, 250, 30)];
+    headLine3.messageArray = @[@"库里43分，勇士吊打骑士",@"伦纳德死亡缠绕詹姆斯，马刺大胜骑士",@"乐福致命失误，骑士惨遭5连败",@"五小阵容发威，雄鹿吊打骑士"];
+    [headLine3 setBgColor:[UIColor whiteColor] textColor:[UIColor orangeRed] textFont:[UIFont systemFontOfSize:13]];
+    [headLine3 setScrollDuration:0.5 stayDuration:3];
+    headLine3.hasGradient = YES;
+    [headLine3 start];
     
     [self.view addSubview:mar];
     [self.view addSubview:mar2];
     [self.view addSubview:mar3];
     [self.view addSubview:mar4];
+    
+    [self.view addSubview:label1];
+    [self.view addSubview:label2];
+    [self.view addSubview:label3];
+    
     [self.view addSubview:headLine1];
+    [self.view addSubview:headLine2];
+    [self.view addSubview:headLine3];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
