@@ -48,6 +48,8 @@
     
     SXHeadLine *headLine1 = [[SXHeadLine alloc]initWithFrame:CGRectMake(20, 430, 200, 30)];
     headLine1.messageArray = @[@"重大活动，天猫的双十一，然而并没卵用",@"库里43分，勇士吊打骑士",@"范冰冰李晨回家过年，年夜饭朴素"];
+    headLine1.bgColor = [UIColor springGreen];
+    headLine1.hasGradient = YES;
     [headLine1 start];
     
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

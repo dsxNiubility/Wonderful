@@ -7,6 +7,7 @@
 //
 
 #import "SXHeadLine.h"
+#import "SXColorGradientView.h"
 
 @interface SXHeadLine ()
 
@@ -14,6 +15,10 @@
 @property(nonatomic,strong)UILabel *label2;
 @property(nonatomic,assign)NSInteger messageIndex;
 @property(nonatomic,assign)CGFloat h;
+@property(nonatomic,assign)CGFloat w;
+
+@property(nonatomic,strong)SXColorGradientView *viewTop;
+@property(nonatomic,strong)SXColorGradientView *viewBottom;
 
 @end
 @implementation SXHeadLine
@@ -23,6 +28,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.h = frame.size.height;
+        self.w = frame.size.width;
         UILabel *label1 = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, frame.size.width, _h)];
         UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(10, _h, frame.size.width, _h)];
         label1.font = [UIFont systemFontOfSize:12];
@@ -37,23 +43,6 @@
         self.clipsToBounds = YES;
     }
     return self;
-}
-
--(void)setMessageArray:(NSArray *)messageArray
-{
-    _messageArray = messageArray;
-    if (self.messageArray.count > 2) {
-        self.label1.text = self.messageArray[0];
-        self.label2.text = self.messageArray[1];
-        self.messageIndex = 2;
-    }else if (self.messageArray.count == 1){
-        self.label1.text = self.messageArray[0];
-        [self.timer invalidate];
-    }else if (self.messageArray.count == 2){
-        self.label1.text = self.messageArray[0];
-        self.label2.text = self.messageArray[1];
-        self.messageIndex = 0;
-    }
 }
 
 - (void)scrollAnimate
@@ -94,6 +83,61 @@
 
 - (void)stop{
     [self.timer invalidate];
+}
+
+-(void)setMessageArray:(NSArray *)messageArray
+{
+    _messageArray = messageArray;
+    if (self.messageArray.count > 2) {
+        self.label1.text = self.messageArray[0];
+        self.label2.text = self.messageArray[1];
+        self.messageIndex = 2;
+    }else if (self.messageArray.count == 1){
+        self.label1.text = self.messageArray[0];
+        [self.timer invalidate];
+    }else if (self.messageArray.count == 2){
+        self.label1.text = self.messageArray[0];
+        self.label2.text = self.messageArray[1];
+        self.messageIndex = 0;
+    }
+}
+
+- (void)setTextColor:(UIColor *)textColor{
+    _textColor = textColor;
+    self.label1.textColor = textColor;
+    self.label2.textColor = textColor;
+}
+
+- (void)setTextFont:(UIFont *)textFont{
+    _textFont = textFont;
+    self.label1.font = textFont;
+    self.label2.font = textFont;
+}
+
+- (void)setBgColor:(UIColor *)bgColor{
+    _bgColor = bgColor;
+    self.backgroundColor = bgColor;
+}
+
+- (void)setScrollDuration:(NSTimeInterval)scrollDuration{
+    _scrollDuration = scrollDuration;
+}
+
+- (void)setStayDuration:(NSTimeInterval)stayDuration{
+    _stayDuration = stayDuration;
+}
+
+- (void)setHasGradient:(BOOL)hasGradient{
+    _hasGradient = hasGradient;
+    if (hasGradient) {
+        _viewTop = [SXColorGradientView createWithColor:self.bgColor frame:CGRectMake(0, 0, _w, _h * 0.2) direction:SXGradientToBottom];
+        _viewBottom = [SXColorGradientView createWithColor:self.bgColor frame:CGRectMake(0, _h * 0.8, _w, _h * 0.2) direction:SXGradientToTop];
+        [self addSubview:_viewTop];
+        [self addSubview:_viewBottom];
+    }else{
+        [_viewTop removeFromSuperview];
+        [_viewBottom removeFromSuperview];
+    }
 }
 
 @end
