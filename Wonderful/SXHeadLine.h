@@ -19,11 +19,18 @@
 
 @property(nonatomic,assign)BOOL hasGradient;
 
+@property(nonatomic,assign)CGFloat cornerRadius;
+
 @property(nonatomic,assign)NSTimeInterval scrollDuration;
 @property(nonatomic,assign)NSTimeInterval stayDuration;
 
 - (void)start;
 
 - (void)stop;
+
+- (void)setBgColor:(UIColor *)bgColor textColor:(UIColor *)textColor textFont:(UIFont *)textFont;
+
+- (void)setScrollDuration:(NSTimeInterval)scrollDuration stayDuration:(NSTimeInterval)stayDuration;
+
 
 @end

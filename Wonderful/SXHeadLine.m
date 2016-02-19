@@ -34,9 +34,9 @@
         UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(kSXHeadLineMargin, _h, frame.size.width, _h)];
         self.bgColor = [UIColor whiteColor];
         self.textColor = [UIColor blackColor];
-        self.scrollDuration = 1;
-        self.stayDuration = 4;
-        self.hasGradient = YES;
+        self.scrollDuration = 1.0f;
+        self.stayDuration = 4.0f;
+        self.cornerRadius = 2;
         self.textFont = [UIFont systemFontOfSize:12];
         label1.font = label2.font = _textFont;
         label1.textColor = label2.textColor = _textColor;
@@ -44,7 +44,8 @@
         self.label2 = label2;
         [self addSubview:label1];
         [self addSubview:label2];
-        self.clipsToBounds = YES;
+        self.layer.cornerRadius = self.cornerRadius;
+        self.layer.masksToBounds = YES;
     }
     return self;
 }
@@ -131,6 +132,13 @@
     _stayDuration = stayDuration;
 }
 
+- (void)setCornerRadius:(CGFloat)cornerRadius
+{
+    _cornerRadius = cornerRadius;
+    self.layer.cornerRadius = cornerRadius;
+    self.layer.masksToBounds = YES;
+}
+
 - (void)setHasGradient:(BOOL)hasGradient{
     _hasGradient = hasGradient;
     if (hasGradient) {
@@ -142,6 +150,19 @@
         [_viewTop removeFromSuperview];
         [_viewBottom removeFromSuperview];
     }
+}
+
+- (void)setBgColor:(UIColor *)bgColor textColor:(UIColor *)textColor textFont:(UIFont *)textFont
+{
+    self.bgColor = bgColor;
+    self.textColor = textColor;
+    self.textFont = textFont;
+}
+
+- (void)setScrollDuration:(NSTimeInterval)scrollDuration stayDuration:(NSTimeInterval)stayDuration
+{
+    self.scrollDuration = scrollDuration;
+    self.stayDuration = stayDuration;
 }
 
 @end
