@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"SXMarquee";
+    self.title = @"SXMarquee-SXHeadLine";
     // Do any additional setup after loading the view.
     self.msgLabel2.text = @"a.可创建各种颜色的跑马灯\nb.默认按下停止可以拖动，也可绑定其他点击事件\nc.可以设置速度，颜色，字体等多种属性\nd.后续会有更多扩展";
 }

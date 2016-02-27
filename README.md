@@ -93,7 +93,8 @@ _建议使用iPhone6运行Demo程序_<br />
 	[mar3 start];
 
 2.跑马灯的背景可以设置任何颜色，这个是基于颜色过渡view做的。<br />
-3.跑马灯可以实现点击拖动，或者绑定更多点击事件。
+3.跑马灯可以实现点击拖动，或者绑定更多点击事件。<br />
+![image](https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/004.gif)<br />
 
 ####五、SXColorLabel
 1.把text里重要的内容用特殊符号包起来，就会特殊显示<br />
