@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name = 'Wonderful'
-s.version = '1.1.0'
+s.version = '1.2.0'
 s.license = 'MIT'
 s.summary = 'Include wonderfulcolor api, marquee, colorLabel, Gradient, Separate.'
 s.homepage = 'https://github.com/dsxNiubility/Wonderful'
