@@ -10,8 +10,8 @@
 
 @implementation SXColorLabel
 
-static UIColor *SXColorLabelAnotherColor;
-static UIFont *SXColorLabelAnotherFont;
+static UIColor  *SXColorLabelAnotherColor;
+static UIFont   *SXColorLabelAnotherFont;
 
 typedef NS_ENUM(NSInteger, SXLabelType) {
     SXLabelTypeColor = 1,

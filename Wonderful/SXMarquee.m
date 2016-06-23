@@ -18,18 +18,18 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 
 @interface SXMarquee ()
 
-@property(nonatomic,strong)UIButton *bgBtn;
-@property(nonatomic,strong)UILabel *marqueeLbl;
-@property(nonatomic,strong)UIColor *bgColor;
-@property(nonatomic,strong)UIColor *txtColor;
-@property(nonatomic,copy)NSString *msg;
-@property(nonatomic,strong)NSTimer *timer;
-@property(nonatomic,copy)SXWonderfulAction tapAction;
-@property(nonatomic,strong)SXColorGradientView *leftFade;
-@property(nonatomic,strong)SXColorGradientView *rightFade;
-@property(nonatomic,assign)SXMarqueeTapMode tapMode;
-@property(nonatomic,assign)SXMarqueeSpeedLevel speedLevel;
-@property(nonatomic,strong)UIView *middleView;
+@property (nonatomic,strong) UIButton             *bgBtn;
+@property (nonatomic,strong) UILabel              *marqueeLbl;
+@property (nonatomic,strong) UIColor              *bgColor;
+@property (nonatomic,strong) UIColor              *txtColor;
+@property (nonatomic,copy  ) NSString             *msg;
+@property (nonatomic,strong) NSTimer              *timer;
+@property (nonatomic,copy  ) SXWonderfulAction     tapAction;
+@property (nonatomic,strong) SXColorGradientView  *leftFade;
+@property (nonatomic,strong) SXColorGradientView  *rightFade;
+@property (nonatomic,assign) SXMarqueeTapMode      tapMode;
+@property (nonatomic,assign) SXMarqueeSpeedLevel   speedLevel;
+@property (nonatomic,strong) UIView               *middleView;
 
 @end
 

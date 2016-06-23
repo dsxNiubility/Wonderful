@@ -10,16 +10,27 @@
 #import "SXColorGradientView.h"
 
 #define kSXHeadLineMargin 10
+
+
+//typedef void(^SXWonderfulAction)(NSInteger index);
+typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
+    SXMarqueeTapForMove = 1,
+    SXMarqueeTapForAction = 2
+};
 @interface SXHeadLine ()
 
-@property(nonatomic,strong)UILabel *label1;
-@property(nonatomic,strong)UILabel *label2;
-@property(nonatomic,assign)NSInteger messageIndex;
-@property(nonatomic,assign)CGFloat h;
-@property(nonatomic,assign)CGFloat w;
-@property(nonatomic,strong)NSTimer *timer;
-@property(nonatomic,strong)SXColorGradientView *viewTop;
-@property(nonatomic,strong)SXColorGradientView *viewBottom;
+@property (nonatomic,strong) UILabel              *label1;
+@property (nonatomic,strong) UILabel              *label2;
+@property (nonatomic,assign) NSInteger             messageIndex;
+@property (nonatomic,assign) CGFloat               h;
+@property (nonatomic,assign) CGFloat               w;
+@property (nonatomic,strong) NSTimer              *timer;
+@property (nonatomic,strong) SXColorGradientView  *viewTop;
+@property (nonatomic,strong) SXColorGradientView  *viewBottom;
+@property (nonatomic,strong) UIButton             *bgBtn;
+@property (nonatomic,copy  ) actionBlock           tapAction;
+@property (nonatomic,assign) SXMarqueeTapMode      tapMode;
+
 
 @end
 @implementation SXHeadLine
@@ -28,23 +39,23 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.h = frame.size.height;
-        self.w = frame.size.width;
-        UILabel *label1 = [[UILabel alloc]initWithFrame:CGRectMake(kSXHeadLineMargin, 0, frame.size.width, _h)];
-        UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(kSXHeadLineMargin, _h, frame.size.width, _h)];
-        self.bgColor = [UIColor whiteColor];
-        self.textColor = [UIColor blackColor];
-        self.scrollDuration = 1.0f;
-        self.stayDuration = 4.0f;
-        self.cornerRadius = 2;
-        self.textFont = [UIFont systemFontOfSize:12];
-        label1.font = label2.font = _textFont;
-        label1.textColor = label2.textColor = _textColor;
-        self.label1 = label1;
-        self.label2 = label2;
+        self.h                   = frame.size.height;
+        self.w                   = frame.size.width;
+        UILabel *label1          = [[UILabel alloc]initWithFrame:CGRectMake(kSXHeadLineMargin, 0, frame.size.width, _h)];
+        UILabel *label2          = [[UILabel alloc]initWithFrame:CGRectMake(kSXHeadLineMargin, _h, frame.size.width, _h)];
+        self.bgColor             = [UIColor whiteColor];
+        self.textColor           = [UIColor blackColor];
+        self.scrollDuration      = 1.0f;
+        self.stayDuration        = 4.0f;
+        self.cornerRadius        = 2;
+        self.textFont            = [UIFont systemFontOfSize:12];
+        label1.font              = label2.font = _textFont;
+        label1.textColor         = label2.textColor = _textColor;
+        self.label1              = label1;
+        self.label2              = label2;
         [self addSubview:label1];
         [self addSubview:label2];
-        self.layer.cornerRadius = self.cornerRadius;
+        self.layer.cornerRadius  = self.cornerRadius;
         self.layer.masksToBounds = YES;
     }
     return self;
@@ -168,6 +179,34 @@
 {
     self.scrollDuration = scrollDuration;
     self.stayDuration = stayDuration;
+}
+
+- (void)changeTapMarqueeAction:(actionBlock)action{
+    
+    [self addSubview:self.bgBtn];
+    self.tapAction = action;
+    self.tapMode = SXMarqueeTapForAction;
+}
+
+
+- (UIButton *)bgBtn
+{
+    if (!_bgBtn) {
+        CGFloat w = self.frame.size.width;
+        CGFloat h = self.frame.size.height;
+        _bgBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, w, h)];
+        [_bgBtn addTarget:self action:@selector(bgButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _bgBtn;
+}
+
+- (void)bgButtonClick
+{
+    if (self.tapAction)
+    {
+        NSLog(@"***** messageIndex : %ld", (self.messageIndex + 2)%self.messageArray.count);
+        self.tapAction((self.messageIndex + 2)%self.messageArray.count);
+    }
 }
 
 @end
