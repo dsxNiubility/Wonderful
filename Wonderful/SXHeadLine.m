@@ -204,8 +204,8 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 {
     if (self.tapAction)
     {
-        NSLog(@"***** messageIndex : %ld", (self.messageIndex + 2)%self.messageArray.count);
-        self.tapAction((self.messageIndex + 2)%self.messageArray.count);
+        NSLog(@"***** messageIndex : %ld", (self.messageIndex + self.messageArray.count - 2)%self.messageArray.count);
+        self.tapAction((self.messageIndex + self.messageArray.count - 2)%self.messageArray.count);
     }
 }
 
