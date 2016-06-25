@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, SXGradientDirection) {
-    SXGradientToTop = 1,
-    SXGradientToLeft = 2,
+    SXGradientToTop    = 1,
+    SXGradientToLeft   = 2,
     SXGradientToBottom = 3,
-    SXGradientToRight = 4,
+    SXGradientToRight  = 4,
 };
 
 @interface SXColorGradientView : UIView

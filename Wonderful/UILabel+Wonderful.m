@@ -8,12 +8,12 @@
 
 #import "UILabel+Wonderful.h"
 
-static UIColor *SXColorLabelAnotherColor;
-static UIFont *SXColorLabelAnotherFont;
+static UIColor  *SXColorLabelAnotherColor;
+static UIFont   *SXColorLabelAnotherFont;
 
 typedef NS_ENUM(NSInteger, SXLabelType) {
     SXLabelTypeColor = 1,
-    SXLabelTypeFont = 2,
+    SXLabelTypeFont  = 2,
 };
 
 @implementation UILabel (Wonderful)

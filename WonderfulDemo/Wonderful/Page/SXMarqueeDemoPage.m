@@ -72,10 +72,16 @@
     [headLine2 start];
     
     SXHeadLine *headLine3 = [[SXHeadLine alloc]initWithFrame:CGRectMake(100, 530, 250, 30)];
-    headLine3.messageArray = @[@"库里43分，勇士吊打骑士",@"伦纳德死亡缠绕詹姆斯，马刺大胜骑士",@"乐福致命失误，骑士惨遭5连败",@"五小阵容发威，雄鹿吊打骑士"];
+    headLine3.messageArray = @[@"1、库里43分，勇士吊打骑士",@"2、伦纳德死亡缠绕詹姆斯，马刺大胜骑士",@"3、乐福致命失误，骑士惨遭5连败",@"4、五小阵容发威，雄鹿吊打骑士", @"5、天猫的双十一，然而并没卵用"];
     [headLine3 setBgColor:[UIColor whiteColor] textColor:[UIColor orangeRed] textFont:[UIFont systemFontOfSize:13]];
     [headLine3 setScrollDuration:0.5 stayDuration:3];
     headLine3.hasGradient = YES;
+
+    [headLine3 changeTapMarqueeAction:^(NSInteger index) {
+        
+        NSLog(@"你点击了第 %ld 个button！内容：%@", index, headLine3.messageArray[index]);
+        
+    }];
     [headLine3 start];
     
     [self.view addSubview:mar];

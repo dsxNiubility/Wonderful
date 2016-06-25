@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, SXColorType) {
-    SXColorTypeRed = 1,
+    SXColorTypeRed   = 1,
     SXColorTypeGreen = 2,
-    SXColorTypeBlue = 3,
+    SXColorTypeBlue  = 3,
     SXColorTypeAlpha = 4
 };
 

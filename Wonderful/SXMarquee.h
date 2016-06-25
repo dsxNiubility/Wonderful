@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, SXMarqueeSpeedLevel) {
-    SXMarqueeSpeedLevelFast = 2,
+    SXMarqueeSpeedLevelFast       = 2,
     SXMarqueeSpeedLevelMediumFast = 4,
     SXMarqueeSpeedLevelMediumSlow = 6,
-    SXMarqueeSpeedLevelSlow = 8,
+    SXMarqueeSpeedLevelSlow       = 8,
 };
 
 @interface SXMarquee : UIView
