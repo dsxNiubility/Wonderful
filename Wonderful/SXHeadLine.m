@@ -55,6 +55,7 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
         self.label2              = label2;
         [self addSubview:label1];
         [self addSubview:label2];
+        [self addSubview:self.bgBtn];
         self.layer.cornerRadius  = self.cornerRadius;
         self.layer.masksToBounds = YES;
     }
@@ -183,7 +184,6 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 
 - (void)changeTapMarqueeAction:(actionBlock)action{
     
-    [self addSubview:self.bgBtn];
     self.tapAction = action;
     self.tapMode = SXMarqueeTapForAction;
 }
@@ -196,16 +196,27 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
         CGFloat h = self.frame.size.height;
         _bgBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, w, h)];
         [_bgBtn addTarget:self action:@selector(bgButtonClick) forControlEvents:UIControlEventTouchUpInside];
+        [_bgBtn addTarget:self action:@selector(bgButtonPress) forControlEvents:UIControlEventTouchDown];
     }
     return _bgBtn;
 }
 
 - (void)bgButtonClick
 {
+    if (self.messageArray.count == 0) return;
     if (self.tapAction)
     {
         NSLog(@"***** messageIndex : %ld", (self.messageIndex + self.messageArray.count - 2)%self.messageArray.count);
         self.tapAction((self.messageIndex + self.messageArray.count - 2)%self.messageArray.count);
+    }else{
+        [self start];
+    }
+}
+
+- (void)bgButtonPress
+{
+    if (!self.tapAction) {
+        [self stop];
     }
 }
 
