@@ -4,7 +4,7 @@
 [![Language](http://img.shields.io/badge/language-OC-yellow.svg?style=flat
 )](https://en.wikipedia.org/wiki/Objective-C)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](http://mit-license.org)
-![CocoaPods Version](https://img.shields.io/badge/pod-v1.2.0-brightgreen.svg)
+![CocoaPods Version](https://img.shields.io/badge/pod-v1.2.1-brightgreen.svg)
 
 	一个关于色彩的库
 
@@ -14,7 +14,21 @@
 
 <br />
 <br />
+
+#### ChangeLog 1.2.1
+
+1.2.1版本修复了：
+
+有marquee或是headline组件的页面，后台回到前台偶现错乱的问题
+
+有marquee或是headline组件的页面，停留在当前页面，锁屏解锁偶现错乱的问题
+
+允许marquee在运行中修改文字
+
+
+
 ####Demo程序截图
+
 _建议使用iPhone6运行Demo程序_<br />
 <img src="https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1001.png" alt="Drawing" width="375px" /><br />
 
@@ -23,7 +37,7 @@ _建议使用iPhone6运行Demo程序_<br />
 
 		self.view.backgroundColor = [UIColor khakiColor];
 		self.view.backgroundColor = [UIColor chocolateColor];
-		
+
 2.平均每个色系有10种颜色，不仅可以使用名称直接敲出，还能使用颜色阶梯的宏敲出，在你想不起词的时候更加方便。 宏从1～10是颜色渐深，可以根据自己的感觉使用浅一级的宏或深一级的宏。<br />
 
 		self.view.backgroundColor = Wonderful_YelloeColor4;
@@ -46,7 +60,7 @@ _建议使用iPhone6运行Demo程序_<br />
 
 	self.showLbl1.backgroundColor = [UIColor peachRed];
 	self.showLbl1.textColor = [[UIColor peachRed]reverseColor];
-	
+
 3.也可以直接打印这个颜色的各项详细数值。<br />
 
 	[[UIColor salmonColor]printDetail];
@@ -54,7 +68,7 @@ _建议使用iPhone6运行Demo程序_<br />
 	This Color's Red:250, Green:128, Blue:114, Alpha:1
 	decimal red:0.9804 green:0.5020 blue:0.4471
 	Hexadecimal 0xfa8072
-	
+
 4.提供了颜色微调方案，可以让一个已知颜色的rgb的某值上升或下降若干，可用于不管背景是什么色，边框都比背景深20。 也可以将认可颜色的详细值打印出来。<br />
 
 		UIColor *navColor = [[UIColor redColor]up:SXColorTypeBlue num:30]; // 在红色上把蓝色色值提高30
@@ -68,7 +82,7 @@ _建议使用iPhone6运行Demo程序_<br />
 1.颜色渐变的view，可以设置任何颜色到透明的过渡。<br />
 
 	SXColorGradientView *grv1 = [SXColorGradientView createWithColor:[UIColor paleGreen] frame:CGRectMake(10, 10, 80, 30) visible:YES direction:SXColorGradientToRight];
-	
+
 2.也可以设置两个颜色相互过渡。<br />
 
 	SXColorGradientView *grv3 = [SXColorGradientView createWithFromColor:[UIColor peruColor] toColor:[UIColor ghostWhite] frame:CGRectMake(10, 50, 80, 30) direction:SXColorGradientToRight];
@@ -76,12 +90,12 @@ _建议使用iPhone6运行Demo程序_<br />
 3.可以设置向上下左右四个过渡的方向。<br />
 
 	typedef NS_ENUM(NSInteger, SXColorGradientDirection) {
-    	SXColorGradientToTop = 1,
-    	SXColorGradientToLeft = 2,
-    	SXColorGradientToBottom = 3,
-    	SXColorGradientToRight = 4,
+		SXColorGradientToTop = 1,
+		SXColorGradientToLeft = 2,
+		SXColorGradientToBottom = 3,
+		SXColorGradientToRight = 4,
 	};
-	
+
 4.支持增加传入一个数组，然后搭建一个多个颜色过渡的view。<br />
 <img src="https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1006.png" alt="Drawing" width="375px" /><br />
 
@@ -99,18 +113,18 @@ _建议使用iPhone6运行Demo程序_<br />
 ####五、SXColorLabel
 1.把text里重要的内容用特殊符号包起来，就会特殊显示<br />
 <img src="https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1002.png" alt="Drawing" width="375px" /><br />
-	
-	
+​	
+​	
 2.如果用<>包起来，就会显示高亮颜色。如果用[]包起来，就会显示高亮的字体。
 
 	lbl.text = @"例1：今天要记得通知<Peter>和<Robin>去开会。";
 	lbl2.text = @"例2：礼物很有[粪]量，你会大吃一[斤]！";
-	
+
 3.这个高亮颜色和高亮字体可以自行设置。
 
     [SXColorLabel setAnotherColor:[UIColor salmonColor]];
     [SXColorLabel setAnotherFont:[UIFont boldSystemFontOfSize:18]];
-    
+
 4.两者也可以混合使用。 高亮的字体里有高亮颜色。
 
     lbl3.text = @"例3：一定要：[通知<Peter>和<Robin>去开会]";
