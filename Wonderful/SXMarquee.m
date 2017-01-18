@@ -30,6 +30,7 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 @property (nonatomic,assign) SXMarqueeTapMode      tapMode;
 @property (nonatomic,assign) SXMarqueeSpeedLevel   speedLevel;
 @property (nonatomic,strong) UIView               *middleView;
+@property (nonatomic,strong) UIFont               *marqueeLabelFont;
 
 @end
 
@@ -77,6 +78,10 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
     return self;
 }
 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)setFrame:(CGRect)frame
 {
     [super setFrame:frame];
@@ -89,6 +94,7 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 - (void)doSometingBeginning{
     self.layer.masksToBounds = YES;
     self.backgroundColor = self.bgColor;
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(backAndRestart) name:@"UIApplicationDidBecomeActiveNotification" object:nil];
     UIView *middleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     self.middleView = middleView;
     [_middleView addSubview:self.marqueeLbl];
@@ -104,6 +110,7 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 
 - (void)changeMarqueeLabelFont:(UIFont *)font{
     self.marqueeLbl.font = font;
+    self.marqueeLabelFont = font;
     CGSize msgSize = [_marqueeLbl.text sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:font,NSFontAttributeName, nil]];
     CGRect fr = self.marqueeLbl.frame;
     fr.size.width = msgSize.width;
@@ -130,7 +137,9 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
         _marqueeLbl.font = fnt;
         CGSize msgSize = [_marqueeLbl.text sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:fnt,NSFontAttributeName, nil]];
         _marqueeLbl.frame = CGRectMake(0, 0, msgSize.width, h);
-        
+        if (self.marqueeLabelFont != nil) {
+            _marqueeLbl.font = self.marqueeLabelFont;
+        }
         _marqueeLbl.textColor = self.txtColor;
     }
     return _marqueeLbl;
@@ -169,6 +178,14 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 
 #pragma mark - 操作
 - (void)start{
+    [self moveAction];
+}
+
+- (void)backAndRestart{
+    [self.marqueeLbl.layer removeAllAnimations];
+    [self.marqueeLbl removeFromSuperview];
+    self.marqueeLbl = nil;
+    [self.middleView addSubview:self.marqueeLbl];
     [self moveAction];
 }
 

@@ -216,6 +216,8 @@
 				TargetAttributes = {
 					1DCCF47A1BDE214900DB5EB7 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 4HW3B6PMKD;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -388,12 +390,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4HW3B6PMKD;
 				INFOPLIST_FILE = Wonderful/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sankuai.Wonderful;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "b257564f-9d82-4034-87a3-18a0d4029e73";
+				PROVISIONING_PROFILE_SPECIFIER = ios_development_sunli;
 			};
 			name = Debug;
 		};
@@ -404,6 +408,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Wonderful/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
