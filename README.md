@@ -27,12 +27,12 @@
 
 
 
-####Demo程序截图
+#### Demo程序截图
 
 _建议使用iPhone6运行Demo程序_<br />
 <img src="https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1001.png" alt="Drawing" width="375px" /><br />
 
-####一、UIColor+Wonderful
+#### 一、UIColor+Wonderful
 1.这个分类里扩充了更多的颜色扩展，以后随手写个小Demo再也不需要redColor buleColor了。<br />
 
 		self.view.backgroundColor = [UIColor khakiColor];
@@ -46,7 +46,7 @@ _建议使用iPhone6运行Demo程序_<br />
 <img src="https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1003.png" alt="Drawing" width="375px" />
 <img src="https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1005.png" alt="Drawing" width="375px" /><br />
 
-####二、UIColor+Separate
+#### 二、UIColor+Separate
 1.提供颜色分离方案，可以将任何颜色的rgb喝alpha的值取出。<br />
 
 		UIColor *testC = [UIColor salmonColor];
@@ -78,7 +78,7 @@ _建议使用iPhone6运行Demo程序_<br />
 
 ![image](https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/003.gif)<br />
 
-####三、SXColorGradientView
+#### 三、SXColorGradientView
 1.颜色渐变的view，可以设置任何颜色到透明的过渡。<br />
 
 	SXColorGradientView *grv1 = [SXColorGradientView createWithColor:[UIColor paleGreen] frame:CGRectMake(10, 10, 80, 30) visible:YES direction:SXColorGradientToRight];
@@ -99,7 +99,7 @@ _建议使用iPhone6运行Demo程序_<br />
 4.支持增加传入一个数组，然后搭建一个多个颜色过渡的view。<br />
 <img src="https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1006.png" alt="Drawing" width="375px" /><br />
 
-####四、SXMarquee
+#### 四、SXMarquee
 1.实现任何样式的跑马灯。<br />
 
 	SXMarquee *mar3 = [[SXMarquee alloc]initWithFrame:CGRectMake(20, 390, 335, 25) speed:2 Msg:@"If you've submitted an update to fix a critical bug in your app on the App Store and you are requesting an expedited review." bgColor:[UIColor goldColor] txtColor:[UIColor goldenrod]];
@@ -110,7 +110,7 @@ _建议使用iPhone6运行Demo程序_<br />
 3.跑马灯可以实现点击拖动，或者绑定更多点击事件。<br />
 ![image](https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/004.gif)<br />
 
-####五、SXColorLabel
+#### 五、SXColorLabel
 1.把text里重要的内容用特殊符号包起来，就会特殊显示<br />
 <img src="https://github.com/dsxNiubility/Wonderful/raw/master/screenshots/1002.png" alt="Drawing" width="375px" /><br />
 ​	
