@@ -8,6 +8,7 @@
 
 #import "SXHeadLine.h"
 #import "SXColorGradientView.h"
+#import <YYText/YYTextWeakProxy.h>
 
 #define kSXHeadLineMargin 10
 
@@ -31,7 +32,7 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 @property (nonatomic,copy  ) actionBlock           tapAction;
 @property (nonatomic,assign) SXMarqueeTapMode      tapMode;
 
-
+@property (nonatomic, strong) YYTextWeakProxy *weakProxy;
 @end
 @implementation SXHeadLine
 
@@ -74,6 +75,8 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
 }
 
 - (void)dealloc{
+    [self.timer invalidate];
+    self.timer = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -113,7 +116,9 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
     if (self.messageArray.count < 2) {
         return;
     }
-    NSTimer *timer = [NSTimer timerWithTimeInterval:_stayDuration target:self selector:@selector(scrollAnimate) userInfo:nil repeats:YES];
+    // 使用NSTimer在`repeats`设置为`yes`时NSTimer会持有target造成循环引用，
+    // 可参考https://stackoverflow.com/questions/16821736/weak-reference-to-nstimer-target-to-prevent-retain-cycle
+    NSTimer *timer = [NSTimer timerWithTimeInterval:_stayDuration target:self.weakProxy selector:@selector(scrollAnimate) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
     self.timer = timer;
 }
@@ -243,6 +248,13 @@ typedef NS_ENUM(NSInteger, SXMarqueeTapMode) {
     if (!self.tapAction) {
         [self stop];
     }
+}
+
+- (YYTextWeakProxy *)weakProxy {
+    if (!_weakProxy) {
+        _weakProxy = [YYTextWeakProxy proxyWithTarget:self];
+    }
+    return _weakProxy;
 }
 
 @end
