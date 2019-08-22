@@ -9,5 +9,6 @@ s.source = { :git => 'https://github.com/dsxNiubility/Wonderful.git', :tag => s.
 s.requires_arc = true
 s.ios.deployment_target = '7.0'
 s.source_files = 'Wonderful/*.{h,m}'
+s.dependency 'YYText'
 
 end
